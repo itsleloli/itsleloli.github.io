@@ -1,2 +1,0 @@
-Appel
-theme: midnight
