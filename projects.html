@@ -8,10 +8,6 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="styles.css">
-    <!-- Bootstrap JS and jQuery -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </head>
 <body>
 
@@ -39,25 +35,49 @@
         </div>
     </nav>
 
-    <!-- Projects Section -->
-    <section id="projects">
-        <h1>Projects</h1>
-        <div class="project-grid">
-            <div class="project">
-                <a href="project1.html">
-                    <img src="project1.jpg" alt="Project 1">
-                    <h3>Project 1</h3>
-                </a>
+    <!-- Portfolio Section (Bootstrap-styled) -->
+    <section id="portfolio" class="bg-light py-5">
+        <div class="container">
+            <h2>Portfolio</h2>
+            <div class="row">
+                <!-- Add your projects here -->
+                <div class="col-md-4">
+                    <div class="card mb-4">
+                        <a href="project1.html">
+                            <!-- Link to individual project page -->
+                            <img src="project1.jpg" alt="Project 1" class="card-img-top">
+                            <div class="card-body">
+                                <h5 class="card-title">Project 1</h5>
+                                <p class="card-text">Description of Project 1.</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card mb-4">
+                        <a href="project2.html">
+                            <!-- Link to individual project page -->
+                            <img src="project2.jpg" alt="Project 2" class="card-img-top">
+                            <div class="card-body">
+                                <h5 class="card-title">Project 2</h5>
+                                <p class="card-text">Description of Project 2.</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card mb-4">
+                        <a href="project3.html">
+                            <!-- Link to individual project page -->
+                            <img src="project3.jpg" alt="Project 3" class="card-img-top">
+                            <div class="card-body">
+                                <h5 class="card-title">Project 3</h5>
+                                <p class="card-text">Description of Project 3.</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
             </div>
-
-            <div class="project">
-                <a href="project2.html">
-                    <img src="project2.jpg" alt="Project 2">
-                    <h3>Project 2</h3>
-                </a>
-            </div>
-
-            <!-- Add more projects as needed -->
         </div>
     </section>
 
@@ -66,5 +86,9 @@
         <p>&copy; 2023 Leandro Bonora</p>
     </footer>
 
+    <!-- Bootstrap JS and jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
