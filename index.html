@@ -11,47 +11,52 @@
 </head>
 <body>
 
-    <!-- Navigation Bar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light" style="padding-top: 20px; padding-bottom: 20px; height: 70px;">
-        <a class="navbar-brand" href="index.html" style="font-size: 32px;">Leandro Bonora</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="index.html" style="font-size: 20px; padding: 10px 20px;">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="about.html" style="font-size: 20px; padding: 10px 20px;">About Me</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="projects.html" style="font-size: 20px; padding: 10px 20px;">Projects</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="contact.html" style="font-size: 20px; padding: 10px 20px;">Contact</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
+<!-- Navigation Bar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" style="padding-top: 10px; padding-bottom: 20px; height: 70px;">
+    <a class="navbar-brand" href="index.html" style="font-size: 32px; padding-top: -1;">Leandro Bonora</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="index.html" style="font-size: 20px; padding: 10px 20px;">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="about.html" style="font-size: 20px; padding: 10px 20px;">About Me</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="projects.html" style="font-size: 20px; padding: 10px 20px;">Projects</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="contact.html" style="font-size: 20px; padding: 10px 20px;">Contact</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<style>
+    /* Custom CSS to ensure the navbar doesn't move when a scrollbar is added */
+    body {
+        padding-top: 70px; /* Add padding to the top of the body to account for the fixed navbar */
+    }
+</style>
+
+
+
+
+<style>
+    /* Custom CSS to ensure the navbar doesn't move when a scrollbar is added */
+    body {
+        padding-top: 70px; /* Add padding to the top of the body to account for the fixed navbar */
+    }
+</style>
 
 
     <!-- Hero Section -->
     <section id="hero" class="text-center">
         <h1>Welcome to My Portfolio</h1>
         <p>Game Developer</p>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="container py-5">
-        <div class="row">
-            <div class="col-lg-6">
-                <h2>About Me</h2>
-                <p>
-                    Welcome to the home page!
-                </p>
-            </div>
-        </div>
     </section>
 
     <!-- Portfolio Section (Bootstrap-styled) -->
@@ -62,39 +67,36 @@
                 <!-- Add your projects here -->
                 <div class="col-md-4">
                     <div class="card mb-4">
-                        <a href="project1.html">
+                        <a href="sea-monkey.html">
                             <!-- Link to individual project page -->
                             <img src="images/sea-monkey-photo.png" alt="Project 1" class="card-img-top">
                             <div class="card-body">
                                 <h5 class="card-title">Sea Monkey</h5>
-                                <p class="card-text">2D PvE Game jam game, The theme for this jam was reflection.</p>
-                                <p class="card-text"><small class="text-muted">Finished: 22/9/2023</small></p>
+                                <p class="card-text">Game Jam.</p>
                             </div>
                         </a>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="card mb-4">
-                        <a href="project2.html">
+                        <a href="starline.html">
                             <!-- Link to individual project page -->
                             <img src="images/starline-photo.png" alt="Project 2" class="card-img-top">
                             <div class="card-body">
                                 <h5 class="card-title">Starline</h5>
-                                <p class="card-text">First-person 3D Puzzle game, about a star trying to find it's way home.</p>
-                                <p class="card-text"><small class="text-muted">Finished: 31/7/2023</small></p>
+                                <p class="card-text">Stars and stuff.</p>
                             </div>
                         </a>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="card mb-4">
-                        <a href="project3.html">
+                        <a href="christmas-night.html">
                             <!-- Link to individual project page -->
                             <img src="images/christmas-night-photo.jpeg" alt="Project 3" class="card-img-top">
                             <div class="card-body">
                                 <h5 class="card-title">Christmas Night</h5>
-                                <p class="card-text">First-person split screen FPS Shooter game.</p>
-                                <p class="card-text"><small class="text-muted">Finished: 22/12/2022</small></p>
+                                <p class="card-text">Vewy cool.</p>
                             </div>
                         </a>
                     </div>
