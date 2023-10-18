@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Leandro Bonora - Christmas Fight</title>
+    <title>Leandro Bonora - Sea Monkey</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <!-- Prism.js CSS -->
@@ -20,7 +20,7 @@
         .snippet {
             background-color: #cbcbcb87; /* You can adjust this color as needed */
             padding: 10px;
-            border-radius: 5px;
+            border-radius:5px;
             border-width: 5px;
             margin-bottom: 5px;
         }
@@ -57,249 +57,122 @@
                 <a class="nav-link" href="about.html" style="font-size: 20px; padding: 10px 20px;">About Me</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="contact.html" style="font-size: 20px; padding: 10px 20px;">Contact</a>
+                <a class="nav-link" href="projects.html" style="font-size: 20px; padding: 10px 20px;">Projects</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="pdf/CV Leandro Bonora 2023 English.pdf" target="_blank" style="font-size: 20px; padding: 10px 20px;">Resume</a>
+                <a class="nav-link" href="contact.html" style="font-size: 20px; padding: 10px 20px;">Contact</a>
             </li>
         </ul>
     </div>
 </nav>
 
-<section id="portfolio" class="bg-light py-5">
-    <div class="container">
-        <h2 class="text-center h1">Sea Monkey</h2>
-        <p class="text-center">2D Pixel Art Arcade Game</p> 
-        <hr class="my-4" style="border-width: 2px;">
-        <div class="row">
-            <!-- Your content here -->
-        </div>
+<!-- Project Description Section -->
+<section id="project-description" class="container py-6 text-center">
+    <h2 style="padding-top: 20px;">Sea Monkey</h2>
+    <p class="mx-auto" style="max-width: 600px;">This game was made during a 72-hour game jam in a group of 2 developers and 4 artists. The theme for this jam was reflection.</p>
+    <p class="mx-auto" style="max-width: 600px;">The premise of the game is to, while in the air, flip the monkey's surfboard and reflect the beach balls the fish is shooting back towards itself. Do this enough times, and you might get a nice surprise at the end!</p>
+</section>
 
-        
-        <!-- Description Section -->
-        <div class="container py-2 text-left">
-            <h2>Description</h2>
-            <p style="font-size: 21px; font-weight: normal;">
-                This game was made for a Game Jam during a project week at school. The theme for the Jam was reflection and we decided to go for a 2D game because that is easier to polish during a short amount of time.
-            </p>
-            <p style="font-size: 21px; font-weight: normal;">
-                The premise of the game is to whilst in the air flip the monkey's surfboard and reflect the beach balls the fish is shooting,  back towards itself. Do this enough times and u might get a nice surprise at the end
-            </p>
-            <div id="video" class="container py-5 text-center">
-                <h2 style="padding-top: 20px;">Sea Monkey Playthrough</h2>
-                <!-- First Video -->
-                <video id="gameTrailer" controls style="width: 100%; max-width: 1200px; height: auto;">
-                    <source src="videos/sea-monkey.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-                <br>
-            </div>
-</div>
+<!-- Video Section -->
+<section id="video" class="container py-5">
+    <h2 style="padding-top: 20px;">Watch the Sea Monkey Game Trailer</h2>
+    <!-- Add your video here -->
+    <video id="gameTrailer" controls>
+        <source src="videos/sea-monkey.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+</section>
 
-
-<!-- Team Section -->
-<div class="container py-2 text-left">
-    <h2>Team</h2>
-    <p style="font-size: 21px; font-weight: normal;">
-        This team was nicely balanced between artists and developers, this was for the most part the same team I've worked with during Starline(My Other Project) 
-        So I had a nice experience once again.
-    </p>
-    
-    <p style="font-size: 20px; font-weight: normal;">
-        <strong>Team Members: 5</strong>
-        <ul class="text-muted lead" style="font-size: 20px; font-weight: normal;">
-            <strong>Developers</strong>
-            <li>Leandro Bonora (Programming)</li>
-            <li>Milan Driece (Programming)</li>
-            <br>
-            <strong>Artists</strong>
-            <li>Aiden Glen (2D)</li>
-            <li>Annelot van der Leden (2D)</li>
-            <li>Anna Heijblom (3D, VFX)</li>
-        </ul>
-        <br>
-    </p>
-</div>
-
-
-<div class="container">
-    <h2 class="text-left h1">Work Process</h2>
-    <p class="text-left text-muted lead">
-        Since this was a game jam we decided to go for a very rapid prototyping way of workign where we just decided on a theme for the game. And then if need be
-        developed things along the way and or asked for extra sprites. Which worked out in our favor since we we're done with the first Prototype within the first day! 
-        After that it was mostly smooth sailing with just polishing extra stuff and adding extra's such as a score.
-    </p>
-
-    <p class="text-left text-muted lead">
-        I worked on stuff such as: Enemy, Projectile, Score and the Wave Manager alongside all UI related things.
-        <hr class="my-4" style="border-width: 2px; width: 450px;"> <!-- Adjust the width as needed -->
-    </p>
-    <br>
-
-<div class="text-left h4 text-left">
-    <p>Fish (Enemy)</p>
-</div>
-<div class="text-left text-left">
-    <p class="text-left text-muted lead">The fish enemy idea came from the original Concept from Aiden, so we decided to stick to it and make it 
-        shoot beachballs because it was easier than making a stream of water and to also tie in the "Reflection" theme since u could also think of it 
-        as that it shoots plastic beachballs because it's oceans are getting polluted.
-    </p>
-    <br>
-    <p class="text-left text-muted lead">The fish works pretty nicely it takes important information such as max health, attack speed from a scriptable object.</p>
-
-    <br>
-    <p class="text-left text-muted lead"> Here u can see the instantiated prefab being shot.</p>
-    <div class="gif-container" style="max-width: 60%; margin: 0 auto;">
-        <div class="text-center">
-            <img src="gifs/Fish.gif" alt="GIF Description" style="max-width: 100%; height: auto;">
-        </div>
-    </div>
-
-<br>
-    </style>
-            <br>
-            <br>
-        <!-- Button 1: Code Snippet 1 -->
+<!-- Code Snippets Section -->
+<section id="code-snippets" class="container py-5">
+    <!-- Button 1: Code Snippet 1 -->
+    <div class="snippet">
         <div class="text-center mb-2"> <!-- Center-align the button text -->
-            <button class="btn btn-primary custom-button" data-toggle="collapse" data-target="#snippet1" style="background-color: rgb(113, 113, 113); padding: 15px 30px; font-size: 18px;">Show Code</button>
+            <button class="btn btn-primary" data-toggle="collapse" data-target="#snippet1">View Code Snippet 1</button>
         </div>
         <div id="snippet1" class="collapse">
-            <pre style="border: none; background-color: #f0f0f0; color: white;"> <!-- Set the background color to dark gray (#333) and text color to white -->
+            <pre>
                 <code class="language-csharp">
-                    private void InstantiatePrefab(GameObject prefab, Vector3 position, Quaternion rotation, Vector2 force)
+                    private void NextLine()
                     {
-                        GameObject instantiatedPrefab = Instantiate(prefab, position, rotation);
-                        Rigidbody2D rb2D = instantiatedPrefab.GetComponent<Rigidbody2D>();
-                        float forceMultiplayer = (Random.Range(m_minForce, m_maxForce));
-                        rb2D.AddForce(force * forceMultiplayer, ForceMode2D.Impulse);
-                        instantiatedPrefab.transform.SetParent(m_bulletParent);
+                        if (index < m_lines.Length - 1)
+                        {
+                            index++;
+                            m_textComponent.text = string.Empty;
+                            StartCoroutine(TypeLine());
+                        }
+                        
+                        else
+                        {
+                            if (PauseMenu.Instance) PauseMenu.Instance.m_gamePaused = false;
+                            if (InGameUI.Instance) InGameUI.Instance.TurnOnInGameUI();
+                            gameObject.SetActive(false);
+                            pa.m_isInteractable = true; // Meow
+                            pc.m_allowedToJump = true; // Meow
+                        }
                     }
                 </code>
             </pre>
         </div>
-        <p class="text-left text-muted lead">The instantiate prefab function is very simple the only thing that changes is that the force it gets is randomly applied, so each projectile has a random curvature
-        <br>
-        <br>
+    </div>
 
-
-
-        <div class="text-left h4 text-left">
-        <hr class="my-4" style="border-width: 2px; width: 450px;"> <!-- Adjust the width as needed -->
-            <p>Dialogue System</p>
+    <!-- Button 2: Code Snippet 2 -->
+    <div class="snippet">
+        <div class="text-center mb-2"> <!-- Center-align the button text -->
+            <button class="btn btn-primary" data-toggle="collapse" data-target="#snippet2">View Code Snippet 2</button>
         </div>
-        <div class="text-left  text-left">
-            <p class="text-left text-muted lead">I made this dialogue system for the books we have in the game that aswell as giving tips to players also give more info about the lore of the game. We chose this way giving information rather than info dumping because we thought this would be more fun and work better!
-            </p>
-            
-            <!-- Button 2: Code Snippet 2 -->
-            <div class="text-center mb-2"> <!-- Center-align the button text -->
-                <button class="btn btn-primary custom-button" data-toggle="collapse" data-target="#snippet2" style="background-color: rgb(113, 113, 113); padding: 15px 30px; font-size: 18px;">Show Code</button>
-            </div>
-            <div id="snippet2" class="collapse">
-                <pre style="border: none; background-color: #f0f0f0; color: white;"> <!-- Set the background color to dark gray (#333) and text color to white -->
-                    <code class="language-csharp">
-                        private void NextLine()
-
-                    </code>
-                </pre>
-            </div>
-            <p class="text-left text-muted lead">Next Line works by first checking if there are any more lines left to write and if there are any lines 
-                (So a whole sentence).
-                It will start writing those by calling the Coroutine TypeLine.
-                <br>
-                The coroutine TypeLine will then for each character in the current line will type it out and wait for the specified time 
-                and keep doing that until there are no more characters left. which results in a nice letter for letter dialogue system.
-            </p>
-            <br>
-            <p class="text-left text-muted lead"> Here u can see a player interact with the dialogue system.</p>
-            <div class="gif-container" style="max-width: 60%; margin: 0 auto;">
-                <div class="text-center">
-                    <img src="gifs/Dialogue.gif" alt="GIF Description" style="max-width: 100%; height: auto;">
-                </div>
-            </div>
-            <br>
-            <br>
-            <br>
-        </div>
-        
-        
-        
-
-        <div class="text-left h4 text-left">
-            <hr class="my-4" style="border-width: 2px; width: 450px;"> <!-- Adjust the width as needed -->
-            <p>Culling</p>
-        </div>
-        <div class="text-left  text-left">
-            <p class="text-left text-muted lead">To help with preformance I opted to alongside using Oclussion Culling to also deactive everything in the cell once the player is done there 
-                                                 that way no unnecessary performance would go there this was a very simple but effective way to win frames!
-            </p>
-            <p class="text-left text-muted lead"> I did this alongside using actual occlusion culling to up the performance of the game.</p>
-      
-            <!-- Button 3: Code Snippet 3 -->
-            <div class="text-center mb-2"> <!-- Center-align the button text -->
-                <button class="btn btn-primary custom-button" data-toggle="collapse" data-target="#snippet3" style="background-color: rgb(113, 113, 113); padding: 15px 30px; font-size: 18px;">Show Code</button>
-            </div>
-            <div id="snippet3" class="collapse">
-                <pre style="border: none; background-color: #f0f0f0; color: white; margin-left: 0; padding-left: 0; overflow-x: auto;"> <!-- Set the background color to dark gray (#333) and text color to white, remove margin and padding, enable horizontal scrolling -->
-                    <code class="language-csharp" style="margin-left: 0; padding-left: 0;"> <!-- Remove margin and padding for code block -->
-                        public void TurnOffCel(int index)
+        <div id="snippet2" class="collapse">
+            <pre>
+                <code class="language-csharp">
+                    private void NextLine()
+                    {
+                        if (index < m_lines.Length - 1)
                         {
- 
-                    </code>
-                </pre>
-            </div>
-            
-            <p class="text-left text-muted lead">
-                The turnOffCel function is very simple and just turns off the cel specified in the parameters off. It only keeps a couple of things that aren't worth using a find function for to specifically destroy.
-                <div class="gif-container" style="max-width: 80%; margin: 0 auto;">
-                    <div class="text-center">
-                        <img src="gifs/Culling.gif" alt="GIF Description" style="max-width: 100%; height: auto;">
-                    </div>
-                </div>
-            </p>
-            <br>
-            <br>
-            <br>
+                            index++;
+                            m_textComponent.text = string.Empty;
+                            StartCoroutine(TypeLine());
+                        }
+                        
+                        else
+                        {
+                            if (PauseMenu.Instance) PauseMenu.Instance.m_gamePaused = false;
+                            if (InGameUI.Instance) InGameUI.Instance.TurnOnInGameUI();
+                            gameObject.SetActive(false);
+                            pa.m_isInteractable = true; // Meow
+                            pc.m_allowedToJump = true; // Meow
+                        }
+                    }
+                </code>
+            </pre>
         </div>
     </div>
-</div>
 
+    <!-- Add more code snippets as needed -->
 
-
-    </div>
-    <!-- Reflection -->
-    <div class="container">
-        <h2 class="text-left h1">Reflection</h2>
-        <p class="text-left text-muted lead">
-            I had a lot of fun during this Game Jam because we had a very nice approach to it and decided to go very simple but very polished which was great in my opinion.  
-            <br>
-            <br>
-            I do have to admit I had a little trouble switching on the 1st day from constantly making 3D projects to going back to 2D but that switch was quickly made!
-            <br>
-            <br>
-            My favorite part is definitely the ending screen u get when u finished the game and the dialogue u get with it! PS, play the game to find out yourself :D 
-            <br>
-            <br>
-            <br>
-            <br>
-        </p>
-    </div>
-
-    
+</section>
 
 <!-- Prism.js Initialization -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/components/prism-csharp.min.js"></script>
+<script>
+    // Initialize Prism.js
+    Prism.highlightAll();
+</script>
 
 <!-- JavaScript to set initial video volume -->
 <script>
     // Set the initial volume to 10% (0.1)
-    document.getElementById("gameTrailer").volume = 0.05;
-    document.getElementById("gamePlay").volume = 0.05;
-    document.getElementById("devCommentary").volume = 0.05;
+    document.getElementById("gameTrailer").volume = 0.1;
 </script>
+
+<!-- Footer Section (similar to your existing footer) -->
+<!--<footer class="text-center py-3">
+    <p>&copy; 2023 Leandro Bonora</p>
+</footer>-->
 
 <!-- Bootstrap JS and jQuery -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
