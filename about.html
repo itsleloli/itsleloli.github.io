@@ -6,6 +6,8 @@
     <title>Leandro Bonora - About</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Font Awesome CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -26,10 +28,10 @@
                 <a class="nav-link" href="about.html" style="font-size: 20px; padding: 10px 20px;">About Me</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="projects.html" style="font-size: 20px; padding: 10px 20px;">Projects</a>
+                <a class="nav-link" href="contact.html" style="font-size: 20px; padding: 10px 20px;">Contact</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="contact.html" style="font-size: 20px; padding: 10px 20px;">Contact</a>
+                <a class="nav-link" href="pdf/CV Leandro Bonora 2023 English.pdf" target="_blank" style="font-size: 20px; padding: 10px 20px;">Resume</a>
             </li>
         </ul>
     </div>
@@ -41,23 +43,15 @@
         padding-top: 70px; /* Add padding to the top of the body to account for the fixed navbar */
     }
 </style>
-
-
-
-
-
-
-
-
     <!-- About Section -->
     <section id="about" class="container py-5">
         <div class="row">
             <div class="col-lg-6">
                 <h2>About Me</h2>
-                <p>
+                <p style="font-size: 17px;">
                     Hi! My name is Leandro Rosero Bonora, but you can call me Leo. I'm an 18-year-old student currently studying Game Development at the Grafisch Lyceum Utrecht in The Netherlands.
                 </p>
-                <p>
+                <p style="font-size: 17px;">
                     In my free time, I enjoy cooking (I love food), reading, and working out.
                 </p>
             </div>
@@ -69,7 +63,7 @@
         <div class="row" style="margin-top: 50px;">
             <div class="col-lg-6">
                 <h3>Soft Skills</h3>
-                <ul style="font-size: 18px;">
+                <ul style="font-size: 20px;">
                     <li>Working alongside a team</li>
                     <li>Problem-solving ability</li>
                     <li>Helpful attitude</li>
@@ -80,7 +74,7 @@
             </div>
             <div class="col-lg-6">
                 <h3>Hard Skills</h3>
-                <ul style="font-size: 18px;">
+                <ul style="font-size: 20px;">
                     <li>Programming – C#</li>
                     <li>Photoshop</li>
                     <li>Blender</li>
@@ -90,20 +84,53 @@
             </div>
         </div>
         <h3 style="font-size: 24px; margin-top: 40px;">Notables</h3>
-        <p>
+        <p style="font-size: 17px;">
             At school, I've helped with organizing an afternoon for the upcoming first years since November of my 2nd year until the end of my 2nd year. This entailed welcoming the new students, talking to them about the course, answering their questions, showing my own work, and helping the teacher if need be. This experience has helped me further develop organization and communication skills.
         </p>
-        <p>
+        <p style="font-size: 17px;">
             Some notable things I've done around school include assisting with the "Welcome Afternoons." This entailed welcoming new and up-and-coming students to the school, showing my own work, answering questions, and helping the teacher if needed.
         </p>
     </section>
 
+<!-- Footer Section -->
+<footer class="navbar navbar-expand-lg navbar-dark bg-dark fixed-bottom" style="padding-top: 15px; padding-bottom: 50px;">
+    <div class="container">
+        <div class="row">
+            <div class="col text-center" style="position: absolute; right: 0;">
+                <!-- Social Media Buttons with custom class -->
+                <a href="https://www.linkedin.com/in/leandro-bonora-08b0ba257/" class="btn btn-primary social-btn mr-2" target="_blank">
+                    <i class="fab fa-linkedin"></i> <!-- Replace with your Font Awesome Facebook icon -->
+                </a>
+                <a href="https://itsleloli.itch.io/" class="btn btn-primary social-btn mr-2" target="_blank">
+                    <i class="fab fa-itch-io"></i> <!-- Replace with your Font Awesome Instagram icon -->
+                </a>
+                <a href="https://github.com/itsleloli" class="btn btn-primary social-btn mr-2" target="_blank">
+                    <i class="fab fa-github"></i> <!-- Replace with your Font Awesome Twitter icon -->
+                </a>
+                <a href="https://www.instagram.com/leandrobonora/" class="btn btn-primary social-btn mr-2"target="_blank">
+                    <i class="fab fa-instagram"></i> <!-- Replace with your Font Awesome Email icon -->
+                </a>
+                <a href="mailto:bonoraleandro@gmail.com" class="btn btn-primary social-btn mr-2">
+                    <i class="fas fa-envelope"></i> <!-- Replace with your Font Awesome Email icon -->
+                </a>
+            </div>
+        </div>
+    </div>
+</footer>
 
+<style>
+    /* Custom CSS to style the social media buttons */
+    .social-btn {
+        background-color: #4a4a4a00; /* Default button background color */
+        border-color: #4a4a4a00; /* Default button border color */
+    }
 
-    <!-- Footer Section -->
-    <!--<footer class="text-center py-3">
-        <p>&copy; 2023 Leandro Bonora</p>
-    </footer>-->
+    .social-btn:hover {
+        background-color: #2e2e2e; /* Button background color on hover */
+        border-color: #2e2e2e; /* Button border color on hover */
+    }
+</style>
+
     <!-- Bootstrap JS and jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
