@@ -142,15 +142,15 @@
     <p>Fish (Enemy)</p>
 </div>
 <div class="text-left text-left">
-    <p class="text-left text-muted lead">The fish enemy idea came from the original Concept from Aiden, so we decided to stick to it and make it 
+    <p class="text-left text-muted lead">The fish enemy idea came from the original concept from Aiden, so we decided to stick to it and make it 
         shoot beachballs because it was easier than making a stream of water and to also tie in the "Reflection" theme since u could also think of it 
         as that it shoots plastic beachballs because it's oceans are getting polluted.
     </p>
     <br>
-    <p class="text-left text-muted lead">The fish works pretty nicely it takes important information such as max health, attack speed from a scriptable object.</p>
+    <p class="text-left text-muted lead">The fish works pretty nicely it takes important information such as max health, attack speed from a scriptable object. which allowed me to make different scriptable objects depending on the difficulty of the enemy and easily tweak them.</p>
 
     <br>
-    <p class="text-left text-muted lead"> Here u can see the instantiated prefab being shot.</p>
+    <p class="text-center text-muted lead"> Here u can see the instantiated prefab being shot.</p>
     <div class="gif-container" style="max-width: 60%; margin: 0 auto;">
         <div class="text-center">
             <img src="gifs/Fish.gif" alt="GIF Description" style="max-width: 100%; height: auto;">
@@ -166,21 +166,24 @@
             <button class="btn btn-primary custom-button" data-toggle="collapse" data-target="#snippet1" style="background-color: rgb(113, 113, 113); padding: 15px 30px; font-size: 18px;">Show Code</button>
         </div>
         <div id="snippet1" class="collapse">
-            <pre style="border: none; background-color: #f0f0f0; color: white;"> <!-- Set the background color to dark gray (#333) and text color to white -->
+            <pre style="border: none; background-color: #e9e9e9; color: white;"> <!-- Set the background color to dark gray (#333) and text color to white -->
                 <code class="language-csharp">
-                    private void InstantiatePrefab(GameObject prefab, Vector3 position, Quaternion rotation, Vector2 force)
+                    private void InstantiatePrefab(GameObject prefab, Vector3 position, Quaternion rotation)
                     {
+                        if (EnemyDataList == null || EnemyDataList.Count == 0) return;
+
                         GameObject instantiatedPrefab = Instantiate(prefab, position, rotation);
-                        Rigidbody2D rb2D = instantiatedPrefab.GetComponent<Rigidbody2D>();
-                        float forceMultiplayer = (Random.Range(m_minForce, m_maxForce));
-                        rb2D.AddForce(force * forceMultiplayer, ForceMode2D.Impulse);
-                        instantiatedPrefab.transform.SetParent(m_bulletParent);
+                        instantiatedPrefab.GetComponent<Fish>().EnemyData = EnemyDataList[0];
+                        EnemyDataList.RemoveAt(0);
+                     
+                        instantiatedPrefab.transform.SetParent(m_parent);
+                        m_spawnedEnemiesList.Add(instantiatedPrefab);
                     }
                 </code>
             </pre>
         </div>
-        <p class="text-left text-muted lead">The instantiate prefab function is very simple the only thing that changes is that the force it gets is randomly applied, so each projectile has a random curvature
-        <br>
+        <p class="text-left text-muted lead">The instantiate prefab function is for spawning new enemies with their respective Enemy Data. It's very simple
+            but it works for what it's intended.
         <br>
 
 
@@ -198,7 +201,7 @@
                 <button class="btn btn-primary custom-button" data-toggle="collapse" data-target="#snippet2" style="background-color: rgb(113, 113, 113); padding: 15px 30px; font-size: 18px;">Show Code</button>
             </div>
             <div id="snippet2" class="collapse">
-                <pre style="border: none; background-color: #f0f0f0; color: white;"> <!-- Set the background color to dark gray (#333) and text color to white -->
+                <pre style="border: none; background-color: #e9e9e9; color: white;"> <!-- Set the background color to dark gray (#333) and text color to white -->
                     <code class="language-csharp">
                         private void NextLine()
 
@@ -222,47 +225,7 @@
             <br>
             <br>
             <br>
-        </div>
-        
-        
-        
-
-        <div class="text-left h4 text-left">
-            <hr class="my-4" style="border-width: 2px; width: 450px;"> <!-- Adjust the width as needed -->
-            <p>Culling</p>
-        </div>
-        <div class="text-left  text-left">
-            <p class="text-left text-muted lead">To help with preformance I opted to alongside using Oclussion Culling to also deactive everything in the cell once the player is done there 
-                                                 that way no unnecessary performance would go there this was a very simple but effective way to win frames!
-            </p>
-            <p class="text-left text-muted lead"> I did this alongside using actual occlusion culling to up the performance of the game.</p>
-      
-            <!-- Button 3: Code Snippet 3 -->
-            <div class="text-center mb-2"> <!-- Center-align the button text -->
-                <button class="btn btn-primary custom-button" data-toggle="collapse" data-target="#snippet3" style="background-color: rgb(113, 113, 113); padding: 15px 30px; font-size: 18px;">Show Code</button>
-            </div>
-            <div id="snippet3" class="collapse">
-                <pre style="border: none; background-color: #f0f0f0; color: white; margin-left: 0; padding-left: 0; overflow-x: auto;"> <!-- Set the background color to dark gray (#333) and text color to white, remove margin and padding, enable horizontal scrolling -->
-                    <code class="language-csharp" style="margin-left: 0; padding-left: 0;"> <!-- Remove margin and padding for code block -->
-                        public void TurnOffCel(int index)
-                        {
- 
-                    </code>
-                </pre>
-            </div>
-            
-            <p class="text-left text-muted lead">
-                The turnOffCel function is very simple and just turns off the cel specified in the parameters off. It only keeps a couple of things that aren't worth using a find function for to specifically destroy.
-                <div class="gif-container" style="max-width: 80%; margin: 0 auto;">
-                    <div class="text-center">
-                        <img src="gifs/Culling.gif" alt="GIF Description" style="max-width: 100%; height: auto;">
-                    </div>
-                </div>
-            </p>
-            <br>
-            <br>
-            <br>
-        </div>
+        </div>  
     </div>
 </div>
 

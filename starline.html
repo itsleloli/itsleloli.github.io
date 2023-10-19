@@ -233,31 +233,115 @@
             <br>
         <!-- Button 1: Code Snippet 1 -->
         <div class="text-center mb-2"> <!-- Center-align the button text -->
-            <button class="btn btn-primary custom-button" data-toggle="collapse" data-target="#snippet1" style="background-color: rgb(113, 113, 113); padding: 15px 30px; font-size: 18px;">Show Code</button>
+            <button class="btn btn-primary custom-button" data-toggle="collapse" data-target="#snippet1" style="background-color: rgb(113, 113, 113); padding: 15px 30px; font-size: 18px;">Show Script</button>
         </div>
         <div id="snippet1" class="collapse">
-            <pre style="border: none; background-color: #f0f0f0; color: white;"> <!-- Set the background color to dark gray (#333) and text color to white -->
+            <pre style="border: none; background-color: #e9e9e9; color: white;"> <!-- Set the background color to dark gray (#333) and text color to white -->
                 <code class="language-csharp">
-                    /// <Teleport Player To Postion>
-                        /// TargetPostion is based on the parameters given when the function is called 
+                    public class TeleportPlayer : MonoBehaviour
+                    {
+                        [Header("Triggers")] // Needs to be reworked into something more Solid
+                        [SerializeField] private GameObject m_leftTrigger;
+                        [SerializeField] private GameObject m_rightTrigger;
+                    
+                        [Header("Transforms")]
+                        [SerializeField] private Transform m_playerTransform;
+                        [SerializeField] private Transform m_planeTransform;
+                    
+                        [Header("Player Position")]
+                        [SerializeField] private float posX = 0.0f;
+                        [SerializeField] private float posY = 0.0f;
+                    
+                        [Header("Offsets")]
+                        [SerializeField] private float m_hallOffset = 2.75f;
+                        [SerializeField] private float m_angleOffset = 90f;
+                        [SerializeField] private float m_yRotationOffset = 60f;
+                        [SerializeField] private float m_heightOffset = 18.4f;
+                    
+                        [Header("Timer")]
+                        [SerializeField] private float m_waitTime = 2.5f;
+                    
+                        private float m_planeWidth = 1f;
+                        private float m_planeHeight = 1f;
+                        private float timer;
+                        private bool m_teleported;
+                    
+                        ObjectVisibility ov;
+                        PathTrigger lt;
+                        PathTrigger rt;
+                    
+                        private void Start()
+                        {
+                            ov = GetComponent<ObjectVisibility>();
+                            lt = m_leftTrigger.GetComponent<PathTrigger>();
+                            rt = m_rightTrigger.GetComponent<PathTrigger>();
+                        }
+                    
+                        /// Checks if the player has crossed the Y Pos where they get teleported and get teleported if they do and haven't been teleported yet/
+                        /// 
+                        /// Then checks when u are teleported how much time is in between the teleportation so u don't get stuck whilst teleported or get teleported multiple times
+                        /// Get player's position in world space
+                        /// Convert world position to local coordinates of the plane
+                        /// Calculate normalized position values on the plane
+                        /// 
+                        /// Debug.Log("Normalized Position: (" + posX.ToString("F2") + ", " + posY.ToString("F2") + ")"); //Debug Player Position on the Plane
+                        private void FixedUpdate()
+                        {
+                            if (posY >= -m_hallOffset && !m_teleported) Teleport();
+                    
+                            if (m_teleported)
+                            {
+                                timer += Time.fixedDeltaTime;
+                                if (timer >= m_waitTime)
+                                {
+                                    m_teleported = false;
+                                    timer = 0f;
+                                }
+                            }
+                    
+                            Vector3 playerPosition = m_playerTransform.position;
+                            Vector3 localPosition = playerPosition - m_planeTransform.position;
+                    
+                            posX = localPosition.x / m_planeWidth;
+                            posY = localPosition.z / m_planeHeight;
+                        }
+                    
+                        /// TargetPostion is based on the parameters given when the Function is called 
                         /// It calculates the target position based on the provided normalizedX and normalizedY values, multiplied by the plane's width and height,
                         /// respectively. The plane's position is then added to the result, forming a target position in the world space.
                         /// 
-                        /// Sets the player position to be alligned with the heightoffset.
+                        /// Sets the player position to be alligned with the heightoffset
                         /// Rotates the player to face correct place. 
                         /// 
-                        /// Finally sets the teleported bool to true.
-                        /// And Syncs all transforms of the player.
-                        public void TeleportPlayerToPosition(float normalizedX, float normalizedY, float rotationOffset)
+                        /// Finally sets the teleported bool to true
+                        /// And Syncs all transforms.
+                        private void TeleportPlayerToPosition(float normalizedX, float normalizedY, float rotationOffset)
                         {
-                            Vector3 targetPosition = new Vector3(normalizedX * m_planeWidth, 0f, normalizedY * m_planeHeight) + m_planeTransform.position;
-                            m_playerTransform.position = targetPosition;
-                            m_playerTransform.position = new Vector3(m_playerTransform.position.x, m_heightOffset, m_playerTransform.position.z); 
-                            m_playerTransform.Rotate(new Vector3(0f, rotationOffset, 0f), m_angleOffset); 
-                    
+                            Vector3 targetPosition = new Vector3(normalizedX * m_planeWidth + m_planeTransform.position.x, m_heightOffset, normalizedY * m_planeHeight + m_planeTransform.position.z);
+                            m_playerTransform.SetPositionAndRotation(targetPosition, Quaternion.Euler(0f, rotationOffset, 0f));
+                                
                             m_teleported = true;
                             Physics.SyncTransforms();
                         }
+                    
+                    
+                        /// Based on which trigger is triggered it sends the player to a new position, with new rotation
+                        /// And calls the right function based on which trigger is triggered
+                        private void Teleport()
+                        {
+                            if (rt.trigger)
+                            {
+                                TeleportPlayerToPosition(-m_hallOffset, -posX, m_yRotationOffset);
+                                ov.RightPathTaken();
+                            }
+                    
+                            else if (lt.trigger)
+                            {
+                                TeleportPlayerToPosition(m_hallOffset, posX, -m_yRotationOffset);
+                                ov.LeftPathTaken();
+                            }
+                        }
+                    }
                 </code>
             </pre>
         </div>
@@ -265,6 +349,8 @@
             It tracks the player's precise coordinates on this plane.  
             To make teleporting the player as smooth and seamless as possible when teleported the player arrives in another hallway with the original position they had
             and an added 90-degree camera rotation. Which if they now open the door infront of them it's the same cell they originally came from.
+        </p>
+        <p class="text-left text-muted lead">Looking back I should've made a more solid way of adding the Triggers and not a Left and Right Trigger respectively. I would tackle this by just having a Trigger script that depending on let's say the original player position then give the correct offsets.
         </p>
         <br>
         <p class="text-left text-muted lead">Sidenote after playtesting we discovered some people don't ever get the solution so we added a book that spawns each time the player goes through the door again which has a hint helping them :D
@@ -283,10 +369,10 @@
             
             <!-- Button 2: Code Snippet 2 -->
             <div class="text-center mb-2"> <!-- Center-align the button text -->
-                <button class="btn btn-primary custom-button" data-toggle="collapse" data-target="#snippet2" style="background-color: rgb(113, 113, 113); padding: 15px 30px; font-size: 18px;">Show Code</button>
+                <button class="btn btn-primary custom-button" data-toggle="collapse" data-target="#snippet2" style="background-color: rgb(113, 113, 113); padding: 15px 30px; font-size: 18px;">Show Script</button>
             </div>
             <div id="snippet2" class="collapse">
-                <pre style="border: none; background-color: rgb(235, 235, 235); color: rgb(255, 255, 255);"> <!-- Set the background color to gray and text color to white -->
+                <pre style="border: none; background-color: #e9e9e9; color: rgb(255, 255, 255);"> <!-- Set the background color to gray and text color to white -->
                     <code class="language-csharp">
                         public class Dialogue : MonoBehaviour
                         {
@@ -425,7 +511,7 @@
             <br>
             My favorite part has to be the fact we got personal permission from Hikaru Shirosu to use his music, in general the whole interaction with him was very wholesome and I loved it.
             <br>
-            <p class="text-left text-muted lead"> Here u can see some of the progression stages!</p>
+            <p class="text-left text-muted lead"> Here u can see some of the progression stages!        </p>
             <div class="gif-container" style="max-width: 100%; margin: 0 auto;">
                 <div class="text-center">
                     <img src="gifs/Progression.gif" alt="GIF Description" style="max-width: 100%; height: auto;">
