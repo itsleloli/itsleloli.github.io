@@ -151,8 +151,13 @@
             <p class="text-left text-muted lead">Since I used the new input system for this project for the easier controller support. Most of the UI scripts work the same and or are very similar to each other, so I'll quickly go over 1 example of what happens when you press Tab or the Tab input is received via the controller.
             </p>
                 <br>
-            <p class="text-left text-muted lead">   Since I used the new Input system expanding on stuff or adding more input is very easy especially if I want controller support for the new input as well.
-</p>
+            <p class="text-left text-muted lead"> Since I used the new Input system expanding on stuff or adding more input is very easy especially if I want controller support for the new input as well.</p>
+            
+            <div class="text-center">
+                <img src="images/input-actions.jpeg" style="max-width: 120%; height: auto;">
+            </div>
+            <br>
+
             <!-- Button 1: Code Snippet 1 -->
             <div class="text-center mb-2"> <!-- Center-align the button text -->
                 <button class="btn btn-primary custom-button" data-toggle="collapse" data-target="#snippet1" style="background-color: rgb(113, 113, 113); padding: 15px 30px; font-size: 18px;">Show Code</button>
@@ -160,19 +165,19 @@
             <div id="snippet1" class=" collapse">
                 <pre style="border: none; background-color: #e9e9e9; color: white;"> <!-- Set the background color to dark gray (#333) and text color to white -->
                     <code class="language-csharp">
-                        private void OnTab()
-                        {
-                            if (MainMenu.Instance.m_gameStarted)
-                            {
-                                if (m_pauseMenu != null && m_settingsMenu.activeSelf == false)
-                                {
-                                    m_pauseMenu.SetActive(true);
-                                    m_ingameUI.SetActive(false);
-                                    MenuSelectBtn();
-                                    m_gamePaused = true;
-                                }
-                            }
-                        }
+private void OnTab()                 
+{                      
+    if (MainMenu.Instance.m_gameStarted)                      
+    {                        
+        if (m_pauseMenu != null && m_settingsMenu.activeSelf == false)                        
+        {                         
+            m_pauseMenu.SetActive(true);                         
+            m_ingameUI.SetActive(false);                           
+            MenuSelectBtn();                             
+            m_gamePaused = true;                     
+        }                          
+    }                    
+}
                     </code>
                 </pre>
             </div>
@@ -187,7 +192,15 @@
                 <p class="text-left text-muted lead">The audio manager is a bit more sophisticated and is an Singleton. during the initial setup it'll make an array of all sounds and put it in the variable m_sounds.
                     and make them available to be called upon by other scripts.
                 </p>
-
+                <p class="text-left text-muted lead">Underneath u can see an example of what one of the Sound objects holds with said Sound Script.
+                </p>
+                <br>
+                <div class="text-center">
+                    <img src="images/Sound-Script-Example.jpeg" style="max-width: 120%; height: auto;">
+                </div>
+                <br>
+                <br>
+                
                 <!-- Button 2: Code Snippet 2 -->
                 <div class="text-center mb-2"> <!-- Center-align the button text -->
                     <button class="btn btn-primary custom-button" data-toggle="collapse" data-target="#snippet2" style="background-color: rgb(113, 113, 113); padding: 15px 30px; font-size: 18px;">Show Script</button>
@@ -195,81 +208,75 @@
                 <div id="snippet2" class="collapse">
                     <pre style="border: none; background-color: #e9e9e9; color: white;"> <!-- Set the background color to dark gray (#333) and text color to white -->
                         <code class="language-csharp">
-                            public class AudioManager : MonoBehaviour
-                            {
-                                //Singelton since it's an manager and there only needs to be 1.
-                                public static AudioManager Instance;
-                            
-                                [SerializeField] private AudioMixerGroup m_musicMixerGroup;
-                                [SerializeField] private AudioMixerGroup m_soundEffectsMixerGroup;
-                                [SerializeField] private Sound[] m_sounds;
-                            
-                                private void Awake()
-                                {
-                                    if (Instance != null && Instance != this) Destroy(this);
-                                    else Instance = this;
-                            
-                                    //For each Object with the sound script it will separately give its correct values adjusted in the inspector, and pass it on to the list.
-                                    foreach (Sound s in m_sounds)
-                                    {
-                                        s.m_source = gameObject.AddComponent<AudioSource>();
-                                        s.m_source.clip = s.m_audioClip;
-                                        s.m_source.loop = s.m_isLoop;
-                                        s.m_source.volume = s.volume;
-                            
-                                        //Checks whether the sound is a Sound Effect or Music and gives it the correct Mixer group (Made with a switch case so it's expandable)
-                                        switch (s.m_audioType)
-                                        {
-                                            case Sound.AudioTypes.soundEffect:
-                                                s.m_source.outputAudioMixerGroup = m_soundEffectsMixerGroup;
-                                                break;
-                            
-                                            case Sound.AudioTypes.music:
-                                                s.m_source.outputAudioMixerGroup = m_musicMixerGroup;
-                                                break;
-                                        }
-                            
-                                        if (s.m_playOnAwake) s.m_source.Play();
-                                    }
-                                }
-                            
-                                //If this function is called it will play the audio clip with its assigned string name.
-                                public void Play(string clipname)
-                                {
-                                    //Finds the audio Clip/Sound with the correct name and returns the sound as it is right now
-                                    Sound s = System.Array.Find(m_sounds, sound => sound.m_clipName == clipname);
-                                    if (s == null) return;
-                                    s.m_source.Play();
-                                }
-                            
-                                //If this function is called it will stop the audio clip with its assigned string name.
-                                public void Stop(string clipname)
-                                {
-                                    //Finds the audio Clip/Sound with the correct name and returns the sound as it is right now
-                                    Sound s = System.Array.Find(m_sounds, dummySound => dummySound.m_clipName == clipname);
-                                    if (s == null) return;
-                                    s.m_source.Stop();
-                                }
-                            
-                                //This will adjust the volume in the Mixer Groups, by taking in the value of the changed slider. Then converting it into decibels (Hence the Mathf.Log10 and * 20)
-                                public void UpdateMixerVolume()
-                                {
-                                    m_musicMixerGroup.audioMixer.SetFloat("Music Volume", Mathf.Log10(AudioOptionsManager.m_musicVolume) * 20);
-                                    m_soundEffectsMixerGroup.audioMixer.SetFloat("Sound Effects Volume", Mathf.Log10(AudioOptionsManager.m_soundEffectsVolume) * 20);
-                                }
-                            }
+public class AudioManager : MonoBehaviour                    
+{                         
+    //Singelton since it's an manager and there only needs to be 1.                        
+    public static AudioManager Instance;
+                                                    
+    [SerializeField] private AudioMixerGroup m_musicMixerGroup;                         
+    [SerializeField] private AudioMixerGroup m_soundEffectsMixerGroup;                          
+    [SerializeField] private Sound[] m_sounds;                 
+                                
+    private void Awake()                         
+    {                         
+        if (Instance != null && Instance != this) Destroy(this);                          
+        else Instance = this;
+                                                     
+        //For each Object with the sound script it will separately give its correct values adjusted in the inspector, and pass it on to the list.                          
+        foreach (Sound s in m_sounds)                          
+        {                         
+            s.m_source = gameObject.AddComponent<AudioSource>();                       
+            s.m_source.clip = s.m_audioClip;                          
+            s.m_source.loop = s.m_isLoop;           
+            s.m_source.volume = s.volume;
+                                                    
+            //Checks whether the sound is a Sound Effect or Music and gives it the correct Mixer group (Made with a switch case so it's expandable)                         
+            switch (s.m_audioType)                          
+            {           
+                case Sound.AudioTypes.soundEffect:                                 
+                    s.m_source.outputAudioMixerGroup = m_soundEffectsMixerGroup;                       
+                    break;
+                                             
+                case Sound.AudioTypes.music:
+                    s.m_source.outputAudioMixerGroup = m_musicMixerGroup;
+                    break;
+            }                                       
+            if (s.m_playOnAwake) s.m_source.Play();                      
+        }                    
+    }
+                                                   
+    //If this function is called it will play the audio clip with its assigned string name.                   
+    public void Play(string clipname)                      
+    {                       
+        //Finds the audio Clip/Sound with the correct name and returns the sound as it is right now                       
+        Sound s = System.Array.Find(m_sounds, sound => sound.m_clipName == clipname);                       
+        if (s == null) return;                         
+        s.m_source.Play();                        
+    }
+                                                   
+    //If this function is called it will stop the audio clip with its assigned string name.                        
+    public void Stop(string clipname)
+                                
+    {                         
+        //Finds the audio Clip/Sound with the correct name and returns the sound as it is right now                       
+        Sound s = System.Array.Find(m_sounds, dummySound => dummySound.m_clipName == clipname);                        
+        if (s == null) return;                            
+        s.m_source.Stop();                      
+    }
+                             
+    //This will adjust the volume in the Mixer Groups, by taking in the value of the changed slider. Then converting it into decibels (Hence the Mathf.Log10 and * 20)                         
+    public void UpdateMixerVolume()                          
+    {                             
+        m_musicMixerGroup.audioMixer.SetFloat("Music Volume", Mathf.Log10(AudioOptionsManager.m_musicVolume) * 20);                              
+        m_soundEffectsMixerGroup.audioMixer.SetFloat("Sound Effects Volume", Mathf.Log10(AudioOptionsManager.m_soundEffectsVolume) * 20);                         
+    }                      
+}
                         </code>
                     </pre>
                 </div>
                 <p class="text-left text-muted lead">So if a script wants to play a certain audio clip u can just call the Play function, then in the parameters u give the clipname and it'll look for a match through the array and play it if it exists.
                     The same goes for a Stop function; instead it looks for any playing audio clips and stop those.
                 </p>
-                <br>
-                <p class="text-left text-muted lead">Underneath u can see an example of what one of the Sound objects holds with said Sound Script.
-                </p>
-                <div class="text-center">
-                    <img src="images/Sound-Script-Example.jpeg" style="max-width: 120%; height: auto;">
-                </div>
                 <br>
                 <br>
                 <br>

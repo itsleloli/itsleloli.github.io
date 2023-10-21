@@ -104,7 +104,7 @@
     <h2>Team</h2>
     <p style="font-size: 21px; font-weight: normal;">
         This team was nicely balanced between artists and developers, this was for the most part the same team I've worked with during Starline(My Other Project) 
-        So I had a nice experience once again.
+        so I had a nice experience once again.
     </p>
     
     <p style="font-size: 20px; font-weight: normal;">
@@ -134,98 +134,211 @@
 
     <p class="text-left text-muted lead">
         I worked on stuff such as: Enemy, Projectile, Score and the Wave Manager alongside all UI related things.
-        <hr class="my-4" style="border-width: 2px; width: 450px;"> <!-- Adjust the width as needed -->
     </p>
-    <br>
+    <p class="text-left text-muted lead">
+        Also! Fun fact the mountains in the background are actually 3D but have a filter on them to make them appear 2D!
+    </p>
+    <hr class="my-4" style="border-width: 2px; width: 450px;"> <!-- Adjust the width as needed -->
 
 <div class="text-left h4 text-left">
-    <p>Fish (Enemy)</p>
+    <p>WaveManager</p>
 </div>
 <div class="text-left text-left">
-    <p class="text-left text-muted lead">The fish enemy idea came from the original concept from Aiden, so we decided to stick to it and make it 
+    <p class="text-left text-muted lead">
+        Since we wanted to add in Waves like in Arcade games I took it upon myself to do this. and after making the enemy I made! which little side note: The fish enemy idea came from the original concept from Aiden, so we decided to stick to it and make it 
         shoot beachballs because it was easier than making a stream of water and to also tie in the "Reflection" theme since u could also think of it 
-        as that it shoots plastic beachballs because it's oceans are getting polluted.
+        as that it shoots plastic beachballs because it's oceans are getting polluted. 
     </p>
     <br>
-    <p class="text-left text-muted lead">The fish works pretty nicely it takes important information such as max health, attack speed from a scriptable object. which allowed me to make different scriptable objects depending on the difficulty of the enemy and easily tweak them.</p>
+    <p class="text-ce text-muted lead">
+        The Wave Manager works quite nicely it has and can take in all the important information for the Fish such as: 
+        max health and attack speed from the scriptable objects u give it. which makes it easy to change or tweak the wave and the enemy 
+        separately or together. Especially since we added difficulties to the game and can easily change the enemy by swapping the Enemy Data.
+    </p>
 
-    <br>
-    <p class="text-center text-muted lead"> Here u can see the instantiated prefab being shot.</p>
-    <div class="gif-container" style="max-width: 60%; margin: 0 auto;">
-        <div class="text-center">
-            <img src="gifs/Fish.gif" alt="GIF Description" style="max-width: 100%; height: auto;">
+    <div class="text-center text-center">
+        <br>
+        <p class="text-center text-muted lead">Underneath, you can see the Wave Manager structure in the inspector, as well as the enemy data Scriptable Object. And a sped up gif of the Wave Manager in action.</p>
+        <div class="image-container" style="display: flex; max-width: 2400px;">
+            <div class="gif-container" style="max-width: 60%; margin: 0 auto;">
+                <img src="images/Wave-Manager.jpeg" alt="New Image Description" style="max-width: 100%; height: auto; width: 60%;" id="enlargeImage">
+            </div>
+            <div class="gif-container" style="max-width: 60%; margin: 0 auto;">
+                <img src="gifs/Wavemanager.gif" alt="GIF Description" style="max-width: 100%; width: 70%;" id="enlargeNewImage">
+                <br>
+                <br>
+                <img src="images/EnemyData.jpeg" alt="New Image Description" style="max-width: 100%; height: auto; width: 70%;" id="enlargeImage">
+            </div>
         </div>
     </div>
+    
+    <script>
+        let imageClicked = false;
+        let newImageClicked = false;
+    
+        const enlargeButton = document.getElementById('enlargeImage');
+        const enlargeNewImageButton = document.getElementById('enlargeNewImage');
+        const gifContainer = document.querySelector('.gif-container');
+    
+        enlargeButton.addEventListener('click', function() {
+            if (imageClicked) {
+                enlargeButton.style.width = '60%'; // Adjust the size as needed
+            } else {
+                enlargeButton.style.width = '90%'; // Adjust the size as needed
+            }
+            imageClicked = !imageClicked;
+        });
+    </script>
+    
+    <style>
+        .image-container {
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+    
+        .image-container:hover {
+            transform: scale(1.02); /* You can adjust the desired scale factor */
+        }
+    </style>
+    
 
 <br>
     </style>
             <br>
-            <br>
         <!-- Button 1: Code Snippet 1 -->
         <div class="text-center mb-2"> <!-- Center-align the button text -->
-            <button class="btn btn-primary custom-button" data-toggle="collapse" data-target="#snippet1" style="background-color: rgb(113, 113, 113); padding: 15px 30px; font-size: 18px;">Show Code</button>
+            <button class="btn btn-primary custom-button" data-toggle="collapse" data-target="#snippet1" style="background-color: rgb(113, 113, 113); padding: 15px 30px; font-size: 18px;">Show Script</button>
         </div>
         <div id="snippet1" class="collapse">
             <pre style="border: none; background-color: #e9e9e9; color: white;"> <!-- Set the background color to dark gray (#333) and text color to white -->
                 <code class="language-csharp">
-                    private void InstantiatePrefab(GameObject prefab, Vector3 position, Quaternion rotation)
-                    {
-                        if (EnemyDataList == null || EnemyDataList.Count == 0) return;
+public class WaveManager : MonoBehaviour
+{
+    [Header("Lists")]
+    [SerializeField] private List<GameObject> m_spawnedEnemyList = new List<GameObject>();
+    [SerializeField] private List<WaveData> waves = new List<WaveData>();
 
-                        GameObject instantiatedPrefab = Instantiate(prefab, position, rotation);
-                        instantiatedPrefab.GetComponent<Fish>().EnemyData = EnemyDataList[0];
-                        EnemyDataList.RemoveAt(0);
-                     
-                        instantiatedPrefab.transform.SetParent(m_parent);
-                        m_spawnedEnemiesList.Add(instantiatedPrefab);
-                    }
+    [Header("References")]
+    [SerializeField] private GameObject m_fishPrefab;
+    [SerializeField] private GameObject m_fieldAnchor;
+    [SerializeField] private Transform m_parent;
+
+    private PlayerMovement playerMovement;
+    private Coroutine coroutine;
+    private int enemiesDefeated;
+
+    public static WaveManager Instance;
+
+    [Serializable]
+    public class WaveData
+    {
+        public VideoClip videoClip;
+        public bool isFinalWave;
+        public List<EnemyData> enemies; 
+    }
+
+    private void Awake()
+    {
+        if (Instance != null && Instance != this) Destroy(this);
+        else Instance = this;
+    }
+
+    private void Start()
+    {
+        playerMovement = FindObjectOfType<PlayerMovement>();
+    }
+
+    public void StartNextWave()
+    {
+        ClearProjectiles();
+
+        if (enemiesDefeated < waves.Count)
+        {
+            var currentWave = waves[enemiesDefeated];
+
+            InstantiateEnemies(currentWave.enemies, m_fieldAnchor.transform.position, m_fieldAnchor.transform.rotation); 
+
+            Timer.Instance.ResetTimer();
+            VideoHandler.Instance.PlayVideo(currentWave.videoClip);
+
+            if (currentWave.isFinalWave)
+            {
+                GameManager.Instance.m_gameOn = false;
+                StartEndRoutine(4.2f, false);
+            }
+            else StartWaitRoutine(4.2f);   
+        }
+
+        playerMovement.RespawnPlayer();
+    }
+
+    private void ClearProjectiles()
+    {
+        GameObject[] SpawnedProjectiles = GameObject.FindGameObjectsWithTag("Projectile");
+        foreach (GameObject gameObject in SpawnedProjectiles) Destroy(gameObject);
+    }
+
+    private void InstantiateEnemies(List<EnemyData> enemies, Vector3 position, Quaternion rotation)
+    {
+        foreach (var enemyData in enemies)
+        {
+            GameObject instantiatedEnemy = Instantiate(m_fishPrefab, position, rotation);
+            Fish fishComponent = instantiatedEnemy.GetComponent<Fish>();
+
+            if (fishComponent != null)
+            {
+                fishComponent.EnemyData = enemyData;
+                fishComponent.SetCorrectValues();
+                instantiatedEnemy.transform.SetParent(m_parent);
+                m_spawnedEnemyList.Add(instantiatedEnemy);
+            }
+        }
+    }
+
+    private void StartWaitRoutine(float timeWait)
+    {
+        if (coroutine == null)
+        {
+            StartCoroutine(WaitRoutine(timeWait));
+            GameManager.Instance.m_gameOn = false;
+        }
+    }
+
+    private IEnumerator WaitRoutine(float timeWait)
+    {
+        yield return new WaitForSeconds(timeWait);
+        GameManager.Instance.m_gameOn = true;
+        coroutine = null;
+    }
+
+    public void StartEndRoutine(float waitTime, bool playerDied)
+    {
+        if (coroutine == null) coroutine = StartCoroutine(EndRoutine(waitTime, playerDied));
+    }
+
+    private IEnumerator EndRoutine(float timeWait, bool playerDied)
+    {
+        yield return new WaitForSeconds(0.03f);
+        if (playerDied)
+        {
+            InGameUI.Instance.TurnOffInGameUI();
+            EndMenu.Instance.OpenEndMenu();
+        }
+        else
+        {
+            Dialogue.Instance.TurnOnDialogue();
+            EndMenu.Instance.OpenWinMenu();
+        }
+        yield return new WaitForSeconds(timeWait);
+    }
+}
                 </code>
             </pre>
         </div>
-        <p class="text-left text-muted lead">The instantiate prefab function is for spawning new enemies with their respective Enemy Data. It's very simple
-            but it works for what it's intended.
+        <p class="text-left text-muted lead">The WaveManager script is responsible for managing 
+            the wave-based gameplay, including enemy spawning with their accurate data, videos for the different waves. This makes it really easy for me to adjust and or add waves.
         <br>
-
-
-
-        <div class="text-left h4 text-left">
-        <hr class="my-4" style="border-width: 2px; width: 450px;"> <!-- Adjust the width as needed -->
-            <p>Dialogue System</p>
-        </div>
-        <div class="text-left  text-left">
-            <p class="text-left text-muted lead">I made this dialogue system for the books we have in the game that aswell as giving tips to players also give more info about the lore of the game. We chose this way giving information rather than info dumping because we thought this would be more fun and work better!
-            </p>
-            
-            <!-- Button 2: Code Snippet 2 -->
-            <div class="text-center mb-2"> <!-- Center-align the button text -->
-                <button class="btn btn-primary custom-button" data-toggle="collapse" data-target="#snippet2" style="background-color: rgb(113, 113, 113); padding: 15px 30px; font-size: 18px;">Show Code</button>
-            </div>
-            <div id="snippet2" class="collapse">
-                <pre style="border: none; background-color: #e9e9e9; color: white;"> <!-- Set the background color to dark gray (#333) and text color to white -->
-                    <code class="language-csharp">
-                        private void NextLine()
-
-                    </code>
-                </pre>
-            </div>
-            <p class="text-left text-muted lead">Next Line works by first checking if there are any more lines left to write and if there are any lines 
-                (So a whole sentence).
-                It will start writing those by calling the Coroutine TypeLine.
-                <br>
-                The coroutine TypeLine will then for each character in the current line will type it out and wait for the specified time 
-                and keep doing that until there are no more characters left. which results in a nice letter for letter dialogue system.
-            </p>
-            <br>
-            <p class="text-left text-muted lead"> Here u can see a player interact with the dialogue system.</p>
-            <div class="gif-container" style="max-width: 60%; margin: 0 auto;">
-                <div class="text-center">
-                    <img src="gifs/Dialogue.gif" alt="GIF Description" style="max-width: 100%; height: auto;">
-                </div>
-            </div>
-            <br>
-            <br>
-            <br>
-        </div>  
+        <br>
     </div>
 </div>
 
@@ -242,11 +355,10 @@
             I do have to admit I had a little trouble switching on the 1st day from constantly making 3D projects to going back to 2D but that switch was quickly made!
             <br>
             <br>
-            My favorite part is definitely the ending screen u get when u finished the game and the dialogue u get with it! PS, play the game to find out yourself :D 
+            My favorite part is definitely the ending screen u get when u finished the game and the dialogue u get with it! I won't spoil the dialogue u get though >:D 
             <br>
             <br>
-            <br>
-            <br>
+            <img src="images/sea-monkey-end-screen.png" alt="Image Description" style="max-width: 100%; height: auto; width: 100%;" id="enlargeImage">
         </p>
     </div>
 
@@ -255,14 +367,6 @@
 <!-- Prism.js Initialization -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/components/prism-csharp.min.js"></script>
-
-<!-- JavaScript to set initial video volume -->
-<script>
-    // Set the initial volume to 10% (0.1)
-    document.getElementById("gameTrailer").volume = 0.05;
-    document.getElementById("gamePlay").volume = 0.05;
-    document.getElementById("devCommentary").volume = 0.05;
-</script>
 
 <!-- Bootstrap JS and jQuery -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
