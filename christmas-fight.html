@@ -95,7 +95,7 @@
 
     <!-- Video Section -->
     <div id="video" class="container py-5 text-center">
-        <h2 style="padding-top: 20px;">Christmas Fight Gameplay Video</h2>
+        <h2 style="padding-top: 20px;">Christmas Fight Showcase</h2>
         <!-- Add your video here -->
         <video id="gameTrailer" controls style="width: 100%; max-width: 1200px; height: auto;">
             <source src="videos/christmas-fight.mp4" type="video/mp4">
@@ -148,15 +148,22 @@
             <p>New Input System</p>
         </div>
         <div class="text-left  text-left">
-            <p class="text-left text-muted lead">Since I used the new input system for this project for the easier controller support. Most of the UI scripts work the same and or are very similar to each other, so I'll quickly go over 1 example of what happens when you press Tab or the Tab input is received via the controller.
+            <p class="text-left text-muted lead">I learned how to use the new input system for this project because of it's easier controller support. Most of the UI and Input scripts work the same and or are very similar to each other, so I'll quickly go over 1 example of what happens when you press Tab or the Tab input is received via the controller.
             </p>
                 <br>
-            <p class="text-left text-muted lead"> Since I used the new Input system expanding on stuff or adding more input is very easy especially if I want controller support for the new input as well.</p>
-            
-            <div class="text-center">
-                <img src="images/input-actions.jpeg" style="max-width: 120%; height: auto;">
+            <p class="text-left text-muted lead">Key difference being there are a lot of Input Actions in the whole game as u can see on the left. Input Actions can run on multiple things such in this example: "OnTab" But after learning it I don't think it was't as bad as I had imagined!</p>
+
+            <div class="text-center text-center">
+                <div class="image-container" style="display: flex; max-width: 2400px;">
+                    <div class="gif-container" style="max-width: 60%; margin: 0 auto;">
+                        <img src="images/input-actions.jpeg" alt="New Image Description" style="max-width: 100%; height: auto; width: 100%;" id="enlargeImage">
+                    </div>
+                    <div class="gif-container" style="max-width: 60%; margin: 0 auto;">
+                        <img src="gifs/christmas-night-ui.gif" alt="GIF Description" style="max-width: 110%; width: 107%;" id="enlargeNewImage">
+                        <br>
+                        <br>
+                </div>
             </div>
-            <br>
 
             <!-- Button 1: Code Snippet 1 -->
             <div class="text-center mb-2"> <!-- Center-align the button text -->
@@ -181,7 +188,11 @@ private void OnTab()
                     </code>
                 </pre>
             </div>
-            <p class="text-left text-muted lead">It first checks a couple of things, whether the game is running and/or if the pause menu object actually exists, and afterwards it'll turn on the Pause menu and turn the In-game UI off. The MenuSelectBtn is for the controller input and highlights a standard button to round off. It sets the game Paused bool to true.</p>
+            <p class="text-left text-muted lead">Simply put this function pauses the game itself including the ingame UI and turns on the Pause menu.</p>
+            <br>
+            <p class="text-left text-muted lead">Input Actions can be used to handle input across multiple input sources. In my example, 
+                I made an 'OnTab' action that I set to the Tab key on my Keyboard and the Start button on a generic gamepad. Additionally,
+                 Input Actions can be combined with events which I didn't do during this project but did do so in a later project.</p>
             <br>
             <br>
 
@@ -192,11 +203,21 @@ private void OnTab()
                 <p class="text-left text-muted lead">The audio manager is a bit more sophisticated and is an Singleton. during the initial setup it'll make an array of all sounds and put it in the variable m_sounds.
                     and make them available to be called upon by other scripts.
                 </p>
-                <p class="text-left text-muted lead">Underneath u can see an example of what one of the Sound objects holds with said Sound Script.
-                </p>
-                <br>
-                <div class="text-center">
-                    <img src="images/Sound-Script-Example.jpeg" style="max-width: 120%; height: auto;">
+            </p>
+            <br>
+            <div class="text-center text-center">
+                    <p class="text-ce text-muted lead">Underneath u can see an example of what one of the Sound objects holds with said Sound Script.
+                    <br>
+                    <div class="image-container" style="display: flex; max-width: 2400px;">
+                        <div class="gif-container" style="max-width: 60%; margin: 0 auto;">
+                            <img src="images/Sound-Script-Example.jpeg" alt="New Image Description" style="max-width: 100%; height: auto; width: 100%;" id="enlargeImage">
+                        </div>
+                        <div class="gif-container" style="max-width: 60%; margin: 0 auto;">
+                            <img src="images/christmas-fight-sound-manager.jpeg" alt="New Image Description" style="max-width: 100%; height: auto; width: 100%;" id="enlargeImage">
+                            <br>
+                            <br>
+                        </div>
+                    </div>
                 </div>
                 <br>
                 <br>
@@ -298,6 +319,12 @@ public class AudioManager : MonoBehaviour
             My favorite part of the game has to be the animations of the player, especially the "Crouch" where we just compressed the character model.
             <br>
             <br>
+            <p class="text-center text-muted lead"> I think it is way more funny than it is to be honest.       </p>
+            <div class="gif-container" style="max-width: 100%; margin: 0 auto;">
+                <div class="text-center">
+                    <img src="gifs/christmas-night-crouch.gif" alt="GIF Description" style="max-width: 110%; width: 100%;" height: auto;">
+                </div>
+            </div>
             <br>
             <br>
         </p>
