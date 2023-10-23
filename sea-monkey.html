@@ -22,7 +22,7 @@
         .snippet {
             background-color: #cbcbcb87; /* You can adjust this color as needed */
             padding: 10px;
-            border-radius: 5px;
+            border-radius:5px;
             border-width: 5px;
             margin-bottom: 5px;
         }
@@ -59,12 +59,20 @@
                 <a class="nav-link" href="about.html" style="font-size: 20px; padding: 10px 20px;">About Me</a>
             </li>
             <li class="nav-item">
+<<<<<<< HEAD
                 <a class="nav-link" href="pdf/CV Leandro Bonora 2023 English.pdf" target="_blank" style="font-size: 20px; padding: 10px 20px;">Resume</a>
+=======
+                <a class="nav-link" href="projects.html" style="font-size: 20px; padding: 10px 20px;">Projects</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="contact.html" style="font-size: 20px; padding: 10px 20px;">Contact</a>
+>>>>>>> parent of 2eb5891 (Update)
             </li>
         </ul>
     </div>
 </nav>
 
+<<<<<<< HEAD
 <section id="portfolio" class="py-5" style="background: linear-gradient(to bottom, #74b5e4, #f0efeb, #fdfdfd, #f0efeb, #e8c29e);">
     <div class="container">
         <h1 class="text-center h1" style="font-size: 60px;">Sea Monkey</h1>
@@ -337,9 +345,90 @@ public class WaveManager : MonoBehaviour
             the wave-based gameplay, including enemy spawning with their accurate data, videos for the different waves. This makes it really easy for me to adjust and or add waves.
         <br>
         <br>
-    </div>
-</div>
+=======
+<!-- Project Description Section -->
+<section id="project-description" class="container py-6 text-center">
+    <h2 style="padding-top: 20px;">Sea Monkey</h2>
+    <p class="mx-auto" style="max-width: 600px;">This game was made during a 72-hour game jam in a group of 2 developers and 4 artists. The theme for this jam was reflection.</p>
+    <p class="mx-auto" style="max-width: 600px;">The premise of the game is to, while in the air, flip the monkey's surfboard and reflect the beach balls the fish is shooting back towards itself. Do this enough times, and you might get a nice surprise at the end!</p>
+</section>
 
+<!-- Video Section -->
+<section id="video" class="container py-5">
+    <h2 style="padding-top: 20px;">Watch the Sea Monkey Game Trailer</h2>
+    <!-- Add your video here -->
+    <video id="gameTrailer" controls>
+        <source src="videos/sea-monkey.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+</section>
+
+<!-- Code Snippets Section -->
+<section id="code-snippets" class="container py-5">
+    <!-- Button 1: Code Snippet 1 -->
+    <div class="snippet">
+        <div class="text-center mb-2"> <!-- Center-align the button text -->
+            <button class="btn btn-primary" data-toggle="collapse" data-target="#snippet1">View Code Snippet 1</button>
+        </div>
+        <div id="snippet1" class="collapse">
+            <pre>
+                <code class="language-csharp">
+                    private void NextLine()
+                    {
+                        if (index < m_lines.Length - 1)
+                        {
+                            index++;
+                            m_textComponent.text = string.Empty;
+                            StartCoroutine(TypeLine());
+                        }
+                        
+                        else
+                        {
+                            if (PauseMenu.Instance) PauseMenu.Instance.m_gamePaused = false;
+                            if (InGameUI.Instance) InGameUI.Instance.TurnOnInGameUI();
+                            gameObject.SetActive(false);
+                            pa.m_isInteractable = true; // Meow
+                            pc.m_allowedToJump = true; // Meow
+                        }
+                    }
+                </code>
+            </pre>
+        </div>
+    </div>
+
+    <!-- Button 2: Code Snippet 2 -->
+    <div class="snippet">
+        <div class="text-center mb-2"> <!-- Center-align the button text -->
+            <button class="btn btn-primary" data-toggle="collapse" data-target="#snippet2">View Code Snippet 2</button>
+        </div>
+        <div id="snippet2" class="collapse">
+            <pre>
+                <code class="language-csharp">
+                    private void NextLine()
+                    {
+                        if (index < m_lines.Length - 1)
+                        {
+                            index++;
+                            m_textComponent.text = string.Empty;
+                            StartCoroutine(TypeLine());
+                        }
+                        
+                        else
+                        {
+                            if (PauseMenu.Instance) PauseMenu.Instance.m_gamePaused = false;
+                            if (InGameUI.Instance) InGameUI.Instance.TurnOnInGameUI();
+                            gameObject.SetActive(false);
+                            pa.m_isInteractable = true; // Meow
+                            pc.m_allowedToJump = true; // Meow
+                        }
+                    }
+                </code>
+            </pre>
+        </div>
+>>>>>>> parent of 2eb5891 (Update)
+    </div>
+
+<<<<<<< HEAD
     </div>
     <!-- Reflection -->
     <div class="container">
@@ -359,18 +448,38 @@ public class WaveManager : MonoBehaviour
     </div>
 
     
+=======
+    <!-- Add more code snippets as needed -->
+
+</section>
+>>>>>>> parent of 2eb5891 (Update)
 
 <!-- Prism.js Initialization -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/components/prism-csharp.min.js"></script>
+<script>
+    // Initialize Prism.js
+    Prism.highlightAll();
+</script>
 
 <!-- JavaScript to set initial video volume -->
 <script>
     // Set the initial volume to 10% (0.1)
+<<<<<<< HEAD
     document.getElementById("gameTrailer-sea-monkey").volume = 0.05;
+=======
+    document.getElementById("gameTrailer").volume = 0.1;
+>>>>>>> parent of 2eb5891 (Update)
 </script>
+
+<!-- Footer Section (similar to your existing footer) -->
+<!--<footer class="text-center py-3">
+    <p>&copy; 2023 Leandro Bonora</p>
+</footer>-->
 
 <!-- Bootstrap JS and jQuery -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
