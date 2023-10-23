@@ -356,7 +356,7 @@ public class TeleportPlayer : MonoBehaviour
         </div>
         <p class="text-left text-muted lead">The TeleportPlayerToPosition function operates based on the 20x20 plane the player walks on. 
             It tracks the player's precise coordinates on this plane.  
-            To make teleporting the player as smooth and seamless as possible when teleported the player arrives in another hallway with the original position they had
+            To make teleporting the player as smooth and seamless as possible, when teleported the player arrives in another hallway with the original position they had
             and an added 90-degree camera rotation. Which if they now open the door infront of them it's the same cell they originally came from.
         </p>
         <p class="text-left text-muted lead">Looking back I should've made a more solid way of adding the Triggers and not a Left and Right Trigger respectively. I would tackle this by just having a Trigger script that depending on let's say the original player position then give the correct offsets.
@@ -486,13 +486,14 @@ public class Dialogue : MonoBehaviour
 
             <p class="text-left text-muted lead"> I have given the entire script but I will be highlighting: Next Line works by first checking if there are any more lines left to write and if there are any lines 
                 (So a whole sentence).
-                It will start writing those by calling the Coroutine TypeLine.
+                It will start writing those by calling the coroutine TypeLine.
                 <br>
-                The coroutine TypeLine will then for each character in the current line will type it out and wait for the specified time 
-                and keep doing that until there are no more characters left. which results in a nice letter for letter dialogue system.
+                The coroutine TypeLine will then for each character in the current line type it out and wait for the specified time, 
+                and keep doing that until there are no more characters left. Which results in a nice letter for letter dialogue system.
             </p>
             <br>
-            <p class="text-center text-muted lead">Here you can see a player interact with the dialogue system. and how the Dialogue System looks in the inspector, as u can see each Element is it's own line.</p>
+            <p class="text-center text-muted lead">Here you can see a player interact with the Dialogue System and how the Dialogue System looks in the
+                 inspector, as u can see each Element is it's own line.</p>
             <div class="text-center text-center">
                 <div class="image-container" style="display: flex; max-width: 2400px;">
                     <div class="gif-container" style="max-width: 60%; margin: 0 auto;">
@@ -543,7 +544,7 @@ public class Dialogue : MonoBehaviour
     <div class="container">
         <h2 class="text-left h1">Reflection</h2>
         <p class="text-left text-muted lead">
-            I really enjoyed this project a lot, I spent way too much time on this project but it was so fun especially seeing everytime come together was so nice. I wouldn't have done a lot differently than from the way I did things.  
+            I really enjoyed this project a lot, I spent way too much time on this project but it was so fun especially seeing everything come together was so nice. I wouldn't have done a lot differently than from the way I did things.  
             <br>
             <br>
             The one thing I would've liked to do better was probably coming up with the Mechanic and having a clear idea for it. However I feel like that comes with time and is something I am actively trying to improve on.
