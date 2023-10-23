@@ -87,7 +87,7 @@
             <div id="video" class="container py-5 text-center">
                 <h2 style="padding-top: 20px;">Sea Monkey Playthrough</h2>
                 <!-- First Video -->
-                <video id="gameTrailer" controls style="width: 100%; max-width: 1200px; height: auto;">
+                <video id="gameTrailer-sea-monkey" controls style="width: 100%; max-width: 1200px; height: auto;">
                     <source src="videos/sea-monkey.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
@@ -340,8 +340,6 @@ public class WaveManager : MonoBehaviour
     </div>
 </div>
 
-
-
     </div>
     <!-- Reflection -->
     <div class="container">
@@ -365,6 +363,12 @@ public class WaveManager : MonoBehaviour
 <!-- Prism.js Initialization -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/components/prism-csharp.min.js"></script>
+
+<!-- JavaScript to set initial video volume -->
+<script>
+    // Set the initial volume to 10% (0.1)
+    document.getElementById("gameTrailer-sea-monkey").volume = 0.05;
+</script>
 
 <!-- Bootstrap JS and jQuery -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

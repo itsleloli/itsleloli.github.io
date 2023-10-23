@@ -44,7 +44,6 @@
 </head>
 <body>
     
-
 <!-- Navigation Bar -->
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #3c3943 ; padding-top: 10px; padding-bottom: 20px; height: 70px;">
     <a class="navbar-brand" href="index.html" style="font-size: 32px; padding-top: -1;">Leandro Bonora</a>
@@ -98,7 +97,7 @@
 <div id="video" class="container py-5 text-center">
     <h2 style="padding-top: 20px;">Starline Trailer</h2>
     <!-- First Video -->
-    <video id="gameTrailer" controls style="width: 100%; max-width: 1200px; height: auto;">
+    <video id="gameTrailer-starline" controls style="width: 100%; max-width: 1200px; height: auto;">
         <source src="videos/starline-trailer.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
@@ -555,7 +554,7 @@ public class Dialogue : MonoBehaviour
 <!-- JavaScript to set initial video volume -->
 <script>
     // Set the initial volume to 10% (0.1)
-    document.getElementById("gameTrailer").volume = 0.05;
+    document.getElementById("gameTrailer-starline").volume = 0.05;
     document.getElementById("gamePlay").volume = 0.05;
     document.getElementById("devCommentary").volume = 0.05;
 </script>
