@@ -100,6 +100,21 @@
         <br>
     </div>
 
+    <div class="container py-3 text-center">
+        <a href="https://m1l4n.itch.io/christmas-fight" class="btn btn-custom-color btn-custom-text-size" style="width: 250px; height: 80px; line-height: 60px; color: rgb(0, 0, 0);" target="_blank">Play on Itch.io</a>
+    </div>
+    </div>
+    
+    <style>
+    .btn-custom-color {
+    background-color: #abd0eb;
+    }
+    
+    .btn-custom-text-size {
+    font-size: 22px; /* Adjust the font size as needed */
+    }
+    </style>
+
     <!-- Team Section -->
     <div class="container py-2 text-left">
         <h2>Team</h2>
@@ -196,8 +211,8 @@ private void OnTab()
                 <p>Audio Manager</p>
             </div>
             <div class="text-left  text-left">
-                <p class="text-left text-muted lead">The audio manager is a bit more sophisticated and is an Singleton. during the initial setup it'll make an array of all sounds and put it in the variable m_sounds.
-                    and make them available to be called upon by other scripts.
+                <p class="text-left text-muted lead">The audio manager is a bit more sophisticated and is a Singleton. During the initial setup it'll make an array of all sounds 
+                    and put it in the variable m_sounds which is a array and make them available to be called upon by other scripts.
                 </p>
             </p>
             <br>
@@ -239,7 +254,7 @@ public class AudioManager : MonoBehaviour
         if (Instance != null && Instance != this) Destroy(this);                          
         else Instance = this;
                                                      
-        //For each Object with the sound script it will separately give its correct values adjusted in the inspector, and pass it on to the list.                          
+        //For each Object with the sound script it will separately give its correct values adjusted in the inspector, and pass it on to the array.                          
         foreach (Sound s in m_sounds)                          
         {                         
             s.m_source = gameObject.AddComponent<AudioSource>();                       
@@ -306,10 +321,14 @@ public class AudioManager : MonoBehaviour
     <div class="container">
         <h2 class="text-left h1">Reflection</h2>
         <p class="text-left text-muted lead">
-            I honestly had a lot of fun and learned a lot during this project because we had so much freedom and weren't bound to any ideas besides that we wanted it to be an FPS, so we were able to completely go crazy with the ideas for the mechanics and or gameplay for our game, hence I came up with the idea of adding random drops from a Santa.
+            I honestly had a lot of fun and learned a lot during this project because we had so much freedom and weren't bound to any ideas besides 
+            that we wanted it to be an FPS, so we were able to completely go crazy with the ideas for the mechanics and or gameplay for our game, 
+            hence I came up with the idea of adding random drops from Santa.
             <br>
             <br>
-            Looking back though I wish I would've put at least some basic Post Processing in the game as well since that would've made it just a bit more polished, but at the time I sadly had almost zero knowledge about Post Processing. That being said I would like to come back and polish the game a bit more!
+            Looking back though I wish I would've put at least some basic Post Processing in the game since that 
+            would've made it just a bit more polished, but at the time I sadly had almost zero knowledge about Post Processing. 
+            That being said I would like to come back and polish the game a bit more!
             <br>
             <br>
             My favorite part of the game has to be the animations of the player, especially the "Crouch" where we just compressed the character model.
