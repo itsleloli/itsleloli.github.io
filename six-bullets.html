@@ -15,14 +15,14 @@
     <style>
         /* Custom CSS to ensure the navbar doesn't move when a scrollbar is added */
         body {
-            padding-top: 70px; /* Add padding to the top of the body to account for the fixed navbar */
+            padding-top: 50px; /* Add padding to the top of the body to account for the fixed navbar */
         }
 
         /* Custom CSS for code snippets background color */
         .snippet {
             background-color: #cbcbcb87; /* You can adjust this color as needed */
             padding: 10px;
-            border-radius:5px;
+            border-radius: 5px;
             border-width: 5px;
             margin-bottom: 5px;
         }
@@ -45,7 +45,7 @@
 <body>
 
 <!-- Navigation Bar -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" style="padding-top: 10px; padding-bottom: 20px; height: 70px;">
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #393e43 ; padding-top: 10px; padding-bottom: 20px; height: 70px;">
     <a class="navbar-brand" href="index.html" style="font-size: 32px; padding-top: -1;">Leandro Bonora</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -59,76 +59,334 @@
                 <a class="nav-link" href="about.html" style="font-size: 20px; padding: 10px 20px;">About Me</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="contact.html" style="font-size: 20px; padding: 10px 20px;">Contact</a>
-            </li>
-            <li class="nav-item">
                 <a class="nav-link" href="pdf/CV Leandro Bonora 2023 English.pdf" target="_blank" style="font-size: 20px; padding: 10px 20px;">Resume</a>
             </li>
         </ul>
     </div>
 </nav>
 
-<section id="portfolio" class="bg-light py-5">
+<section id="portfolio" class="py-5" style="background: linear-gradient(to bottom, #74b5e4, #f0efeb, #fdfdfd, #f0efeb, #e8c29e);">
     <div class="container">
-        <h2 class="text-center h1">Sea Monkey</h2>
-        <p class="text-center">3D Redirection Game</p> 
+        <h1 class="text-center h1" style="font-size: 60px;">Six Bullets</h1>
+        <p class="text-center">3D Target Shooting Game</p> 
         <hr class="my-4" style="border-width: 2px;">
         <div class="row">
             <!-- Your content here -->
-        </div>   
+        </div>
 
-<!-- Video Section -->
-<section id="video" class="container py-5">
-    <h2 style="padding-top: 20px;">Watch the Six Bullets gameplay Video</h2>
-    <!-- Add your video here -->
-    <video id="gameTrailer" controls>
-        <source src="videos/sea-monkey.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
-</section>
+        
+        <!-- Description Section -->
+        <div class="container py-2 text-left">
+            <h2>Description</h2>
+            <p style="font-size: 21px; font-weight: normal;">
+                This game was made for a Game Jam during a project week at school. The theme for the Jam was reflection and we decided to go for a 2D game because that is easier to polish during a short amount of time.
+            </p>
+            <p style="font-size: 21px; font-weight: normal;">
+                The premise of the game is to whilst in the air flip the monkey's surfboard and deflect the beach balls shot by the fish,  
+                back towards itself. Do this enough times and u might get a nice surprise at the end
+            </p>
+            <div id="video" class="container py-5 text-center">
+                <h2 style="padding-top: 20px;">Sea Monkey Playthrough</h2>
+                <!-- First Video -->
+                <video id="gameTrailer-sea-monkey" controls style="width: 100%; max-width: 1200px; height: auto;">
+                    <source src="videos/sea-monkey.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <br>
+            </div>
+            <div class="container py-3 text-center">
+                <a href="https://itsleloli.itch.io/sea-monkey" class="btn btn-custom-color btn-custom-text-size" style="width: 250px; height: 80px; line-height: 60px; color: rgb(0, 0, 0);" target="_blank">Play on Itch.io</a>
+            </div>
+</div>
 
-<!-- Code Snippets Section -->
-<section id="code-snippets" class="container py-5">
-    <!-- Button 1: Code Snippet 1 -->
-    <div class="snippet">
+<style>
+    .btn-custom-color {
+        background-color: #74b5e4;
+    }
+
+    .btn-custom-text-size {
+        font-size: 22px; /* Adjust the font size as needed */
+    }
+</style>
+
+
+<!-- Team Section -->
+<div class="container py-2 text-left">
+    <h2>Team</h2>
+    <p style="font-size: 21px; font-weight: normal;">
+        This team was nicely balanced between artists and developers, this was for the most part the same team I've worked with during Starline (My Other Project) 
+        so I had a nice experience once again.
+    </p>
+    
+    <p style="font-size: 20px; font-weight: normal;">
+        <strong>Team Members: 5</strong>
+        <ul class="text-muted lead" style="font-size: 20px; font-weight: normal;">
+            <strong>Developers</strong>
+            <li>Leandro Bonora (Programming)</li>
+            <li>Milan Driece (Programming)</li>
+            <br>
+            <strong>Artists</strong>
+            <li>Aiden Glen (2D)</li>
+            <li>Annelot van der Leden (2D)</li>
+            <li>Anna Heijblom (3D, VFX)</li>
+        </ul>
+        <br>
+    </p>
+</div>
+
+
+<div class="container">
+    <h2 class="text-left h1">Work Process</h2>
+    <p class="text-left text-muted lead">
+        Since this was a game jam we decided to go for a very rapid prototyping way of working where we just decided on a theme for the game. 
+        When needed we developed things along the way and or asked for extra sprites. 
+        Which worked out in our favor since we were done with the first Prototype within the first day! 
+        After that it was mostly smooth sailing with just polishing extra stuff and adding extra's such as a score.
+    </p>
+
+    <p class="text-left text-muted lead">
+        I worked on stuff such as: Enemy, Projectile, Score and the Wave Manager alongside all UI related things.
+    </p>
+    <p class="text-left text-muted lead">
+        Also! Fun fact the mountains in the background are actually 3D but have a filter on them to make them appear 2D!
+    </p>
+    <hr class="my-4" style="border-width: 2px; width: 450px;"> <!-- Adjust the width as needed -->
+    <br>
+
+<div class="text-left h4 text-left">
+    <p>WaveManager</p>
+</div>
+<div class="text-left text-left">
+    <p class="text-left text-muted lead">
+        Since we wanted to add in Waves like in Arcade games I took it upon myself to do this. After making the enemy! which little side note: 
+        The fish enemy idea came from the original concept from Aiden, so we decided to stick to it and make it  
+        shoot beachballs because it was easier than making a stream of water and to also tie into the "Reflection" theme since u could also think of it 
+        as that it shoots plastic beachballs because it's oceans are getting polluted. 
+    </p>
+    <br>
+    <p class="text-ce text-muted lead">
+        The Wave Manager works quite nicely it has and can take in all the important information for the Fish such as: 
+        max health and attack speed from the scriptable objects u give it. Which makes it easy to change or tweak the wave and the enemy 
+        separately or together. Especially since we added difficulties to the game and thus can easily change the enemy by swapping the Enemy Data.
+    </p>
+
+    <div class="text-center text-center">
+        <br>
+        <p class="text-center text-muted lead">Underneath, you can see the Wave Manager structure in the inspector, as well as the enemy data Scriptable Object. And a sped up gif of the Wave Manager in action.</p>
+        <div class="image-container" style="display: flex; max-width: 2400px;">
+            <div class="gif-container" style="max-width: 60%; margin: 0 auto;">
+                <img src="images/Wave-Manager.jpeg" alt="New Image Description" style="max-width: 100%; height: auto; width: 60%;" id="enlargeImage">
+            </div>
+            <div class="gif-container" style="max-width: 60%; margin: 0 auto;">
+                <img src="gifs/Wavemanager.gif" alt="GIF Description" style="max-width: 100%; width: 70%;" id="enlargeNewImage">
+                <br>
+                <br>
+                <img src="images/EnemyData.jpeg" alt="New Image Description" style="max-width: 100%; height: auto; width: 70%;" id="enlargeImage">
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        let imageClicked = false;
+        let newImageClicked = false;
+    
+        const enlargeButton = document.getElementById('enlargeImage');
+        const enlargeNewImageButton = document.getElementById('enlargeNewImage');
+        const gifContainer = document.querySelector('.gif-container');
+    
+        enlargeButton.addEventListener('click', function() {
+            if (imageClicked) {
+                enlargeButton.style.width = '60%'; // Adjust the size as needed
+            } else {
+                enlargeButton.style.width = '90%'; // Adjust the size as needed
+            }
+            imageClicked = !imageClicked;
+        });
+    </script>
+    
+    <style>
+        .image-container {
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+    
+        .image-container:hover {
+            transform: scale(1.02); /* You can adjust the desired scale factor */
+        }
+    </style>
+    
+
+<br>
+    </style>
+            <br>
+        <!-- Button 1: Code Snippet 1 -->
         <div class="text-center mb-2"> <!-- Center-align the button text -->
-            <button class="btn btn-primary" data-toggle="collapse" data-target="#snippet1">View Code Snippet 1</button>
+            <button class="btn btn-primary custom-button" data-toggle="collapse" data-target="#snippet1" style="background-color: rgb(113, 113, 113); padding: 15px 30px; font-size: 18px;">Show Script</button>
         </div>
         <div id="snippet1" class="collapse">
-            <pre>
+            <pre style="border: none; background-color: #e9e9e9; color: white;"> <!-- Set the background color to dark gray (#333) and text color to white -->
                 <code class="language-csharp">
-                    private void NextLine()
-                    {
+public class WaveManager : MonoBehaviour
+{
+    [Header("Lists")]
+    [SerializeField] private List<GameObject> m_spawnedEnemyList = new List<GameObject>();
+    [SerializeField] private List<WaveData> waves = new List<WaveData>();
 
-                    }
+    [Header("References")]
+    [SerializeField] private GameObject m_fishPrefab;
+    [SerializeField] private GameObject m_fieldAnchor;
+    [SerializeField] private Transform m_parent;
+
+    private PlayerMovement playerMovement;
+    private Coroutine coroutine;
+    private int enemiesDefeated;
+
+    public static WaveManager Instance;
+
+    [Serializable]
+    public class WaveData
+    {
+        public VideoClip videoClip;
+        public bool isFinalWave;
+        public List<EnemyData> enemies; 
+    }
+
+    private void Awake()
+    {
+        if (Instance != null && Instance != this) Destroy(this);
+        else Instance = this;
+    }
+
+    private void Start()
+    {
+        playerMovement = FindObjectOfType<PlayerMovement>();
+    }
+
+    public void StartNextWave()
+    {
+        ClearProjectiles();
+
+        if (enemiesDefeated < waves.Count)
+        {
+            var currentWave = waves[enemiesDefeated];
+
+            InstantiateEnemies(currentWave.enemies, m_fieldAnchor.transform.position, m_fieldAnchor.transform.rotation); 
+
+            Timer.Instance.ResetTimer();
+            VideoHandler.Instance.PlayVideo(currentWave.videoClip);
+
+            if (currentWave.isFinalWave)
+            {
+                GameManager.Instance.m_gameOn = false;
+                StartEndRoutine(4.2f, false);
+            }
+            else StartWaitRoutine(4.2f);   
+        }
+
+        playerMovement.ResetPlayerPosition();
+    }
+
+    private void ClearProjectiles()
+    {
+        GameObject[] SpawnedProjectiles = GameObject.FindGameObjectsWithTag("Projectile");
+        foreach (GameObject gameObject in SpawnedProjectiles) Destroy(gameObject);
+    }
+
+    private void InstantiateEnemies(List<EnemyData> enemies, Vector3 position, Quaternion rotation)
+    {
+        foreach (var enemyData in enemies)
+        {
+            GameObject instantiatedEnemy = Instantiate(m_fishPrefab, position, rotation);
+            Fish fishComponent = instantiatedEnemy.GetComponent<Fish>();
+
+            if (fishComponent != null)
+            {
+                fishComponent.EnemyData = enemyData;
+                fishComponent.SetCorrectValues();
+                instantiatedEnemy.transform.SetParent(m_parent);
+                m_spawnedEnemyList.Add(instantiatedEnemy);
+            }
+        }
+    }
+
+    private void StartWaitRoutine(float timeWait)
+    {
+        if (coroutine == null)
+        {
+            StartCoroutine(WaitRoutine(timeWait));
+            GameManager.Instance.m_gameOn = false;
+        }
+    }
+
+    private IEnumerator WaitRoutine(float timeWait)
+    {
+        yield return new WaitForSeconds(timeWait);
+        GameManager.Instance.m_gameOn = true;
+        coroutine = null;
+    }
+
+    public void StartEndRoutine(float waitTime, bool playerDied)
+    {
+        if (coroutine == null) coroutine = StartCoroutine(EndRoutine(waitTime, playerDied));
+    }
+
+    private IEnumerator EndRoutine(float timeWait, bool playerDied)
+    {
+        yield return new WaitForSeconds(0.03f);
+        if (playerDied)
+        {
+            InGameUI.Instance.TurnOffInGameUI();
+            EndMenu.Instance.OpenEndMenu();
+        }
+        else
+        {
+            Dialogue.Instance.TurnOnDialogue();
+            EndMenu.Instance.OpenWinMenu();
+        }
+        yield return new WaitForSeconds(timeWait);
+    }
+}
                 </code>
             </pre>
         </div>
+        <p class="text-left text-muted lead">The WaveManager script is responsible for managing 
+            the wave-based gameplay, including enemy spawning with their accurate data, videos for the different waves. This makes it really easy for me to adjust and or add waves.
+        <br>
+        <br>
     </div>
-</section>
+</div>
+
+    </div>
+    <!-- Reflection -->
+    <div class="container">
+        <h2 class="text-left h1">Reflection</h2>
+        <p class="text-left text-muted lead">
+            I had a lot of fun during this Game Jam because we had a very nice approach to it and decided to go very simple but very polished which was great in my opinion.  
+            <br>
+            <br>
+            I do have to admit I had a little trouble switching on the 1st day from constantly making 3D projects to going back to 2D but that switch was quickly made!
+            <br>
+            <br>
+            My favorite part is definitely the ending screen u get when u finished the game and the dialogue u get with it! I won't spoil the dialogue u get though >:D 
+            <br>
+            <br>
+            <img src="images/sea-monkey-end-screen.png" alt="Image Description" style="max-width: 100%; height: auto; width: 100%;" id="enlargeImage">
+        </p>
+    </div>
+
+    
 
 <!-- Prism.js Initialization -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/components/prism-csharp.min.js"></script>
-<script>
-    // Initialize Prism.js
-    Prism.highlightAll();
-</script>
 
 <!-- JavaScript to set initial video volume -->
 <script>
     // Set the initial volume to 10% (0.1)
-    document.getElementById("gameTrailer").volume = 0.1;
+    document.getElementById("gameTrailer-sea-monkey").volume = 0.05;
 </script>
-
-<!-- Footer Section (similar to your existing footer) -->
-<!--<footer class="text-center py-3">
-    <p>&copy; 2023 Leandro Bonora</p>
-</footer>-->
 
 <!-- Bootstrap JS and jQuery -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-</body>
-</html>
