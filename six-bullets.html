@@ -45,7 +45,7 @@
 <body>
 
 <!-- Navigation Bar -->
-<nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #393e43 ; padding-top: 10px; padding-bottom: 20px; height: 70px;">
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #333b58 ; padding-top: 10px; padding-bottom: 20px; height: 70px;">
     <a class="navbar-brand" href="index.html" style="font-size: 32px; padding-top: -1;">Leandro Bonora</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -65,10 +65,10 @@
     </div>
 </nav>
 
-<section id="portfolio" class="py-5" style="background: linear-gradient(to bottom, #74b5e4, #f0efeb, #fdfdfd, #f0efeb, #e8c29e);">
+<section id="portfolio" class="py-5" style="background: linear-gradient(to bottom, #6a89f7, #ffffff, #ffffff, #f0efeb, #e8c29e);">
     <div class="container">
         <h1 class="text-center h1" style="font-size: 60px;">Six Bullets</h1>
-        <p class="text-center">3D Target Shooting Game</p> 
+        <p class="text-center">3D Action Arcade Game</p> 
         <hr class="my-4" style="border-width: 2px;">
         <div class="row">
             <!-- Your content here -->
@@ -79,29 +79,50 @@
         <div class="container py-2 text-left">
             <h2>Description</h2>
             <p style="font-size: 21px; font-weight: normal;">
-                This game was made for a Game Jam during a project week at school. The theme for the Jam was reflection and we decided to go for a 2D game because that is easier to polish during a short amount of time.
+                This game was made for a project where I had complete freedom to choose anything I wanted, So after having watched Jojo Part 5 and being inspired by the stand (Power/Ability) Mista uses and really liking his ability and his character I decided to make it based on it! (I did have to change the name to Six Bullets)
             </p>
             <p style="font-size: 21px; font-weight: normal;">
-                The premise of the game is to whilst in the air flip the monkey's surfboard and deflect the beach balls shot by the fish,  
-                back towards itself. Do this enough times and u might get a nice surprise at the end
+                I only had 2 requirements during this project.  
+            </p>
+            <ol class="text-muted lead" style="font-size: 20px; font-weight: normal;"> <!-- You can adjust the font-size and font-weight as needed -->
+                <li>Make a Game Design document. (Feel free to check it, it is in Dutch though!)</li>
+                <li>Make your own 3D model.</li>
+            </ol>
+            <div class="container py-3 text-center">
+                <a href="pdf/GGD Leandro Bonora Six Bullets.pdf" target="_blank" class="btn btn-custom-color btn-custom-text-size" style="width: 320px; height: 60px; line-height: 40px; color: rgb(0, 0, 0);" target="_blank">Game Design Document (NL)</a>
+            </div>
+            <br>
+            <p style="font-size: 21px; font-weight: normal;">
+                The premise of the game is to hit as many targets as possible within 60 seconds, whilst redirecting the bullets path to do so. 
+                beware though as u might run out of redirections if you aren't careful enough. U can however buy more redirections if u have enough coins!
             </p>
             <div id="video" class="container py-5 text-center">
-                <h2 style="padding-top: 20px;">Sea Monkey Playthrough</h2>
+                <h2 style="padding-top: 20px;">Six Bullets Playthrough</h2>
                 <!-- First Video -->
-                <video id="gameTrailer-sea-monkey" controls style="width: 100%; max-width: 1200px; height: auto;">
-                    <source src="videos/sea-monkey.mp4" type="video/mp4">
+                <video id="gameTrailer-six-bullets" controls style="width: 100%; max-width: 1200px; height: auto;">
+                    <source src="videos/six-bullets.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
                 <br>
             </div>
             <div class="container py-3 text-center">
-                <a href="https://itsleloli.itch.io/sea-monkey" class="btn btn-custom-color btn-custom-text-size" style="width: 250px; height: 80px; line-height: 60px; color: rgb(0, 0, 0);" target="_blank">Play on Itch.io</a>
+                <a href="https://itsleloli.itch.io/six-bullets" class="btn btn-custom-color2 btn-custom-text-size" style="width: 250px; height: 80px; line-height: 60px; color: rgb(0, 0, 0);" target="_blank">Play on Itch.io</a>
             </div>
 </div>
 
 <style>
     .btn-custom-color {
-        background-color: #74b5e4;
+        background-color: #6a89f7;
+    }
+
+    .btn-custom-text-size {
+        font-size: 22px; /* Adjust the font size as needed */
+    }
+</style>
+
+<style>
+    .btn-custom-color2 {
+        background-color: #e39256;
     }
 
     .btn-custom-text-size {
@@ -114,21 +135,14 @@
 <div class="container py-2 text-left">
     <h2>Team</h2>
     <p style="font-size: 21px; font-weight: normal;">
-        This team was nicely balanced between artists and developers, this was for the most part the same team I've worked with during Starline (My Other Project) 
-        so I had a nice experience once again.
+        I was the sole developer during this project, Most of the art except for the bullet which I made myself :) was provided to me by school.
     </p>
     
     <p style="font-size: 20px; font-weight: normal;">
-        <strong>Team Members: 5</strong>
+        <strong>Team Members: 1</strong>
         <ul class="text-muted lead" style="font-size: 20px; font-weight: normal;">
-            <strong>Developers</strong>
-            <li>Leandro Bonora (Programming)</li>
-            <li>Milan Driece (Programming)</li>
-            <br>
-            <strong>Artists</strong>
-            <li>Aiden Glen (2D)</li>
-            <li>Annelot van der Leden (2D)</li>
-            <li>Anna Heijblom (3D, VFX)</li>
+            <strong>Developer</strong>
+            <li>Leandro Bonora</li>
         </ul>
         <br>
     </p>
@@ -138,50 +152,246 @@
 <div class="container">
     <h2 class="text-left h1">Work Process</h2>
     <p class="text-left text-muted lead">
-        Since this was a game jam we decided to go for a very rapid prototyping way of working where we just decided on a theme for the game. 
-        When needed we developed things along the way and or asked for extra sprites. 
-        Which worked out in our favor since we were done with the first Prototype within the first day! 
-        After that it was mostly smooth sailing with just polishing extra stuff and adding extra's such as a score.
+        Whilst working on this project I learned how to make a Game design document which was required before I could actually start making the game.
+    </p>
+    <p class="text-left text-muted lead">
+        During this project there were 4 key things I learned and implemented.
+        <ol class="text-muted lead" style="font-size: 20px; font-weight: normal;"> <!-- You can adjust the font-size and font-weight as needed -->
+            <li>I learned how to use Shader Graph to make the speed lines u see in most forms of media when something fast moves in this case a bullet! </li>
+            <li>I made use of a Cinemachine camera, because it would offer me more flexibility whilst tweaking the gamefeel.</li>
+            <li>I also made use of the new Input system because it would make me able to add easy controller support.</li>
+            <li>I learned the basics of Maya and made my first own 3D Bullet Model!</li>
+        </ol>
     </p>
 
-    <p class="text-left text-muted lead">
-        I worked on stuff such as: Enemy, Projectile, Score and the Wave Manager alongside all UI related things.
-    </p>
-    <p class="text-left text-muted lead">
-        Also! Fun fact the mountains in the background are actually 3D but have a filter on them to make them appear 2D!
-    </p>
     <hr class="my-4" style="border-width: 2px; width: 450px;"> <!-- Adjust the width as needed -->
     <br>
 
 <div class="text-left h4 text-left">
-    <p>WaveManager</p>
+    <p>Bullet</p>
 </div>
 <div class="text-left text-left">
     <p class="text-left text-muted lead">
-        Since we wanted to add in Waves like in Arcade games I took it upon myself to do this. After making the enemy! which little side note: 
-        The fish enemy idea came from the original concept from Aiden, so we decided to stick to it and make it  
-        shoot beachballs because it was easier than making a stream of water and to also tie into the "Reflection" theme since u could also think of it 
-        as that it shoots plastic beachballs because it's oceans are getting polluted. 
+        Due to the fact my bullet is the literal center point of my game I decided to make give it as much helpful values needed to tweak it just the way I wanted it to be and make it so that the bullet feels nice and dynamic.
+        during my testing I did discover that without any restraints to the speed and with a crosshair people just won way too much so I put in some values to control the speed and add a bullet drop, as well as removing the crosshair entirely.
+        
     </p>
     <br>
     <p class="text-ce text-muted lead">
-        The Wave Manager works quite nicely it has and can take in all the important information for the Fish such as: 
-        max health and attack speed from the scriptable objects u give it. Which makes it easy to change or tweak the wave and the enemy 
-        separately or together. Especially since we added difficulties to the game and thus can easily change the enemy by swapping the Enemy Data.
+        I provided the entire script but I would like to highlight the RedirectBullet function since that is the most important in my opinion. 
     </p>
+    <p class="text-ce text-muted lead">
+        This function first slows down the bullet thus giving the illusion of slowmotion. 
+        It then allows the player to rotate the bullet based on their mouse input. 
+        The redirection timer and UI are updated during this process. 
+        If the redirection timer reaches zero or the player clicks the ability button again,
+         the EndRedirection() function will simply put give the bullet a speed boost and resume it on the new set trajectory.
+    </p>
+    </style>
+        <!-- Button 1: Code Snippet 1 -->
+        <div class="text-center mb-2"> <!-- Center-align the button text -->
+            <button class="btn btn-primary custom-button" data-toggle="collapse" data-target="#snippet1" style="background-color: rgb(113, 113, 113); padding: 15px 30px; font-size: 18px;">Show Script</button>
+        </div>
+        <div id="snippet1" class="collapse">
+            <pre style="border: none; background-color: #e9e9e9; color: white;"> <!-- Set the background color to dark gray (#333) and text color to white -->
+                <code class="language-csharp">               
+                    
+public class Bullet : MonoBehaviour
+{
+    [Header("Debug Purposes")]
+    public GameObject m_impactLocation;
 
+    [Header("Player Input Settings")]
+    [Tooltip("The sensitivity which the Player will move the camera with")]                
+    [SerializeField] private float m_sensitivity;
+    
+    [Header("Bullet Info")]
+    [SerializeField] private GameObject m_model;
+    [SerializeField] private GameObject m_target;
+    
+    [Header("Bullet Speeds & Variables")]
+    [SerializeField] private float m_currentSpeed;
+    [SerializeField] private float m_abilitySpeed;
+    [SerializeField] private float m_decreaseSpeedValue;
+    [SerializeField] private float m_increaseSpeedValue;
+    [SerializeField] private float m_objectHitSpeedValue;
+    [SerializeField] private float m_maxSpeed;
+    [SerializeField] private float m_spinSpeed;
+    [SerializeField] private float m_bulletDropSpeed;
+    [SerializeField] private float m_dropRotationValue;
+    [SerializeField] private bool m_bulletDropAllowed;
+    [SerializeField] private bool m_spinAllowed;
+    
+    [Header("Redirection Variables")]
+    [SerializeField] private float m_redirectionTimer;
+    [SerializeField] private float m_maxRedirectionTime;
+    
+    [Header("UI & VFX Elements")]
+    [SerializeField] private GameObject m_gui;
+    [SerializeField] private GameObject m_menu;
+    [SerializeField] private TextMeshProUGUI m_redirectText;
+    [SerializeField] private VisualEffect VFX;
+    [SerializeField] private ParticleSystem m_particleSystem;
+
+    public bool GetRedirectionStatus() => m_redirectionInProgress;
+    
+    public GameObject GetImpactLocation() => m_impactLocation;
+                    
+    public void ResetImpactLocation() => m_impactLocation = null;
+                    
+    public void StartBulletSlowmo()
+    {
+        StartRedirection();
+        m_redirectionTimer = 1f;
+        RedirectBullet(m_objectHitSpeedValue);
+    }
+                    
+    private void Start()
+    {
+        if (GameManager.Instance.m_gameOn)
+        {
+            m_redirectionTimer = m_maxRedirectionTime;
+            m_menu.SetActive(false);
+        }
+    }
+
+    /// Summary
+    /// Updates the bullet's position based on its speed and handles redirection, spinning, and bullet drop during the fixed update.
+    ///   
+    private void FixedUpdate()
+    {
+        if (GameManager.Instance.m_gameOn && GameManager.Instance.m_firstFire)
+        {
+            if (!m_redirectionInProgress && GameManager.Instance.m_firstFire) transform.position += transform.forward * m_currentSpeed * Time.fixedDeltaTime;
+            else if (m_redirectionInProgress) RedirectBullet(m_abilitySpeed);
+
+            SpinBullet();
+            BulletDrop();
+        }
+    }
+                    
+    private void Update()
+    {
+        UpdateUI();
+    }
+    
+    /// Summary
+    /// Manages the visibility of the GUI and updates the speedlines shader graph effect based on the bullet's speed.  
+    ///
+    private void UpdateUI()
+    {
+        if (!m_redirectionInProgress || !GameManager.Instance.m_gameOn)
+        {
+            m_gui.SetActive(false);
+            VFX.SetFloat("SpawnRate", m_currentSpeed);
+        }
+        else if (m_redirectionInProgress)
+        {
+            m_gui.SetActive(true);
+            float spawnrate = m_currentSpeed * (m_redirectionInProgress ? m_abilitySpeed / m_hitSpeed : 1f);
+            VFX.SetFloat("SpawnRate", spawnrate);
+                    
+            if (!m_redirectionInProgress) m_currentSpeed = spawnrate;
+        }
+    }
+    
+    /// Summary
+    /// Moves and rotates the bullet based on input, updating the redirection timer and UI during redirection.
+    ///
+    private void RedirectBullet(float speed)
+    {
+        transform.position += transform.forward * speed * Time.fixedDeltaTime;
+        float MouseX = Mouse.current.delta.x.ReadValue() * Time.deltaTime;
+        float MouseY = -Mouse.current.delta.y.ReadValue() * Time.deltaTime;
+                    
+        if (m_redirectionInProgress)
+        {
+            transform.Rotate(Vector3.up * MouseX * m_sensitivity + Vector3.right * MouseY * m_sensitivity);
+                    
+            m_redirectionTimer -= Time.deltaTime;
+            m_redirectText.text = m_redirectionTimer.ToString("0.0");
+                    
+            if (m_redirectionTimer <= 0) EndRedirection();     
+        }
+    }
+                    
+    public void StartRedirection()
+    {
+        m_redirectionInProgress = true;
+        m_bulletDropAllowed = false;
+    }
+                    
+    public void EndRedirection()
+    {
+        IncreaseBulletSpeed();
+        m_redirectionInProgress = false;
+        m_bulletDropAllowed = true;
+        m_redirectionTimer = m_maxRedirectionTime;
+        m_particleSystem.Play();
+        MusicManager.Instance.RedirectionSound();
+    }
+                    
+    private void IncreaseBulletSpeed()
+    {
+        if (m_currentSpeed < m_maxSpeed) m_currentSpeed += m_increaseSpeedValue;
+    }
+    
+    /// Summary
+    /// Manages the bullet's descent, reducing its speed and adjusting rotation based on speed.
+    ///
+    private void BulletDrop()
+    {
+        if (m_bulletDropAllowed && m_currentSpeed >= 0)
+        {
+            m_currentSpeed -= Time.deltaTime * m_decreaseSpeedValue;
+                    
+            if (m_currentSpeed > 10) m_dropRotationAmount = m_currentSpeed * m_bulletDropSpeed * 0.05f;
+
+            gameObject.transform.Rotate(Vector3.right, m_dropRotationValue * Time.fixedDeltaTime, Space.Self);
+        }
+    }
+    
+    /// Summary 
+    /// Handles bullet spinning based on its speed and whether redirection is in progress.
+    ///
+    private void SpinBullet()
+    {
+        m_spinSpeed = m_currentSpeed / 20;
+        if (m_spinAllowed) m_model.transform.Rotate(Vector3.up, m_redirectionInProgress ? (m_spinSpeed / 7.5f) : m_spinSpeed);
+    }
+    
+    /// Summary
+    /// Handles the trigger event when the bullet collides with another object, setting the impact location and triggering relevant actions.
+    ///
+    private void OnTriggerEnter(Collider other)
+    {
+        if (m_impactLocation == null)
+        {
+            m_impactLocation = other.gameObject;
+            MusicManager.Instance.ImpactSound();
+                    
+            if (other.gameObject.CompareTag("Target")) StartBulletSlowmo();
+        }
+    }
+}                    
+                </code>
+            </pre>
+        </div>
+        <p class="text-left text-muted lead">
+    </div>
+</div>
     <div class="text-center text-center">
         <br>
-        <p class="text-center text-muted lead">Underneath, you can see the Wave Manager structure in the inspector, as well as the enemy data Scriptable Object. And a sped up gif of the Wave Manager in action.</p>
+        <p class="text-center text-muted lead">Underneath, you can see see the Bullet in action in 2 seperate POV's</p>
         <div class="image-container" style="display: flex; max-width: 2400px;">
-            <div class="gif-container" style="max-width: 60%; margin: 0 auto;">
-                <img src="images/Wave-Manager.jpeg" alt="New Image Description" style="max-width: 100%; height: auto; width: 60%;" id="enlargeImage">
+            <div class="gif-container" style="max-width: 140%; margin: 0 auto;">
+                <img src="gifs/Bullet-POV.gif" alt="GIF Description" style="max-width: 100%; width: 100%;" id="enlargeNewImage">
             </div>
             <div class="gif-container" style="max-width: 60%; margin: 0 auto;">
-                <img src="gifs/Wavemanager.gif" alt="GIF Description" style="max-width: 100%; width: 70%;" id="enlargeNewImage">
+                <img src="gifs/Bullet-Showcase.gif" alt="GIF Description" style="max-width: 100%; width: 78%;" id="enlargeNewImage">
                 <br>
                 <br>
-                <img src="images/EnemyData.jpeg" alt="New Image Description" style="max-width: 100%; height: auto; width: 70%;" id="enlargeImage">
+                <!-- <img src="images/Bullet-Texture.jpeg" alt="New Image Description" style="max-width: 100%; height: auto; width: 70%;" id="enlargeImage"> -->
             </div>
         </div>
     </div>
@@ -216,161 +426,171 @@
     </style>
     
 
-<br>
-    </style>
-            <br>
-        <!-- Button 1: Code Snippet 1 -->
-        <div class="text-center mb-2"> <!-- Center-align the button text -->
-            <button class="btn btn-primary custom-button" data-toggle="collapse" data-target="#snippet1" style="background-color: rgb(113, 113, 113); padding: 15px 30px; font-size: 18px;">Show Script</button>
-        </div>
-        <div id="snippet1" class="collapse">
-            <pre style="border: none; background-color: #e9e9e9; color: white;"> <!-- Set the background color to dark gray (#333) and text color to white -->
-                <code class="language-csharp">
-public class WaveManager : MonoBehaviour
-{
-    [Header("Lists")]
-    [SerializeField] private List<GameObject> m_spawnedEnemyList = new List<GameObject>();
-    [SerializeField] private List<WaveData> waves = new List<WaveData>();
 
-    [Header("References")]
-    [SerializeField] private GameObject m_fishPrefab;
-    [SerializeField] private GameObject m_fieldAnchor;
-    [SerializeField] private Transform m_parent;
 
-    private PlayerMovement playerMovement;
-    private Coroutine coroutine;
-    private int enemiesDefeated;
 
-    public static WaveManager Instance;
 
-    [Serializable]
-    public class WaveData
-    {
-        public VideoClip videoClip;
-        public bool isFinalWave;
-        public List<EnemyData> enemies; 
-    }
 
-    private void Awake()
-    {
-        if (Instance != null && Instance != this) Destroy(this);
-        else Instance = this;
-    }
 
-    private void Start()
-    {
-        playerMovement = FindObjectOfType<PlayerMovement>();
-    }
 
-    public void StartNextWave()
-    {
-        ClearProjectiles();
-
-        if (enemiesDefeated < waves.Count)
-        {
-            var currentWave = waves[enemiesDefeated];
-
-            InstantiateEnemies(currentWave.enemies, m_fieldAnchor.transform.position, m_fieldAnchor.transform.rotation); 
-
-            Timer.Instance.ResetTimer();
-            VideoHandler.Instance.PlayVideo(currentWave.videoClip);
-
-            if (currentWave.isFinalWave)
-            {
-                GameManager.Instance.m_gameOn = false;
-                StartEndRoutine(4.2f, false);
-            }
-            else StartWaitRoutine(4.2f);   
-        }
-
-        playerMovement.ResetPlayerPosition();
-    }
-
-    private void ClearProjectiles()
-    {
-        GameObject[] SpawnedProjectiles = GameObject.FindGameObjectsWithTag("Projectile");
-        foreach (GameObject gameObject in SpawnedProjectiles) Destroy(gameObject);
-    }
-
-    private void InstantiateEnemies(List<EnemyData> enemies, Vector3 position, Quaternion rotation)
-    {
-        foreach (var enemyData in enemies)
-        {
-            GameObject instantiatedEnemy = Instantiate(m_fishPrefab, position, rotation);
-            Fish fishComponent = instantiatedEnemy.GetComponent<Fish>();
-
-            if (fishComponent != null)
-            {
-                fishComponent.EnemyData = enemyData;
-                fishComponent.SetCorrectValues();
-                instantiatedEnemy.transform.SetParent(m_parent);
-                m_spawnedEnemyList.Add(instantiatedEnemy);
-            }
-        }
-    }
-
-    private void StartWaitRoutine(float timeWait)
-    {
-        if (coroutine == null)
-        {
-            StartCoroutine(WaitRoutine(timeWait));
-            GameManager.Instance.m_gameOn = false;
-        }
-    }
-
-    private IEnumerator WaitRoutine(float timeWait)
-    {
-        yield return new WaitForSeconds(timeWait);
-        GameManager.Instance.m_gameOn = true;
-        coroutine = null;
-    }
-
-    public void StartEndRoutine(float waitTime, bool playerDied)
-    {
-        if (coroutine == null) coroutine = StartCoroutine(EndRoutine(waitTime, playerDied));
-    }
-
-    private IEnumerator EndRoutine(float timeWait, bool playerDied)
-    {
-        yield return new WaitForSeconds(0.03f);
-        if (playerDied)
-        {
-            InGameUI.Instance.TurnOffInGameUI();
-            EndMenu.Instance.OpenEndMenu();
-        }
-        else
-        {
-            Dialogue.Instance.TurnOnDialogue();
-            EndMenu.Instance.OpenWinMenu();
-        }
-        yield return new WaitForSeconds(timeWait);
-    }
-}
-                </code>
-            </pre>
-        </div>
-        <p class="text-left text-muted lead">The WaveManager script is responsible for managing 
-            the wave-based gameplay, including enemy spawning with their accurate data, videos for the different waves. This makes it really easy for me to adjust and or add waves.
-        <br>
-        <br>
+<div class="text-left h4 text-left">
+    <hr class="my-4" style="border-width: 2px; width: 450px;"> <!-- Adjust the width as needed -->
+    <p>WaypointUI</p>
+</div>
+<div class="text-left text-left">
+    <p class="text-left text-muted lead">
+        For my target I made a Waypoint script so it would highlight and create a literal waypoint to the target u are supposed to hit, 
+        I opted for this over any other solution since it is very straight forward literally and made it so I didn't have to explain the premise of the game!
+    </p>
+    
+    <!-- Button 2: Code Snippet 2 -->
+    <div class="text-center mb-2"> <!-- Center-align the button text -->
+        <button class="btn btn-primary custom-button" data-toggle="collapse" data-target="#snippet2" style="background-color: rgb(113, 113, 113); padding: 15px 30px; font-size: 18px;">Show Script</button>
     </div>
+    <div id="snippet2" class="collapse">
+        <pre style="border: none; background-color: #e9e9e9; color: rgb(255, 255, 255);"> <!-- Set the background color to gray and text color to white -->
+            <code class="language-csharp">               
+                
+public class WaypointUI : MonoBehaviour
+{
+    [SerializeField] private Image m_image;
+    [SerializeField] private GameObject m_target;
+    [SerializeField] private float m_uiOffset;
+    [SerializeField] private TextMeshProUGUI m_uiText;
+                
+    private Vector2 pos;
+    
+    private void UpdateUIPosition()
+    {
+        m_image.transform.position = pos;
+    }    
+    
+    private void Update()
+    {
+        UpdateWaypoint();
+    }
+    
+    public void UpdateWaypoint()
+    {
+        // Calculate screen boundaries and normalized direction from camera to target
+        float minX = m_image.GetPixelAdjustedRect().width / 2;
+        float maxX = Screen.width - minX;
+        float minY = m_image.GetPixelAdjustedRect().height / 2;
+        float maxY = Screen.height - minY;
+                
+        Vector3 dir = (m_target.transform.position - Camera.main.transform.position).normalized;
+                
+        if (GameManager.Instance.m_gameOn && Vector3.Dot(dir, Camera.main.transform.forward) > 0)
+        {
+            // Update UI position based on target's position
+            pos = Camera.main.WorldToScreenPoint(m_target.transform.position);
+            pos.y += m_uiOffset;
+            UpdateUIPosition();
+        }
+        else if (GameManager.Instance.m_gameOn && Vector3.Dot(dir, Camera.main.transform.forward) > 0)
+        {
+            if (pos.x < Screen.width) pos.x = maxX;
+            else pos.x = minX;
+        }
+                
+        pos.x = Mathf.Clamp(pos.x, minX, maxX);
+        pos.y = Mathf.Clamp(pos.y, minY, maxY);
+                
+        UpdateUIPosition();
+    }
+
+    // Updates UI Text with the distance between camera and target
+    public void UpdateUIDistance(Vector3 camPosition)
+    {
+        float dist = Vector3.Distance(camPosition, m_target.transform.position);
+        m_uiText.text = dist.ToString("0") + " m";
+    }       
+}
+                              
+            </code>
+        </pre>
+    </div>
+</div>
+
+    <p class="text-left text-muted lead">  
+        This script makes it so u can give it a target and then that target will have a waypoint,
+        that follows the target on the screen and displays the distance between the camera and the target.
+        I made it a seperate script so I could call it on different objects if I wanted to add such a gamemode.
+    </p>
+    <br>
+    <p class="text-center text-muted lead">Here you can see the Waypoint system at work</p>
+    <div class="text-center text-center">
+        <div class="image-container" style="display: flex; max-width: 2400px;">
+            <div class="gif-container" style="max-width: 120%; margin: 0 auto;">
+                <img src="gifs/waypoint.gif" alt="GIF Description" style="max-width: 120%; width: 90%;">
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    </div>
+    
+    </div>
+    <script>
+        let imageClicked2 = false;
+    
+        const enlargeButton2 = document.getElementById('enlargeImage2');
+    
+        enlargeButton2.addEventListener('click', function() {
+            if (imageClicked2) {
+                enlargeButton2.style.width = '100%'; // Adjust the size as needed
+            } else {
+                enlargeButton2.style.width = '140%'; // Adjust the size as needed
+            }
+            imageClicked2 = !imageClicked2;
+        });
+    </script>
+    
+    <style>
+        .image-container {
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+    
+        .image-container:hover {
+            transform: scale(1.02); /* You can adjust the desired scale factor */
+        }
+    </style>
+
+</div>
+
+</div>
+
+<div class="container">
+    <br>
+
+    <h2 class="text-left h1">Art</h2>
+    <p class="text-left text-muted lead">
+        Here's a small compilation of all the (Technical) Art related stuff I made during this project!
+        <br>
+        <br>
+    </p>
+    <img src="images/Bullet-Texture.jpeg" alt="Image Description" style="max-width: 30%; height: auto; width: 30%;" id="enlargeImage">
 </div>
 
     </div>
     <!-- Reflection -->
     <div class="container">
+        <br>
+
         <h2 class="text-left h1">Reflection</h2>
         <p class="text-left text-muted lead">
-            I had a lot of fun during this Game Jam because we had a very nice approach to it and decided to go very simple but very polished which was great in my opinion.  
+            I liked this project a lot since I could combine aspects from a show I really liked into a game. 
+            and since I now have some experience working with Maya and making a 3D model and texture it'll help me gauge stuff better from an artists' perspective
             <br>
             <br>
-            I do have to admit I had a little trouble switching on the 1st day from constantly making 3D projects to going back to 2D but that switch was quickly made!
+            I would've liked to make one of the "Six Bullets" as an actual model though but I frankly didn't have the skills to do some currently.
             <br>
             <br>
-            My favorite part is definitely the ending screen u get when u finished the game and the dialogue u get with it! I won't spoil the dialogue u get though >:D 
+            That being said it was a great project! (Small recommendation watch JJBA if u haven't! )
             <br>
             <br>
-            <img src="images/sea-monkey-end-screen.png" alt="Image Description" style="max-width: 100%; height: auto; width: 100%;" id="enlargeImage">
         </p>
     </div>
 
@@ -383,7 +603,7 @@ public class WaveManager : MonoBehaviour
 <!-- JavaScript to set initial video volume -->
 <script>
     // Set the initial volume to 10% (0.1)
-    document.getElementById("gameTrailer-sea-monkey").volume = 0.05;
+    document.getElementById("gameTrailer-six-bullets").volume = 0.05;
 </script>
 
 <!-- Bootstrap JS and jQuery -->
