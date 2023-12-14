@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leandro Bonora - Six Bullets</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Prism.js CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism.min.css">
+    <!-- Favicon link -->
+    <link rel="icon" type="image/png" href="images/pochita.png">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Custom CSS to ensure the navbar doesn't move when a scrollbar is added */
+        body {
+            padding-top: 50px; /* Add padding to the top of the body to account for the fixed navbar */
+        }
+
+        /* Custom CSS for code snippets background color */
+        .snippet {
+            background-color: #cbcbcb87; /* You can adjust this color as needed */
+            padding: 10px;
+            border-radius: 5px;
+            border-width: 5px;
+            margin-bottom: 5px;
+        }
+
+        /* Center-align the video within the section */
+        #video {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        /* Adjust video width */
+        #gameTrailer {
+            width: 70%; /* Adjust this value as needed */
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navigation Bar -->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #333b58 ; padding-top: 10px; padding-bottom: 20px; height: 70px;">
+    <a class="navbar-brand" href="index.html" style="font-size: 32px; padding-top: -1;">Leandro Bonora</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="index.html" style="font-size: 20px; padding: 10px 20px;">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="about.html" style="font-size: 20px; padding: 10px 20px;">About Me</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="pdf/CV Leandro Bonora 2023 English.pdf" target="_blank" style="font-size: 20px; padding: 10px 20px;">Resume</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<section id="portfolio" class="py-5" style="background: linear-gradient(to bottom, #6a89f7, #ffffff, #ffffff, #f0efeb, #e8c29e);">
+    <div class="container">
+        <h1 class="text-center h1" style="font-size: 60px;">Six Bullets</h1>
+        <p class="text-center">3D Action Arcade Game</p> 
+        <hr class="my-4" style="border-width: 2px;">
+        <div class="row">
+            <!-- Your content here -->
+        </div>
+
+        
+        <!-- Description Section -->
+        <div class="container py-2 text-left">
+            <h2>Description</h2>
+            <p style="font-size: 21px; font-weight: normal;">
+                This game was made for a project where I had complete freedom to choose anything I wanted, So after having watched Jojo Part 5 and being inspired by the stand (Power/Ability) Mista uses and really liking his ability and his character I decided to make it based on it! (I did have to change the name to Six Bullets)
+            </p>
+            <p style="font-size: 21px; font-weight: normal;">
+                I only had 2 requirements during this project.  
+            </p>
+            <ol class="text-muted lead" style="font-size: 20px; font-weight: normal;"> <!-- You can adjust the font-size and font-weight as needed -->
+                <li>Make a Game Design document. (Feel free to check it, it is in Dutch though!)</li>
+                <li>Make your own 3D model.</li>
+            </ol>
+            <div class="container py-3 text-center">
+                <a href="pdf/GGD Leandro Bonora Six Bullets.pdf" target="_blank" class="btn btn-custom-color btn-custom-text-size" style="width: 320px; height: 60px; line-height: 40px; color: rgb(0, 0, 0);" target="_blank">Game Design Document (NL)</a>
+            </div>
+            <br>
+            <p style="font-size: 21px; font-weight: normal;">
+                The premise of the game is to hit as many targets as possible within 60 seconds, whilst redirecting the bullets path to do so. 
+                beware though as u might run out of redirections if you aren't careful enough. U can however buy more redirections if u have enough coins!
+            </p>
+            <div id="video" class="container py-5 text-center">
+                <h2 style="padding-top: 20px;">Six Bullets Playthrough</h2>
+                <!-- First Video -->
+                <video id="gameTrailer-six-bullets" controls style="width: 100%; max-width: 1200px; height: auto;">
+                    <source src="videos/six-bullets.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <br>
+            </div>
+            <div class="container py-3 text-center">
+                <a href="https://itsleloli.itch.io/six-bullets" class="btn btn-custom-color2 btn-custom-text-size" style="width: 250px; height: 80px; line-height: 60px; color: rgb(0, 0, 0);" target="_blank">Play on Itch.io</a>
+            </div>
+</div>
+
+<style>
+    .btn-custom-color {
+        background-color: #6a89f7;
+    }
+
+    .btn-custom-text-size {
+        font-size: 22px; /* Adjust the font size as needed */
+    }
+</style>
+
+<style>
+    .btn-custom-color2 {
+        background-color: #e39256;
+    }
+
+    .btn-custom-text-size {
+        font-size: 22px; /* Adjust the font size as needed */
+    }
+</style>
+
+
+<!-- Team Section -->
+<div class="container py-2 text-left">
+    <h2>Team</h2>
+    <p style="font-size: 21px; font-weight: normal;">
+        I was the sole developer during this project, Most of the art except for the bullet which I made myself :) was provided to me by school.
+    </p>
+    
+    <p style="font-size: 20px; font-weight: normal;">
+        <strong>Team Members: 1</strong>
+        <ul class="text-muted lead" style="font-size: 20px; font-weight: normal;">
+            <strong>Developer</strong>
+            <li>Leandro Bonora</li>
+        </ul>
+        <br>
+    </p>
+</div>
+
+
+<div class="container">
+    <h2 class="text-left h1">Work Process</h2>
+    <p class="text-left text-muted lead">
+        Whilst working on this project I learned how to make a Game design document which was required before I could actually start making the game.
+    </p>
+    <p class="text-left text-muted lead">
+        During this project there were 4 key things I learned and implemented.
+        <ol class="text-muted lead" style="font-size: 20px; font-weight: normal;"> <!-- You can adjust the font-size and font-weight as needed -->
+            <li>I learned how to use Shader Graph to make the speed lines u see in most forms of media when something fast moves in this case a bullet! </li>
+            <li>I made use of a Cinemachine camera, because it would offer me more flexibility whilst tweaking the gamefeel.</li>
+            <li>I also made use of the new Input system because it would make me able to add easy controller support.</li>
+            <li>I learned the basics of Maya and made my first own 3D Bullet Model!</li>
+        </ol>
+    </p>
+
+    <hr class="my-4" style="border-width: 2px; width: 450px;"> <!-- Adjust the width as needed -->
+    <br>
+
+<div class="text-left h4 text-left">
+    <p>Bullet</p>
+</div>
+<div class="text-left text-left">
+    <p class="text-left text-muted lead">
+        Due to the fact my bullet is the literal center point of my game I decided to make give it as much helpful values needed to tweak it just the way I wanted it to be and make it so that the bullet feels nice and dynamic.
+        during my testing I did discover that without any restraints to the speed and with a crosshair people just won way too much so I put in some values to control the speed and add a bullet drop, as well as removing the crosshair entirely.
+        
+    </p>
+    <br>
+    <p class="text-ce text-muted lead">
+        I provided the entire script but I would like to highlight the RedirectBullet function since that is the most important in my opinion. 
+    </p>
+    <p class="text-ce text-muted lead">
+        This function first slows down the bullet thus giving the illusion of slowmotion. 
+        It then allows the player to rotate the bullet based on their mouse input. 
+        The redirection timer and UI are updated during this process. 
+        If the redirection timer reaches zero or the player clicks the ability button again,
+         the EndRedirection() function will simply put give the bullet a speed boost and resume it on the new set trajectory.
+    </p>
+    </style>
+        <!-- Button 1: Code Snippet 1 -->
+        <div class="text-center mb-2"> <!-- Center-align the button text -->
+            <button class="btn btn-primary custom-button" data-toggle="collapse" data-target="#snippet1" style="background-color: rgb(113, 113, 113); padding: 15px 30px; font-size: 18px;">Show Script</button>
+        </div>
+        <div id="snippet1" class="collapse">
+            <pre style="border: none; background-color: #e9e9e9; color: white;"> <!-- Set the background color to dark gray (#333) and text color to white -->
+                <code class="language-csharp">               
+                    
+public class Bullet : MonoBehaviour
+{
+    [Header("Debug Purposes")]
+    public GameObject m_impactLocation;
+
+    [Header("Player Input Settings")]
+    [Tooltip("The sensitivity which the Player will move the camera with")]                
+    [SerializeField] private float m_sensitivity;
+    
+    [Header("Bullet Info")]
+    [SerializeField] private GameObject m_model;
+    [SerializeField] private GameObject m_target;
+    
+    [Header("Bullet Speeds & Variables")]
+    [SerializeField] private float m_currentSpeed;
+    [SerializeField] private float m_abilitySpeed;
+    [SerializeField] private float m_decreaseSpeedValue;
+    [SerializeField] private float m_increaseSpeedValue;
+    [SerializeField] private float m_objectHitSpeedValue;
+    [SerializeField] private float m_maxSpeed;
+    [SerializeField] private float m_spinSpeed;
+    [SerializeField] private float m_bulletDropSpeed;
+    [SerializeField] private float m_dropRotationValue;
+    [SerializeField] private bool m_bulletDropAllowed;
+    [SerializeField] private bool m_spinAllowed;
+    
+    [Header("Redirection Variables")]
+    [SerializeField] private float m_redirectionTimer;
+    [SerializeField] private float m_maxRedirectionTime;
+    
+    [Header("UI & VFX Elements")]
+    [SerializeField] private GameObject m_gui;
+    [SerializeField] private GameObject m_menu;
+    [SerializeField] private TextMeshProUGUI m_redirectText;
+    [SerializeField] private VisualEffect VFX;
+    [SerializeField] private ParticleSystem m_particleSystem;
+
+    public bool GetRedirectionStatus() => m_redirectionInProgress;
+    
+    public GameObject GetImpactLocation() => m_impactLocation;
+                    
+    public void ResetImpactLocation() => m_impactLocation = null;
+                    
+    public void StartBulletSlowmo()
+    {
+        StartRedirection();
+        m_redirectionTimer = 1f;
+        RedirectBullet(m_objectHitSpeedValue);
+    }
+                    
+    private void Start()
+    {
+        if (GameManager.Instance.m_gameOn)
+        {
+            m_redirectionTimer = m_maxRedirectionTime;
+            m_menu.SetActive(false);
+        }
+    }
+
+    /// Summary
+    /// Updates the bullet's position based on its speed and handles redirection, spinning, and bullet drop during the fixed update.
+    ///   
+    private void FixedUpdate()
+    {
+        if (GameManager.Instance.m_gameOn && GameManager.Instance.m_firstFire)
+        {
+            if (!m_redirectionInProgress && GameManager.Instance.m_firstFire) transform.position += transform.forward * m_currentSpeed * Time.fixedDeltaTime;
+            else if (m_redirectionInProgress) RedirectBullet(m_abilitySpeed);
+
+            SpinBullet();
+            BulletDrop();
+        }
+    }
+                    
+    private void Update()
+    {
+        UpdateUI();
+    }
+    
+    /// Summary
+    /// Manages the visibility of the GUI and updates the speedlines shader graph effect based on the bullet's speed.  
+    ///
+    private void UpdateUI()
+    {
+        if (!m_redirectionInProgress || !GameManager.Instance.m_gameOn)
+        {
+            m_gui.SetActive(false);
+            VFX.SetFloat("SpawnRate", m_currentSpeed);
+        }
+        else if (m_redirectionInProgress)
+        {
+            m_gui.SetActive(true);
+            float spawnrate = m_currentSpeed * (m_redirectionInProgress ? m_abilitySpeed / m_hitSpeed : 1f);
+            VFX.SetFloat("SpawnRate", spawnrate);
+                    
+            if (!m_redirectionInProgress) m_currentSpeed = spawnrate;
+        }
+    }
+    
+    /// Summary
+    /// Moves and rotates the bullet based on input, updating the redirection timer and UI during redirection.
+    ///
+    private void RedirectBullet(float speed)
+    {
+        transform.position += transform.forward * speed * Time.fixedDeltaTime;
+        float MouseX = Mouse.current.delta.x.ReadValue() * Time.deltaTime;
+        float MouseY = -Mouse.current.delta.y.ReadValue() * Time.deltaTime;
+                    
+        if (m_redirectionInProgress)
+        {
+            transform.Rotate(Vector3.up * MouseX * m_sensitivity + Vector3.right * MouseY * m_sensitivity);
+                    
+            m_redirectionTimer -= Time.deltaTime;
+            m_redirectText.text = m_redirectionTimer.ToString("0.0");
+                    
+            if (m_redirectionTimer <= 0) EndRedirection();     
+        }
+    }
+                    
+    public void StartRedirection()
+    {
+        m_redirectionInProgress = true;
+        m_bulletDropAllowed = false;
+    }
+                    
+    public void EndRedirection()
+    {
+        IncreaseBulletSpeed();
+        m_redirectionInProgress = false;
+        m_bulletDropAllowed = true;
+        m_redirectionTimer = m_maxRedirectionTime;
+        m_particleSystem.Play();
+        MusicManager.Instance.RedirectionSound();
+    }
+                    
+    private void IncreaseBulletSpeed()
+    {
+        if (m_currentSpeed < m_maxSpeed) m_currentSpeed += m_increaseSpeedValue;
+    }
+    
+    /// Summary
+    /// Manages the bullet's descent, reducing its speed and adjusting rotation based on speed.
+    ///
+    private void BulletDrop()
+    {
+        if (m_bulletDropAllowed && m_currentSpeed >= 0)
+        {
+            m_currentSpeed -= Time.deltaTime * m_decreaseSpeedValue;
+                    
+            if (m_currentSpeed > 10) m_dropRotationAmount = m_currentSpeed * m_bulletDropSpeed * 0.05f;
+
+            gameObject.transform.Rotate(Vector3.right, m_dropRotationValue * Time.fixedDeltaTime, Space.Self);
+        }
+    }
+    
+    /// Summary 
+    /// Handles bullet spinning based on its speed and whether redirection is in progress.
+    ///
+    private void SpinBullet()
+    {
+        m_spinSpeed = m_currentSpeed / 20;
+        if (m_spinAllowed) m_model.transform.Rotate(Vector3.up, m_redirectionInProgress ? (m_spinSpeed / 7.5f) : m_spinSpeed);
+    }
+    
+    /// Summary
+    /// Handles the trigger event when the bullet collides with another object, setting the impact location and triggering relevant actions.
+    ///
+    private void OnTriggerEnter(Collider other)
+    {
+        if (m_impactLocation == null)
+        {
+            m_impactLocation = other.gameObject;
+            MusicManager.Instance.ImpactSound();
+                    
+            if (other.gameObject.CompareTag("Target")) StartBulletSlowmo();
+        }
+    }
+}                    
+                </code>
+            </pre>
+        </div>
+        <p class="text-left text-muted lead">
+    </div>
+</div>
+    <div class="text-center text-center">
+        <br>
+        <p class="text-center text-muted lead">Underneath, you can see see the Bullet in action in 2 seperate POV's</p>
+        <div class="image-container" style="display: flex; max-width: 2400px;">
+            <div class="gif-container" style="max-width: 140%; margin: 0 auto;">
+                <img src="gifs/Bullet-POV.gif" alt="GIF Description" style="max-width: 100%; width: 100%;" id="enlargeNewImage">
+            </div>
+            <div class="gif-container" style="max-width: 60%; margin: 0 auto;">
+                <img src="gifs/Bullet-Showcase.gif" alt="GIF Description" style="max-width: 100%; width: 78%;" id="enlargeNewImage">
+                <br>
+                <br>
+                <!-- <img src="images/Bullet-Texture.jpeg" alt="New Image Description" style="max-width: 100%; height: auto; width: 70%;" id="enlargeImage"> -->
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        let imageClicked = false;
+        let newImageClicked = false;
+    
+        const enlargeButton = document.getElementById('enlargeImage');
+        const enlargeNewImageButton = document.getElementById('enlargeNewImage');
+        const gifContainer = document.querySelector('.gif-container');
+    
+        enlargeButton.addEventListener('click', function() {
+            if (imageClicked) {
+                enlargeButton.style.width = '60%'; // Adjust the size as needed
+            } else {
+                enlargeButton.style.width = '90%'; // Adjust the size as needed
+            }
+            imageClicked = !imageClicked;
+        });
+    </script>
+    
+    <style>
+        .image-container {
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+    
+        .image-container:hover {
+            transform: scale(1.02); /* You can adjust the desired scale factor */
+        }
+    </style>
+    
+
+
+
+
+
+
+
+
+<div class="text-left h4 text-left">
+    <hr class="my-4" style="border-width: 2px; width: 450px;"> 
+    <p>WaypointUI</p>
+</div>
+<div class="text-left text-left">
+    <p class="text-left text-muted lead">
+        For my target I made a Waypoint script so it would highlight and create a literal waypoint to the target u are supposed to hit, 
+        I opted for this over any other solution since it is very straight forward literally and made it so I didn't have to explain the premise of the game!
+    </p>
+    
+    <!-- Button 2: Code Snippet 2 -->
+    <div class="text-center mb-2"> <!-- Center-align the button text -->
+        <button class="btn btn-primary custom-button" data-toggle="collapse" data-target="#snippet2" style="background-color: rgb(113, 113, 113); padding: 15px 30px; font-size: 18px;">Show Script</button>
+    </div>
+    <div id="snippet2" class="collapse">
+        <pre style="border: none; background-color: #e9e9e9; color: rgb(255, 255, 255);"> <!-- Set the background color to gray and text color to white -->
+            <code class="language-csharp">               
+                
+public class WaypointUI : MonoBehaviour
+{
+    [SerializeField] private Image m_image;
+    [SerializeField] private GameObject m_target;
+    [SerializeField] private float m_uiOffset;
+    [SerializeField] private TextMeshProUGUI m_uiText;
+                
+    private Vector2 pos;
+    
+    private void UpdateUIPosition()
+    {
+        m_image.transform.position = pos;
+    }    
+    
+    private void Update()
+    {
+        UpdateWaypoint();
+    }
+    
+    public void UpdateWaypoint()
+    {
+        // Calculate screen boundaries and normalized direction from camera to target
+        float minX = m_image.GetPixelAdjustedRect().width / 2;
+        float maxX = Screen.width - minX;
+        float minY = m_image.GetPixelAdjustedRect().height / 2;
+        float maxY = Screen.height - minY;
+                
+        Vector3 dir = (m_target.transform.position - Camera.main.transform.position).normalized;
+                
+        if (GameManager.Instance.m_gameOn && Vector3.Dot(dir, Camera.main.transform.forward) > 0)
+        {
+            // Update UI position based on target's position
+            pos = Camera.main.WorldToScreenPoint(m_target.transform.position);
+            pos.y += m_uiOffset;
+            UpdateUIPosition();
+        }
+        else if (GameManager.Instance.m_gameOn && Vector3.Dot(dir, Camera.main.transform.forward) > 0)
+        {
+            if (pos.x < Screen.width) pos.x = maxX;
+            else pos.x = minX;
+        }
+                
+        pos.x = Mathf.Clamp(pos.x, minX, maxX);
+        pos.y = Mathf.Clamp(pos.y, minY, maxY);
+                
+        UpdateUIPosition();
+    }
+
+    // Updates UI Text with the distance between camera and target
+    public void UpdateUIDistance(Vector3 camPosition)
+    {
+        float dist = Vector3.Distance(camPosition, m_target.transform.position);
+        m_uiText.text = dist.ToString("0") + " m";
+    }       
+}
+                              
+            </code>
+        </pre>
+    </div>
+</div>
+
+    <p class="text-left text-muted lead">  
+        This script makes it so u can give it a target and then that target will have a waypoint,
+        that follows the target on the screen and displays the distance between the camera and the target.
+        I made it a seperate script so I could call it on different objects if I wanted to add such a gamemode.
+    </p>
+    <br>
+    <p class="text-center text-muted lead">Here you can see the Waypoint system at work</p>
+    <div class="text-center text-center">
+        <div class="image-container" style="display: flex; max-width: 2400px;">
+            <div class="gif-container" style="max-width: 120%; margin: 0 auto;">
+                <img src="gifs/waypoint.gif" alt="GIF Description" style="max-width: 120%; width: 90%;">
+            </div>
+        </div>
+    </div>
+    <br>
+    <hr class="my-4" style="border-width: 2px; width: 450px;"> 
+    <br>
+    </div>
+    
+    </div>
+    <script>
+        let imageClicked2 = false;
+    
+        const enlargeButton2 = document.getElementById('enlargeImage2');
+    
+        enlargeButton2.addEventListener('click', function() {
+            if (imageClicked2) {
+                enlargeButton2.style.width = '100%'; // Adjust the size as needed
+            } else {
+                enlargeButton2.style.width = '140%'; // Adjust the size as needed
+            }
+            imageClicked2 = !imageClicked2;
+        });
+    </script>
+    
+    <style>
+        .image-container {
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+    
+        .image-container:hover {
+            transform: scale(1.02); /* You can adjust the desired scale factor */
+        }
+    </style>
+
+</div>
+
+</div>
+
+<div class="container">
+    <h2 class="text-left h1">Art</h2>
+    <p class="text-left text-muted lead">
+        Here's a small compilation of all the (Technical) Art related stuff I made during this project!
+        <div class="text-center text-center">
+            <br>
+            <p class="text-left text-muted lead">Underneath, you can see the speedlines I made in ShaderGraph, as well as the settings used for it (U can enlarge the gif by clicking on it!)</p>
+            <p class="text-left text-muted lead">Since I wanted to make it feel more realistic and accordingly portray speed I made it so the speed of the bullet also determines the Spawnrate of the lines</p>
+            <div class="image-container" style="display: flex; max-width: 2400px;">
+                <!-- First image -->
+                <div class="gif-container" style="max-width: 140%; margin: 0 auto;">
+                    <img src="gifs/speedlines.gif" alt="GIF Description" style="max-width: 100%; width: 90%;">
+                </div>
+                <!-- Second image -->
+                <div class="gif-container" style="max-width: 150%; margin: 0 auto;">
+                    <img src="gifs/ShaderGraph-Settings.gif" alt="GIF Description" style="max-width: 150%; width: 100%;" id="enlargeImage3">
+                </div>
+            </div>
+        </div>
+        <br>
+        <hr class="my-4" style="border-width: 2px; width: 450px;">
+
+        <!-- Third image (new) -->
+        <p class="text-center text-muted lead">Here is the Bullet I modeled and textured!</p>
+        <div class="image-container" style="display: flex; max-width: 2400px;">
+            <!-- First image -->
+            <div class="gif-container" style="max-width: 140%; margin: 0 auto;">
+                <img src="images/Bullet-Texture.jpeg" alt="GIF Description" style="max-width: 150%; width: 90%;" id="enlargeImage4">
+            </div>
+            <!-- Second image -->
+            <div class="gif-container" style="max-width: 150%; margin: 0 auto;">
+                <img src="images/Bullet-Texture.jpeg" alt="GIF Description" style="max-width: 150%; width: 90%;" id="enlargeImage5">
+                <br>
+                <br>       
+            </div>
+    </p>
+    
+    <script>
+        let imageClicked3 = false;
+        let imageClicked4 = false;
+        let imageClicked5 = false;
+    
+        const enlargeButton3 = document.getElementById('enlargeImage3');
+        const enlargeButton4 = document.getElementById('enlargeImage4');
+        const enlargeButton5 = document.getElementById('enlargeImage5');
+    
+        enlargeButton3.addEventListener('click', function() {
+            if (imageClicked3) {
+                enlargeButton3.style.width = '90%'; // Adjust the size as needed
+            } else {
+                enlargeButton3.style.width = '150%'; // Adjust the size as needed
+            }
+            imageClicked3 = !imageClicked3;
+        });
+
+        enlargeButton4.addEventListener('click', function() {
+            if (imageClicked4) {
+                enlargeButton4.style.width = '90%'; // Adjust the size as needed
+            } else {
+                enlargeButton4.style.width = '95%'; // Adjust the size as needed
+            }
+            imageClicked4 = !imageClicked4;
+        });
+
+        enlargeButton5.addEventListener('click', function() {
+            if (imageClicked5) {
+                enlargeButton5.style.width = '90%'; // Adjust the size as needed
+            } else {
+                enlargeButton5.style.width = '95%'; // Adjust the size as needed
+            }
+            imageClicked5 = !imageClicked5;
+        });
+    </script>
+    
+    <style>
+        .gif-container {
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+    
+        .gif-container:hover {
+            transform: scale(1.02); /* You can adjust the desired scale factor */
+        }
+    </style>
+</div>
+
+    
+
+</div>
+    </div>
+    <!-- Reflection -->
+    <div class="container">
+        <br>
+        <hr class="my-4" style="border-width: 2px; width: 450px;">
+        <h2 class="text-left h1">Reflection</h2>
+        <p class="text-left text-muted lead">
+            I liked this project a lot since I could combine aspects from a show I really liked into a game. 
+            and since I now have some experience working with Maya and making a 3D model and texture it'll help me gauge stuff better from an artists' perspective
+            <br>
+            <br>
+            I would've liked to make one of the "Six Bullets" as an actual model though but I frankly didn't have the skills to do some currently.
+            <br>
+            <br>
+            That being said it was a great project! (Small recommendation watch JJBA if u haven't! )
+            <br>
+            <br>
+        </p>
+    </div>
+
+    
+
+<!-- Prism.js Initialization -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/components/prism-csharp.min.js"></script>
+
+<!-- JavaScript to set initial video volume -->
+<script>
+    // Set the initial volume to 10% (0.1)
+    document.getElementById("gameTrailer-six-bullets").volume = 0.7;
+</script>
+
+<!-- Bootstrap JS and jQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
