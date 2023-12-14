@@ -434,7 +434,7 @@ public class Bullet : MonoBehaviour
 
 
 <div class="text-left h4 text-left">
-    <hr class="my-4" style="border-width: 2px; width: 450px;"> <!-- Adjust the width as needed -->
+    <hr class="my-4" style="border-width: 2px; width: 450px;"> 
     <p>WaypointUI</p>
 </div>
 <div class="text-left text-left">
@@ -527,7 +527,7 @@ public class WaypointUI : MonoBehaviour
         </div>
     </div>
     <br>
-    <br>
+    <hr class="my-4" style="border-width: 2px; width: 450px;"> 
     <br>
     </div>
     
@@ -563,22 +563,99 @@ public class WaypointUI : MonoBehaviour
 </div>
 
 <div class="container">
-    <br>
-
     <h2 class="text-left h1">Art</h2>
     <p class="text-left text-muted lead">
         Here's a small compilation of all the (Technical) Art related stuff I made during this project!
+        <div class="text-center text-center">
+            <br>
+            <p class="text-left text-muted lead">Underneath, you can see the speedlines I made in ShaderGraph, as well as the settings used for it (U can enlarge the gif by clicking on it!)</p>
+            <p class="text-left text-muted lead">Since I wanted to make it feel more realistic and accordingly portray speed I made it so the speed of the bullet also determines the Spawnrate of the lines</p>
+            <div class="image-container" style="display: flex; max-width: 2400px;">
+                <!-- First image -->
+                <div class="gif-container" style="max-width: 140%; margin: 0 auto;">
+                    <img src="gifs/speedlines.gif" alt="GIF Description" style="max-width: 100%; width: 90%;">
+                </div>
+                <!-- Second image -->
+                <div class="gif-container" style="max-width: 150%; margin: 0 auto;">
+                    <img src="gifs/ShaderGraph-Settings.gif" alt="GIF Description" style="max-width: 150%; width: 100%;" id="enlargeImage3">
+                </div>
+            </div>
+        </div>
         <br>
-        <br>
+        <hr class="my-4" style="border-width: 2px; width: 450px;">
+
+        <!-- Third image (new) -->
+        <p class="text-center text-muted lead">Here is the Bullet I modeled and textured!</p>
+        <div class="image-container" style="display: flex; max-width: 2400px;">
+            <!-- First image -->
+            <div class="gif-container" style="max-width: 140%; margin: 0 auto;">
+                <img src="images/Bullet-Texture.jpeg" alt="GIF Description" style="max-width: 150%; width: 90%;" id="enlargeImage4">
+            </div>
+            <!-- Second image -->
+            <div class="gif-container" style="max-width: 150%; margin: 0 auto;">
+                <img src="images/Bullet-Texture.jpeg" alt="GIF Description" style="max-width: 150%; width: 90%;" id="enlargeImage5">
+                <br>
+                <br>       
+            </div>
     </p>
-    <img src="images/Bullet-Texture.jpeg" alt="Image Description" style="max-width: 30%; height: auto; width: 30%;" id="enlargeImage">
+    
+    <script>
+        let imageClicked3 = false;
+        let imageClicked4 = false;
+        let imageClicked5 = false;
+    
+        const enlargeButton3 = document.getElementById('enlargeImage3');
+        const enlargeButton4 = document.getElementById('enlargeImage4');
+        const enlargeButton5 = document.getElementById('enlargeImage5');
+    
+        enlargeButton3.addEventListener('click', function() {
+            if (imageClicked3) {
+                enlargeButton3.style.width = '90%'; // Adjust the size as needed
+            } else {
+                enlargeButton3.style.width = '150%'; // Adjust the size as needed
+            }
+            imageClicked3 = !imageClicked3;
+        });
+
+        enlargeButton4.addEventListener('click', function() {
+            if (imageClicked4) {
+                enlargeButton4.style.width = '90%'; // Adjust the size as needed
+            } else {
+                enlargeButton4.style.width = '95%'; // Adjust the size as needed
+            }
+            imageClicked4 = !imageClicked4;
+        });
+
+        enlargeButton5.addEventListener('click', function() {
+            if (imageClicked5) {
+                enlargeButton5.style.width = '90%'; // Adjust the size as needed
+            } else {
+                enlargeButton5.style.width = '95%'; // Adjust the size as needed
+            }
+            imageClicked5 = !imageClicked5;
+        });
+    </script>
+    
+    <style>
+        .gif-container {
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+    
+        .gif-container:hover {
+            transform: scale(1.02); /* You can adjust the desired scale factor */
+        }
+    </style>
 </div>
 
+    
+
+</div>
     </div>
     <!-- Reflection -->
     <div class="container">
         <br>
-
+        <hr class="my-4" style="border-width: 2px; width: 450px;">
         <h2 class="text-left h1">Reflection</h2>
         <p class="text-left text-muted lead">
             I liked this project a lot since I could combine aspects from a show I really liked into a game. 
@@ -603,7 +680,7 @@ public class WaypointUI : MonoBehaviour
 <!-- JavaScript to set initial video volume -->
 <script>
     // Set the initial volume to 10% (0.1)
-    document.getElementById("gameTrailer-six-bullets").volume = 0.05;
+    document.getElementById("gameTrailer-six-bullets").volume = 0.7;
 </script>
 
 <!-- Bootstrap JS and jQuery -->
