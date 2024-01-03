@@ -130,6 +130,21 @@
     }
 </style>
 
+<hr class="my-4" style="border-width: 2px; width: 450px;">
+
+<!-- Third image (new) -->
+<p class="text-center text-muted lead">Here is the Bullet I modeled and textured!</p>
+<div class="image-container" style="display: flex; max-width: 2400px;">
+    <!-- First image -->
+    <div class="gif-container" style="max-width: 225%; margin: 0 auto;">
+        <img src="images/Bullet_Showcase.png" alt="GIF Description" style="max-width: 225%; width: 100%;">
+    </div>
+    <br>
+</p>
+
+
+</div>
+<br>
 
 <!-- Team Section -->
 <div class="container py-2 text-left">
@@ -582,73 +597,6 @@ public class WaypointUI : MonoBehaviour
             </div>
         </div>
         <br>
-        <hr class="my-4" style="border-width: 2px; width: 450px;">
-
-        <!-- Third image (new) -->
-        <p class="text-center text-muted lead">Here is the Bullet I modeled and textured!</p>
-        <div class="image-container" style="display: flex; max-width: 2400px;">
-            <!-- First image -->
-            <div class="gif-container" style="max-width: 140%; margin: 0 auto;">
-                <img src="images/Bullet-Texture.jpeg" alt="GIF Description" style="max-width: 150%; width: 90%;" id="enlargeImage4">
-            </div>
-            <!-- Second image -->
-            <div class="gif-container" style="max-width: 150%; margin: 0 auto;">
-                <img src="images/Bullet-Texture.jpeg" alt="GIF Description" style="max-width: 150%; width: 90%;" id="enlargeImage5">
-                <br>
-                <br>       
-            </div>
-    </p>
-    
-    <script>
-        let imageClicked3 = false;
-        let imageClicked4 = false;
-        let imageClicked5 = false;
-    
-        const enlargeButton3 = document.getElementById('enlargeImage3');
-        const enlargeButton4 = document.getElementById('enlargeImage4');
-        const enlargeButton5 = document.getElementById('enlargeImage5');
-    
-        enlargeButton3.addEventListener('click', function() {
-            if (imageClicked3) {
-                enlargeButton3.style.width = '90%'; // Adjust the size as needed
-            } else {
-                enlargeButton3.style.width = '150%'; // Adjust the size as needed
-            }
-            imageClicked3 = !imageClicked3;
-        });
-
-        enlargeButton4.addEventListener('click', function() {
-            if (imageClicked4) {
-                enlargeButton4.style.width = '90%'; // Adjust the size as needed
-            } else {
-                enlargeButton4.style.width = '95%'; // Adjust the size as needed
-            }
-            imageClicked4 = !imageClicked4;
-        });
-
-        enlargeButton5.addEventListener('click', function() {
-            if (imageClicked5) {
-                enlargeButton5.style.width = '90%'; // Adjust the size as needed
-            } else {
-                enlargeButton5.style.width = '95%'; // Adjust the size as needed
-            }
-            imageClicked5 = !imageClicked5;
-        });
-    </script>
-    
-    <style>
-        .gif-container {
-            cursor: pointer;
-            transition: transform 0.2s;
-        }
-    
-        .gif-container:hover {
-            transform: scale(1.02); /* You can adjust the desired scale factor */
-        }
-    </style>
-</div>
-
-    
 
 </div>
     </div>
