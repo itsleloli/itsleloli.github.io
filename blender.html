@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leandro Bonora - Blender </title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Prism.js CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism.min.css">
+    <!-- Favicon link -->
+    <link rel="icon" type="image/png" href="images/pochita.png">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Custom CSS to ensure the navbar doesn't move when a scrollbar is added */
+        body {
+            padding-top: 50px; /* Add padding to the top of the body to account for the fixed navbar */
+        }
+
+        /* Custom CSS for code snippets background color */
+        .snippet {
+            background-color: #cbcbcb87; /* You can adjust this color as needed */
+            padding: 10px;
+            border-radius: 5px;
+            border-width: 5px;
+            margin-bottom: 5px;
+        }
+
+        /* Center-align the video within the section */
+        #video {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        /* Adjust video width */
+        #gameTrailer {
+            width: 70%; /* Adjust this value as needed */
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navigation Bar -->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #393e43 ; padding-top: 10px; padding-bottom: 20px; height: 70px;">
+    <a class="navbar-brand" href="index.html" style="font-size: 32px; padding-top: -1;">Leandro Bonora</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="index.html" style="font-size: 20px; padding: 10px 20px;">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="about.html" style="font-size: 20px; padding: 10px 20px;">About Me</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="pdf/CV Leandro Bonora 2023 English.pdf" target="_blank" style="font-size: 20px; padding: 10px 20px;">Resume</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<section id="portfolio" class="py-5" style="background: linear-gradient(to bottom, #74b5e4, #f0efeb, #fdfdfd, #b2d8eb, #b2d8eb);">
+    <div class="container">
+        <h1 class="text-center h1" style="font-size: 60px;">Blender</h1>
+        <p class="text-center">Blender Basics Adventure</p> 
+        <hr class="my-4" style="border-width: 2px;">
+        <div class="row">
+            <!-- Your content here -->
+        </div>
+
+        
+        <!-- Description Section -->
+        <div class="container py-2 text-left">
+            <h2>Description</h2>
+            <p style="font-size: 21px; font-weight: normal;">
+                During my 1st internship, I had a two week period where I got to pick what I wanted to learn. Because I always had a interest in 
+                3D Modeling I decided to dive into it and learn Blender alongside 3D printing, So I could print out the models I would be making!
+            </p>
+            <div id="video" class="container py-5 text-center">
+                <h2 style="padding-top: 20px;">Showcase</h2>
+                <!-- First Video -->
+                <video id="gameTrailer-sea-monkey" controls style="width: 50%; max-width: 1200px; height: auto;">
+                    <source src="videos/Ring_showcase.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <br>
+            </div>
+</div>
+
+<!-- Team Section -->
+<div class="container py-2 text-left">
+    <h2>Goals</h2>
+    <p style="font-size: 21px; font-weight: normal;">
+        For the 2 weeks I had set 4 Goals for myself those being:
+        <ol class="text-muted lead" style="font-size: 20px; font-weight: normal;"> <!-- You can adjust the font-size and font-weight as needed -->
+            <li>Complete a Blender tutorial.</li>
+            <li>Make a new burger model.</li>
+            <li>Design and make a ring.</li>
+            <li>3D Print the models.</li>
+        </ol>
+    </p>
+    <br>
+</div>
+
+
+<div class="container">
+    <h2 class="text-left h1">Work Process</h2>
+    <p class="text-left text-muted lead">
+        Since I had 0 experience in Blender I decided to start with a tutorial for beginners, I ended up going with the <a href="https://youtu.be/98qKfdJRzr0?si=Yz5NCoJ-abIGtZce" target="_blank">Sword Tutorial by CGTrack</a>
+        for no particular reason, this tutorial was great it really helped me understand the basics of Blender.
+    </p>
+
+    <br>
+    <h2 class="text-left h2">Tutorial Time</h2>
+    <p class="text-left text-muted lead">
+        I spent the first two days of the week following a tutorial. After completing it, I had created both the sword and a small block island. 
+        Thinking I would sculpt my upcoming burger, I decided to explore sculpting as well and managed to sculpt something vaguely resembling a face
+    </p>
+    <div class="text-center text-center">
+        <div class="image-container" style="display: flex; justify-content: center; max-width: 2400px;">
+            <div class="gif-container" style="max-width: 250%; margin: 0 10px;">
+                <img src="gifs/Sculpt.gif" alt="GIF Description" style="max-width: 100%; width: 90%;" id="enlargeNewImage">
+            </div>
+            <div class="photo-container" style="max-width: 45%; margin: 0 10px;">
+                <img src="images/Sword_Tutorial.png" alt="Photo Description" style="max-width: 83%; width: 100%;">
+                <div class="additional-gif-container" style="margin-top: 20px;">
+                    <img src="gifs/First Tutorial .gif" alt="Additional GIF Description" style="max-width: 83%; width: 100%;">
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr class="my-4" style="border-width: 2px; width: 450px;"> <!-- Adjust the width as needed -->
+    <br>
+    <h2 class="text-left h2">Burger!</h2>
+
+    <p class="text-left text-muted lead">
+        After grasping the basics of Blender, 
+        I dedicated the rest of the week to making a Burger model for another Chef Line's Journey. 
+        While working on the burger model, I wasn't really that fond of it and as such. 
+         I ended up creating two slightly different versions, primarily varying in approach; for instance, 
+        using a cloth simulation for the cheese. Instead of soft selecting the edges and pulling it down and bending it.
+    </p>
+    <p class="text-left text-muted lead">
+        While making the burgers, I decided to adopt a 'we'll figure it out later' mentality, 
+        simply trying things to make them work and then reflecting on what could have been done more easily or simply, 
+        such as with the cheese. Despite this approach, I thoroughly enjoyed the process of making the burgers. 
+        Printing it out after making a few adjustments to turn it into a keychain was honestly pure bliss. 
+        I sliced the burger in Prusa Slicer and printed it out using Mango Yellow PLA
+    </p>
+    <br>
+    <div class="image-container" style="display: flex; justify-content: center; max-width: 2400px;">
+        <div class="gif-container" style="max-width: 45%; margin: 0 10px;">
+            <img src="gifs/Burgers.gif" alt="GIF Description" style="max-width: 100%; width: 100%;" id="enlargeNewImage">
+        </div>
+        <div class="gif-container" style="max-width: 45%; margin: 0 10px;">
+            <img src="gifs/3DBurger.gif" alt="New GIF Description" style="max-width: 100%; width: 90%;">
+        </div>
+    </div>
+    <br>
+    <br>
+    <div class="text-center">
+        <div class="container py-3 text-center">
+            <p class="text-muted lead">
+                PS. No, I didn't end up sculpting at all. I did, however, use Geometry nodes to create the Sesame Seeds and Indents :3 for those who are interested, here you go!
+            </p>
+            <button id="toggleButton" class="btn btn-custom-color btn-custom-text-size">Show Geometry Node GIF</button>
+            <div id="gifContainer" class="gif-container" style="max-width: 100%; margin: 0 auto; display: none;">
+                <img src="gifs/GeometryNode.gif" alt="New GIF Description" style="max-width: 100%; width: 90%;">
+            </div>
+        </div>
+
+        
+        <style>
+            .btn-custom-color {
+                background-color: #74b5e4;
+                border-color: #74b5e4;
+            }
+        
+            .btn-custom-color:hover {
+                background-color: #5f9de9;
+                border-color: #5f9de9;
+            }
+        
+            .btn-custom-text-size {
+                font-size: 22px; /* Adjust the font size as needed */
+            }
+        </style>
+        
+        <script>
+            document.getElementById("toggleButton").addEventListener("click", function() {
+                var gifContainer = document.getElementById("gifContainer");
+                if (gifContainer.style.display === "none") {
+                    gifContainer.style.display = "block";
+                    document.getElementById("toggleButton").textContent = "Hide GIF";
+                } else {
+                    gifContainer.style.display = "none";
+                    document.getElementById("toggleButton").textContent = "Show Geometry Node GIF";
+                }
+            });
+        </script>
+        
+    
+    
+</div>
+
+
+
+<br>
+<br>
+<h2 class="text-left h2">Ring</h2>
+<div class="text-left text-left">
+    <p class="text-left text-muted lead">
+        I spent most of week 2 working on a design for the ring I wanted to make and ultimately landed on this signet-style ring, 
+        which incorporates some Bone-esque features that I liked! I honestly had the hardest time finding a design I liked, so underneath, 
+        you can see some of my not-so-artistic 'sketches'.
+    </p>
+    <br>
+    <p class="text-center text-muted lead">
+        <!-- Image Section -->
+        <div class="text-center">
+            <div class="image-container" style="display: flex; justify-content: center; max-width: 2400px;">
+                <div class="photo-container" style="max-width: 30%; margin: 0 10px;">
+                    <img src="images/Ring_2.png" alt="Sketch 1" style="max-width: 100%; width: 100%;">
+                </div>
+                <div class="photo-container" style="max-width: 30%; margin: 0 10px;">
+                    <img src="images/Sketches.jpeg" alt="Sketch 2" style="max-width: 100%; width: 100%;">
+                </div>
+                <div class="photo-container" style="max-width: 30%; margin: 0 10px;">
+                    <img src="images/Sun_Sketch.jpeg" alt="Sketch 3" style="max-width: 100%; width: 100%;">
+                </div>
+            </div>
+        </div>
+        <br>
+
+    <div class="text-center text-center">
+        <br>
+        <p class="text-center text-muted lead">Underneath, you can see the ring I made in the end!</p>
+        <div class="gif-container-wrapper" style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+            <div class="gif-container" style="max-width: 45%; margin: 0 auto;">
+                <img src="gifs/Ring_Gif.gif" alt="GIF Description" style="max-width: 100%; width: 100%;" id="enlargeNewImage">
+                <br>
+            </div>
+            <div class="gif-container" style="max-width: 45%; margin: 0 auto;">
+                <img src="gifs/Ring_Gif.gif" alt="Second GIF Description" style="max-width: 100%; width: 100%;" id="enlargeSecondImage">
+                <br>
+            </div>
+        </div>
+    </div>
+    
+    
+    <script>
+        let imageClicked = false;
+        let newImageClicked = false;
+    
+        const enlargeButton = document.getElementById('enlargeImage');
+        const enlargeNewImageButton = document.getElementById('enlargeNewImage');
+        const gifContainer = document.querySelector('.gif-container');
+    
+        enlargeButton.addEventListener('click', function() {
+            if (imageClicked) {
+                enlargeButton.style.width = '60%'; // Adjust the size as needed
+            } else {
+                enlargeButton.style.width = '90%'; // Adjust the size as needed
+            }
+            imageClicked = !imageClicked;
+        });
+    </script>
+    
+    <style>
+        .image-container {
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+    
+        .image-container:hover {
+            transform: scale(1.02); /* You can adjust the desired scale factor */
+        }
+    </style>
+    
+    <br>
+    <br>
+
+    </div>
+    <!-- Reflection -->
+    <div class="container">
+        <h2 class="text-left h1">Reflection</h2>
+        <p class="text-left text-muted lead">
+            Looking back, I 3D modeled in Blender for the first time and learned how to 3D print. 
+            It was honestly really fun and surprisingly easy to 3D print, especially not having to think about any topology and just being 
+            able to make shapes and join them together without really thinking. I'm really glad I decided to learn how to do this, 
+            as I'll definitely continue working in Blender and might even get a 3D printer of my own since I used the one we had at the office
+             where I was interning at the time!
+            <br>
+            As well as that I reached all 4 of my goals I set for these 2 weeks which felt great.
+            <img src="images/Final-Ring.png" alt="Image Description" style="max-width: 100%; height: auto; width: 100%;" id="enlargeImage">
+        </p>
+    </div>
+
+    
+
+<!-- Prism.js Initialization -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/components/prism-csharp.min.js"></script>
+
+<!-- JavaScript to set initial video volume -->
+<script>
+    // Set the initial volume to 10% (0.1)
+    document.getElementById("gameTrailer-sea-monkey").volume = 0.05;
+</script>
+
+<!-- Bootstrap JS and jQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
