@@ -65,7 +65,7 @@
     </div>
 </nav>
 
-<section id="portfolio" class="py-5" style="background: linear-gradient(to bottom, #74b5e4, #f0efeb, #fdfdfd, #f0efeb, #e8c29e);">
+<section id="portfolio" class="py-5" style="background: linear-gradient(to bottom, #74b5e4, #f0efeb, #fdfdfd, #f0efeb, #3f7347);">
     <div class="container">
         <h1 class="text-center h1" style="font-size: 60px;">Chef Line's Journey</h1> 
         <h1 class="text-center h1" style="font-size: 45px;">Work In Progress</h1> 
@@ -80,11 +80,10 @@
         <div class="container py-2 text-left">
             <h2>Description</h2>
             <p style="font-size: 21px; font-weight: normal;">
-                This project stems from my 1st internship where I had the rare opportunity to work on my own project 
-                with my own team of 6 whilst being guided by the Company we we're interning at
+                This project originated from my first internship at a company called EmberGlitch. I had the unique opportunity to lead my own project with a dedicated team of six members. Throughout this experience, we received valuable guidance and support from the professionals at EmberGlitch.
             </p>
             <p style="font-size: 21px; font-weight: normal;">
-                The premise of the game is that u are playing as a chef that got transported to a food themed world and where u have to fight or cook ur way through! To solve the mysteries of this world and why U are there!
+                The premise of the game is that you play as a chef who has been transported to a food-themed world. In this world, you must fight or cook your way through various challenges to uncover the mysteries of this strange place and understand why you were brought here.
             </p>
 
             <div id="video" class="container py-5 text-center">
@@ -117,20 +116,21 @@
 <div class="container py-2 text-left">
     <h2>Team</h2>
     <p style="font-size: 21px; font-weight: normal;">
-        This team was 
+        This team consisted of nearly the same members as in my previous project, Starline. Consequently, teamwork was quite seamless, and I encountered absolutely no difficulties working with these fantastic individuals.
     </p>
     
     <p style="font-size: 20px; font-weight: normal;">
-        <strong>Team Members: 5</strong>
+        <strong>Team Members: 6</strong>
         <ul class="text-muted lead" style="font-size: 20px; font-weight: normal;">
             <strong>Developers</strong>
             <li>Leandro Bonora (Programming)</li>
             <li>Milan Driece (Programming)</li>
             <br>
             <strong>Artists</strong>
-            <li>Aiden Glen (2D)</li>
-            <li>Annelot van der Leden (2D)</li>
-            <li>Anna Heijblom (3D, VFX)</li>
+            <li>Aiden Glen (2D & 3D)</li>
+            <li>Anna Heijblom (3D, Animator)</li>
+            <li>Jordy Gouw (3D Prop Artist)</li>
+            <li>Jae Gerritsen (3D, VFX)</li>
         </ul>
         <br>
     </p>
@@ -140,33 +140,42 @@
 <div class="container">
     <h2 class="text-left h1">Work Process</h2>
     <p class="text-left text-muted lead">
-        Since 
+        Since this project was quite different from the usual, it was particularly interesting for me. I decided to take on the role of Scrum Master once again, actively working to improve my team leadership skills alongside my mentors at EmberGlitch. We placed a strong emphasis on learning from professionals, which resulted in thorough documentation, planning, and discussions within the team before diving into development.
     </p>
 
     <p class="text-left text-muted lead">
-        I worked on stuff such as: Enemy, Projectile, Score and the Wave Manager alongside all UI related things.
-    </p>
-    <p class="text-left text-muted lead">
-        Also! 
+        I worked on various aspects of the project, including enemy design and behavior, as well as several smaller features. I handled most of the UI-related tasks and implemented interactive elements, health systems, and more.
     </p>
     <hr class="my-4" style="border-width: 2px; width: 450px;"> <!-- Adjust the width as needed -->
     <br>
 
 <div class="text-left h4 text-left">
-    <p>WaveManager</p>
+    <p>Enemy Behavior</p>
 </div>
 <div class="text-left text-left">
     <p class="text-left text-muted lead">
-        Since we wanted 
+        For the enemy behavior in our game, I implemented a system based on state machines. 
+        This approach allowed me to efficiently manage and control various states such as idle, roaming, chasing, attacking, and fleeing. 
+        Each state was designed to handle specific conditions and transitions, 
+        ensuring that the enemies behaved dynamically and realistically within the game environment. 
+        Taking this approach was a nice challenge because previously, I had implemented almost everything in the same script, 
+        Recognizing that my previous approach, which consolidated everything into a single script, was not ideal, I transitioned to state machines. 
+        This decision enabled me to modularize and organize enemy behaviors more effectively, making the code more readable and maintainable for my fellow developer. 
+        The resulting flexible framework not only enhanced gameplay immersion but also increased amount of effort needed for making new enemies.
+
+
     </p>
     <br>
     <p class="text-ce text-muted lead">
-        The Wave Manager 
+        Im really happy with how everything turned out. 
+        Switching to state machines made it so much easier for me to add different types of enemies and reuse stuff effectively. 
+        It streamlined the whole process and made the enemies more flexible. Now, 
+        I can quickly tweak and adjust enemy behaviors without a lot of hassle.
     </p>
 
     <div class="text-center text-center">
         <br>
-        <p class="text-center text-muted lead">Underneath, you can see the Wave Manager structure in the inspector, as well as the enemy data Scriptable Object. And a sped up gif of the Wave Manager in action.</p>
+        <p class="text-center text-muted lead">Underneath, you can see one of the small critters I made aswell as the StateMachine and State Scripts I made that serve as the base for the critter states</p>
         <div class="image-container" style="display: flex; max-width: 2400px;">
             <div class="gif-container" style="max-width: 60%; margin: 0 auto;">
                 <img src="images/Wave-Manager.jpeg" alt="New Image Description" style="max-width: 100%; height: auto; width: 60%;" id="enlargeImage">
@@ -175,7 +184,6 @@
                 <img src="gifs/Wavemanager.gif" alt="GIF Description" style="max-width: 100%; width: 70%;" id="enlargeNewImage">
                 <br>
                 <br>
-                <img src="images/EnemyData.jpeg" alt="New Image Description" style="max-width: 100%; height: auto; width: 70%;" id="enlargeImage">
             </div>
         </div>
     </div>
@@ -218,9 +226,45 @@
             <button class="btn btn-primary custom-button" data-toggle="collapse" data-target="#snippet1" style="background-color: rgb(113, 113, 113); padding: 15px 30px; font-size: 18px;">Show Script</button>
         </div>
         <div id="snippet1" class="collapse">
-            <pre style="border: none; background-color: #e9e9e9; color: white;"> <!-- Set the background color to dark gray (#333) and text color to white -->
+            <pre style="border: none; background-color: #ffffff; color: white;"> <!-- Set the background color to dark gray (#333) and text color to white -->
                 <code class="language-csharp">
-public class WaveManager : MonoBehaviour
+                    public class StateMachine : State
+                    {
+                        [SerializeField] protected State _currentState;
+                    
+                        public void GoToState<T>()
+                        {
+                            GoToState(typeof(T));
+                        }
+                    
+                        public void GoToState(Type type)
+                        {
+                            if (_currentState != null)
+                            {
+                                _currentState.Deactivate();
+                            }
+                    
+                            State newState = GetComponentInChildren(type) as State;
+                            if (newState == null)
+                            {
+                                GameObject go = new GameObject(type.Name);
+                                go.transform.SetParent(transform);
+                                newState = go.AddComponent(type) as State;
+                            }
+                    
+                            newState.Machine = this;
+                            newState.Activate();
+                            _currentState = newState;
+                        }
+                    
+                        private void Update()
+                        {
+                            if (_currentState != null)
+                            {
+                                _currentState.ActiveUpdate();
+                            }
+                        }
+                    }
 
                 </code>
             </pre>
@@ -237,16 +281,22 @@ public class WaveManager : MonoBehaviour
     <div class="container">
         <h2 class="text-left h1">Reflection</h2>
         <p class="text-left text-muted lead">
-            I had a lot of fun during this Game Jam because we had a very nice approach to it and decided to go very simple but very polished which was great in my opinion.  
+            This project was unlike any other I've worked on in several ways. Our approach was notably different; 
+            instead of diving straight into development, we took quite some time and crafted a comprehensive Game Design Document spanning over 40 pages. 
+            This method was a shift from my usual trial-and-error approach, but it proved invaluable in guiding our development process.
             <br>
             <br>
-            I do have to admit I had a little trouble switching on the 1st day from constantly making 3D projects to going back to 2D but that switch was quickly made!
+            Transitioning from a school environment to an office setting was a refreshing change of pace, 
+            albeit it took some adjustment initially. Fortunately, I quickly adapted to my new surroundings and embraced the professional atmosphere.
             <br>
             <br>
-            My favorite part is definitely the ending screen u get when u finished the game and the dialogue u get with it! I won't spoil the dialogue u get though >:D 
+            Reflecting on this project, I realize how much I've grown, both professionally and personally. 
+            Beyond developing technical skills, I've learned the importance of empathy and collaboration. 
+            This experience has really cemented the realization of the value of being a supportive team member, 
+            which has had a positive impact on both my work and relationships with people in general.
             <br>
             <br>
-            <img src="images/sea-monkey-end-screen.png" alt="Image Description" style="max-width: 100%; height: auto; width: 100%;" id="enlargeImage">
+            <img src="images/ChefLine-Main-Menu.jpeg" alt="Image Description" style="max-width: 100%; height: auto; width: 100%;" id="enlargeImage">
         </p>
     </div>
 
