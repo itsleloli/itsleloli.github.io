@@ -65,7 +65,7 @@
     </div>
 </nav>
 
-<section id="portfolio" class="py-5" style="background: linear-gradient(to bottom, #e4aa74, #f0efeb, #fdfdfd, #f0efeb, #3f7347);">
+<section id="portfolio" class="py-5" style="background: linear-gradient(to bottom, #e4b074, #f0efeb, #fdfdfd, #f0efeb, #3f7347);">
     <div class="container">
         <h1 class="text-center h1" style="font-size: 60px;">Chef Line's Journey</h1> 
         <h1 class="text-center h1" style="font-size: 45px;">Work In Progress</h1> 
@@ -85,7 +85,15 @@
             <p style="font-size: 21px; font-weight: normal;">
                 The premise of the game is that you play as a chef who has been transported to a food-themed world. In this world, you must fight or cook your way through various challenges to uncover the mysteries of this strange place and understand why you were brought here.
             </p>
-
+            <div id="video" class="container py-5 text-center">
+                <h2 style="padding-top: 20px;">Chef Line's Journey Playthrough Teaser</h2>
+                <!-- First Video -->
+                <video id="gameTrailer-chefline" controls style="width: 100%; max-width: 1200px; height: auto;">
+                    <source src="videos/ChefLine's-Journey-Gameplay.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <br>
+            </div>
             
             
 </div>
@@ -566,7 +574,7 @@ public class EnemyRoamState : BaseEnemyState
 <!-- JavaScript to set initial video volume -->
 <script>
     // Set the initial volume to 10% (0.1)
-    document.getElementById("gameTrailer-sea-monkey").volume = 0.05;
+    document.getElementById("gameTrailer-chefline").volume = 0.05;
 </script>
 
 <!-- Bootstrap JS and jQuery -->
