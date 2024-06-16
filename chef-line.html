@@ -45,7 +45,7 @@
 <body>
 
 <!-- Navigation Bar -->
-<nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #393e43 ; padding-top: 10px; padding-bottom: 20px; height: 70px;">
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #433b39 ; padding-top: 10px; padding-bottom: 20px; height: 70px;">
     <a class="navbar-brand" href="index.html" style="font-size: 32px; padding-top: -1;">Leandro Bonora</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -65,7 +65,7 @@
     </div>
 </nav>
 
-<section id="portfolio" class="py-5" style="background: linear-gradient(to bottom, #74b5e4, #f0efeb, #fdfdfd, #f0efeb, #3f7347);">
+<section id="portfolio" class="py-5" style="background: linear-gradient(to bottom, #e4aa74, #f0efeb, #fdfdfd, #f0efeb, #3f7347);">
     <div class="container">
         <h1 class="text-center h1" style="font-size: 60px;">Chef Line's Journey</h1> 
         <h1 class="text-center h1" style="font-size: 45px;">Work In Progress</h1> 
@@ -86,19 +86,8 @@
                 The premise of the game is that you play as a chef who has been transported to a food-themed world. In this world, you must fight or cook your way through various challenges to uncover the mysteries of this strange place and understand why you were brought here.
             </p>
 
-            <div id="video" class="container py-5 text-center">
-                <h2 style="padding-top: 20px;">Chef Line's Journey Trailer</h2>
-                <!-- First Video -->
-                <video id="gameTrailer-sea-monkey" controls style="width: 100%; max-width: 1200px; height: auto;">
-                    <source src="videos/sea-monkey.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-                <br>
-            </div>
-              
-            <!-- <div class="container py-3 text-center">
-                <a href="https://itsleloli.itch.io/sea-monkey" class="btn btn-custom-color btn-custom-text-size" style="width: 250px; height: 80px; line-height: 60px; color: rgb(0, 0, 0);" target="_blank">Play on Itch.io</a>
-            </div> -->
+            
+            
 </div>
 
 <style>
@@ -146,6 +135,13 @@
     <p class="text-left text-muted lead">
         I worked on various aspects of the project, including enemy design and behavior, as well as several smaller features. I handled most of the UI-related tasks and implemented interactive elements, health systems, and more.
     </p>
+    <br> 
+    <p class="text-left text-muted lead">
+        I also contributed significantly to the extensive Game Design Document 30+ Pages we created before commencing development. Feel free to check it out!
+    </p>
+    <div class="container py-3 text-center">
+        <a href="pdf/Chef Lines Journey GDD.pdf" target="_blank" class="btn btn-custom-color btn-custom-text-size" style="width: 320px; height: 60px; line-height: 40px; color: rgb(0, 0, 0);" target="_blank">Game Design Document</a>
+    </div>
     <hr class="my-4" style="border-width: 2px; width: 450px;"> <!-- Adjust the width as needed -->
     <br>
 
@@ -178,55 +174,53 @@
         <p class="text-center text-muted lead">Underneath, you can see one of the small critters I made aswell as the StateMachine and State Scripts I made that serve as the base for the critter states</p>
         <div class="image-container" style="display: flex; max-width: 2400px;">
             <div class="gif-container" style="max-width: 60%; margin: 0 auto;">
-                <img src="images/Wave-Manager.jpeg" alt="New Image Description" style="max-width: 100%; height: auto; width: 60%;" id="enlargeImage">
+                <img src="gifs/Potato.gif" alt="GIF Description" style="max-width: 100%; width: 95%;" id="enlargeNewImage">
             </div>
             <div class="gif-container" style="max-width: 60%; margin: 0 auto;">
-                <img src="gifs/Wavemanager.gif" alt="GIF Description" style="max-width: 100%; width: 70%;" id="enlargeNewImage">
-                <br>
-                <br>
+                <img src="gifs/Onion.gif" alt="GIF Description" style="max-width: 100%; width: 95%;" id="enlargeNewImage">
             </div>
+            <br>
+            <br>
         </div>
     </div>
-    
-    <script>
-        let imageClicked = false;
-        let newImageClicked = false;
-    
-        const enlargeButton = document.getElementById('enlargeImage');
-        const enlargeNewImageButton = document.getElementById('enlargeNewImage');
-        const gifContainer = document.querySelector('.gif-container');
-    
-        enlargeButton.addEventListener('click', function() {
-            if (imageClicked) {
-                enlargeButton.style.width = '60%'; // Adjust the size as needed
-            } else {
-                enlargeButton.style.width = '90%'; // Adjust the size as needed
+        <style>
+            .custom-button {
+                background-color: rgb(113, 113, 113);
+                padding: 15px 30px;
+                font-size: 18px;
             }
-            imageClicked = !imageClicked;
-        });
-    </script>
-    
+            pre {
+                border: none;
+                background-color: #333;
+                color: white;
+                padding: 10px;
+            }
+        </style>
+    </head>
     <style>
-        .image-container {
-            cursor: pointer;
-            transition: transform 0.2s;
-        }
-    
-        .image-container:hover {
-            transform: scale(1.02); /* You can adjust the desired scale factor */
+        pre {
+            background-color: #f8f9fa;
+            border: 1px solid #ddd;
+            padding: 10px;
         }
     </style>
-    
-
-<br>
-    </style>
-            <br>
-        <!-- Button 1: Code Snippet 1 -->
-        <div class="text-center mb-2"> <!-- Center-align the button text -->
-            <button class="btn btn-primary custom-button" data-toggle="collapse" data-target="#snippet1" style="background-color: rgb(113, 113, 113); padding: 15px 30px; font-size: 18px;">Show Script</button>
+</head>
+<body>
+    <div class="container">
+        <br>
+        <div class="row justify-content-center mb-2">
+            <!-- Button 1: Show Script 1 -->
+            <div class="col-md-3 text-center">
+                <button class="btn btn-primary custom-button" data-toggle="collapse" data-target="#snippet1"> StateMachine Script</button>
+            </div>
+            <!-- Button 2: Show Script 2 -->
+            <div class="col-md-3 text-center">
+                <button class="btn btn-primary custom-button" data-toggle="collapse" data-target="#snippet2">State Script</button>
+            </div>
         </div>
+        <!-- Code Snippet 1 -->
         <div id="snippet1" class="collapse">
-            <pre style="border: none; background-color: #ffffff; color: white;"> <!-- Set the background color to dark gray (#333) and text color to white -->
+            <pre>
                 <code class="language-csharp">
                     public class StateMachine : State
                     {
@@ -265,18 +259,281 @@
                             }
                         }
                     }
-
                 </code>
             </pre>
         </div>
-        <p class="text-left text-muted lead">The WaveManager script is responsible for managing 
-            the wave-based gameplay, including enemy spawning with their accurate data, videos for the different waves. This makes it really easy for me to adjust and or add waves.
-        <br>
-        <br>
+        <!-- Code Snippet 2 -->
+        <div id="snippet2" class="collapse">
+            <pre>
+                <code class="language-csharp">
+                    public class State : MonoBehaviour
+                    {
+                        public StateMachine Machine { get; set; }
+                    
+                        public void Activate()
+                        {
+                            OnActivate();
+                        }
+                    
+                        public void ActiveUpdate()
+                        {
+                            OnActiveUpdate();
+                        }
+                    
+                        public void Deactivate()
+                        {
+                            OnDeactivate();
+                        }
+                    
+                        protected virtual void OnActivate()
+                        {
+                    
+                        }
+                    
+                        protected virtual void OnActiveUpdate()
+                        {
+                    
+                        }
+                    
+                        protected virtual void OnDeactivate()
+                        {
+                    
+                        }
+                    }
+                </code>
+            </pre>
+        </div>
     </div>
-</div>
+    <div class="text-left h4 text-left">
+        <p>Critter Behavior</p>
+    </div>
+    <div class="text-left text-left">
+        <p class="text-left text-muted lead">
+            For critter behavior, I made the following scripts managing various states for their interactions in the game environment. 
 
+            The foundational class supporting these scripts is the BaseEnemyState, 
+            integrating components such as Field of View (FOV) and serving as the basis for specific state scripts:
+            CritterAttackState, EnemyIdleState, EnemyRoamState, and EnemyChaseState.
+        </p>
+        <br>
+        <p class="text-ce text-muted lead">
+            The EnemyRoamState script manages the roaming behavior of AI enemies within the game environment. 
+            This script is integral to controlling how enemies navigate and explore their surroundings, enhancing the game's realism and challenge.
+            The script allows enemies to either patrol predefined points (_fixedRoamPoints) or dynamically explore new areas 
+            based on environmental conditions.
+            Critters adjust their roaming patterns based on game events and player proximity, 
+            making their behavior more responsive and engaging.
+            I added in Debugging options to be able to quickly check why something is not working and help troubleshooting.
+        </p>
+        <br>
+           <!-- Button 2: Code Snippet 2 -->
+           <div class="text-center mb-2"> <!-- Center-align the button text -->
+            <button class="btn btn-primary custom-button" data-toggle="collapse" data-target="#snippet3" style="background-color: rgb(113, 113, 113); padding: 15px 30px; font-size: 18px;">EnemyRoamState Script</button>
+        </div>
+        <div id="snippet3" class="collapse">
+            <pre style="border: none; background-color: #e9e9e9; color: rgb(255, 255, 255);"> <!-- Set the background color to gray and text color to white -->
+                <code class="language-csharp">              
+public class EnemyRoamState : BaseEnemyState
+{
+    [Header("Fixed Roam Settings")]
+    [SerializeField] protected bool _useFixedRoamPoints = false;
+    [SerializeField] protected Vector3[] _fixedRoamPoints;
+
+    protected CapsuleCollider _capsuleCollider;
+    protected Vector3 _walkPoint;
+    protected bool _walkPointSet;
+
+    private int _currentPatrolIndex = 0;
+    private int _maxRecursionDepth = 20;
+
+    protected override void OnActivate()
+    {
+        if (_capsuleCollider == null) _capsuleCollider = Machine.GetComponent<CapsuleCollider>();
+    }
+
+    protected override void OnActiveUpdate()
+    {
+        FindTargetsInView();
+        HandleRoaming();
+
+        ToggleHealthBar(false);
+        if (Machine._anim != null) Machine._anim.SetFloat("WalkSpeed", Machine._agent.velocity.magnitude);
+
+        if (Machine._targetsInView.Count > 0)
+        {
+            Machine.GoToState<EnemyChaseState>();
+        }
+
+        if (Machine._currentRoamTime >= Machine._maxTimeTillIdle && Machine._ableToGoBackToIdle)
+        {
+            Machine._currentRoamTime = 0;
+            _walkPoint = Vector3.zero;
+            _walkPointSet = false;
+            Machine.GoToState<EnemyIdleState>();
+        }
+    }
+
+    private void HandleRoaming()
+    {
+        Machine._currentRoamTime += Time.deltaTime;
+
+        if (Vector3.Distance(transform.position, Machine._startPoint) > Machine._maxDistanceFromStartPoint)
+        {
+            TurnBackToStart();
+            return;
+        }
+
+        if (!Machine._lastLocationSet)
+        {
+            Roaming();
+        }
+        else
+        {
+            Machine._agent.SetDestination(_walkPoint = Machine.LastTargetPosition);
+            Vector3 distanceToWalkPoint = transform.position - _walkPoint;
+
+            if (distanceToWalkPoint.magnitude < 1.25f)
+            {
+                _walkPointSet = false;
+                Machine._lastLocationSet = false;
+            }
+        }
+    }
+
+    protected void Roaming()
+    {
+        Machine._agent.isStopped = false;
+
+        if (_useFixedRoamPoints && _fixedRoamPoints.Length > 0)
+        {
+            Machine._agent.SetDestination(_fixedRoamPoints[_currentPatrolIndex]);
+
+            if (Vector3.Distance(transform.position, _fixedRoamPoints[_currentPatrolIndex]) < 1f)
+                _currentPatrolIndex = (_currentPatrolIndex + 1) % _fixedRoamPoints.Length;
+        }
+        else if (!_useFixedRoamPoints)
+        {
+            if (!_walkPointSet)
+                SearchWalkPoint();
+
+            if (_walkPointSet)
+                Machine._agent.SetDestination(_walkPoint);
+
+            Vector3 distanceToWalkPoint = transform.position - _walkPoint;
+
+            if (distanceToWalkPoint.magnitude < 1.25f)
+                _walkPointSet = false;
+        }
+    }
+
+    protected void SearchWalkPoint(int recursionDepth = 0)
+    {
+        if (recursionDepth >= _maxRecursionDepth)
+        {
+            if (Machine._enableDebugLogs) Debug.LogWarning("Max recursion depth reached. Unable to find a walk point.");
+            TurnAround();
+            return;
+        }
+
+        Vector3 randomPoint = RandomPointInViewCone(transform.position, Machine._FOV._viewAngle, Machine._FOV._viewRadius);
+
+        if (Vector3.Distance(randomPoint, Machine._startPoint) > Machine._maxDistanceFromStartPoint)
+        {
+            if (Machine._enableDebugLogs) Debug.Log($"Recursion Depth: {recursionDepth}, Distance from Start point too great");
+            SearchWalkPoint(recursionDepth + 1);
+            return;
+        }
+
+        RaycastHit hitInfo;
+        if (Physics.Raycast(randomPoint + Vector3.up * 100f, Vector3.down, out hitInfo, Mathf.Infinity, Machine._groundLayerMask))
+        {
+            randomPoint.y = hitInfo.point.y + _capsuleCollider.height * 0.5f;
+        }
+        else
+        {
+            if (Machine._enableDebugLogs) Debug.Log($"Recursion Depth: {recursionDepth}, Failed to find ground for Y position");
+            SearchWalkPoint(recursionDepth + 1);
+            return;
+        }
+
+        NavMeshHit navMeshHit;
+        if (!NavMesh.SamplePosition(randomPoint, out navMeshHit, 1.0f, NavMesh.AllAreas))
+        {
+            if (Machine._enableDebugLogs) Debug.Log($"Recursion Depth: {recursionDepth}, Point not on NavMesh");
+            SearchWalkPoint(recursionDepth + 1);
+            return;
+        }
+
+        if (Physics.Raycast(transform.position, randomPoint - transform.position, out hitInfo, Machine._attackRange, Machine._obstacleMask))
+        {
+            if (hitInfo.collider != null)
+            {
+                if (Machine._enableDebugLogs) Debug.Log($"Recursion Depth: {recursionDepth}, Obstacle detected in front");
+                SearchWalkPoint(recursionDepth + 1);
+                return;
+            }
+        }
+
+        if (randomPoint.y > Machine.transform.position.y + 0.5f)
+        {
+            if (Machine._enableDebugLogs) Debug.Log($"Recursion Depth: {recursionDepth}, Point too high");
+            SearchWalkPoint(recursionDepth + 1);
+            return;
+        }
+
+        _walkPoint = randomPoint;
+        _walkPointSet = true;
+        if (Machine._enableDebugLogs) Debug.Log($"Walk point found: {_walkPoint}, Recursion Depth: {recursionDepth}");
+    }
+
+    protected Vector3 RandomPointInViewCone(Vector3 origin, float angle, float radius)
+    {
+        Quaternion currentRotation = transform.rotation;
+        float randomAngle = Random.Range(-angle / 2f, angle / 2f);
+        Quaternion randomRotation = currentRotation * Quaternion.Euler(0f, randomAngle, 0f);
+        Vector3 randomDirection = randomRotation * Vector3.forward;
+        Vector3 randomPoint = origin + randomDirection * radius;
+        return randomPoint;
+    }
+
+    protected void TurnAround()
+    {
+        RaycastHit hitInfo;
+        Vector3 oppositeDirection = -transform.forward;
+        _walkPoint = transform.position + oppositeDirection * Machine._FOV._viewRadius;
+
+        if (Physics.Raycast(transform.position, oppositeDirection, out hitInfo, Machine._FOV._viewRadius, Machine._obstacleMask))
+        {
+            if (hitInfo.collider != null)
+            {
+                _walkPointSet = true;
+                if (Machine._enableDebugLogs) Debug.Log("Turned Around");
+                return;
+            }
+        }
+        _walkPointSet = true;
+    }
+
+    private void TurnBackToStart()
+    {
+        _walkPoint = Machine._startPoint;
+        Machine._agent.SetDestination(_walkPoint);
+        _walkPointSet = true;
+        _walkPoint = Vector3.zero;
+
+        _walkPointSet = false;
+        SearchWalkPoint();
+    }
+}
+                </code>
+            </pre>
+        </div>
     </div>
+        <br>
+        <br>
+</body>
+</html>
+
     <!-- Reflection -->
     <div class="container">
         <h2 class="text-left h1">Reflection</h2>
