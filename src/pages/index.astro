@@ -271,8 +271,8 @@ const games = [
         <li>
           <Note color="orange" size="sm" tilt={-2}>
             <span class="click-me sticker-yellow" aria-hidden="true"><b>8.3</b> cum laude</span>
-            <span>MBO Game Development, Grafisch Lyceum Utrecht <span class="visually-hidden">(graduated cum laude with an 8.3)</span></span>
-            <span class="note-foot">2021 – 2025</span>
+            <span class="study clear-sticker"><span>Game Development</span><span>Grafisch Lyceum Utrecht</span><span class="visually-hidden">(MBO 4, graduated cum laude with an 8.3)</span></span>
+            <span class="note-foot stacked"><span>MBO 4</span><span>2021 – 2025</span></span>
           </Note>
         </li>
         <li>
@@ -283,7 +283,7 @@ const games = [
         </li>
         <li>
           <Note color="orange" size="sm" tilt={-1}>
-            <span>Business IT & Management, Hogeschool Rotterdam</span>
+            <span class="study"><span>Business IT & Management</span><span>Hogeschool Rotterdam</span></span>
             <span class="note-foot stacked"><span>HBO bachelor</span><span>2026 – now</span></span>
           </Note>
         </li>
@@ -871,28 +871,27 @@ const games = [
     transition: transform 360ms var(--ease);
   }
 
-  /* Cum laude: yellow, stuck on the empty bottom-right corner so it never covers the note's text. */
+  /* Cum laude: a small yellow sticky note on the top-right corner, like "Play this one!". */
   .click-me.sticker-yellow {
     flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
+    justify-content: flex-start;
     gap: 1px;
-    width: auto;
-    aspect-ratio: auto;
-    padding: 7px 9px;
-    white-space: nowrap;
-    top: auto;
-    bottom: -12px;
-    right: -14px;
+    top: -16px;
+    right: -18px;
     background: var(--yellow);
-    transform: rotate(-7deg);
+    transform: rotate(7deg);
   }
 
-  @media (max-width: 700px) {
-    .click-me.sticker-yellow {
-      right: -26px;
-      bottom: -22px;
-    }
+  /* What I studied, then the school, with a little air between them. */
+  .study {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  /* Keep the note's own text out from under the sticker. */
+  .clear-sticker {
+    padding-right: 38px;
   }
 
   .sticker-yellow b {
