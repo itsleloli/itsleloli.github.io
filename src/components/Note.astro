@@ -15,11 +15,18 @@ interface Props {
 }
 
 const { color, tilt = 0, size = 'md', href, linkSkip = false } = Astro.props;
+// An easter egg: a line written on the wall behind the note, only seen once it's dragged away.
+// Rendered first: a slot filled with `{cond && ...}` still "has" content even when it's empty.
+const egg = Astro.slots.has('egg') ? (await Astro.slots.render('egg')).trim() : '';
+const hasEgg = egg !== '';
+const Spot = hasEgg ? 'div' : Fragment;
 // Every plain note can be picked up and moved; link notes stay put so a drag never fights a click.
 const drag = Astro.props.drag ?? !href;
 const Tag = href ? 'a' : 'div';
 ---
 
+<Spot {...(hasEgg ? { class: 'egg-spot' } : {})}>
+{hasEgg && <span class="egg" aria-hidden="true" set:html={egg} />}
 <Tag
   class:list={['note', `note-${color}`, `note-${size}`]}
   style={`--tilt: ${tilt}deg`}
@@ -29,6 +36,7 @@ const Tag = href ? 'a' : 'div';
 >
   <slot />
 </Tag>
+</Spot>
 
 <script>
   // Drag notes around the wall (desktop only). They settle with a fresh tilt where dropped,
@@ -84,6 +92,36 @@ const Tag = href ? 'a' : 'div';
 </script>
 
 <style>
+  /* The egg sits in the note's spot; the note (later in the DOM) paints over it. */
+  .egg-spot {
+    position: relative;
+    display: grid;
+  }
+
+  .egg {
+    position: absolute;
+    inset: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    color: var(--ink-2);
+    font-size: var(--fs-label);
+    font-weight: 650;
+    line-height: 1.25;
+    text-align: center;
+    text-wrap: balance;
+    transform: rotate(-2deg);
+  }
+
+  /* Phones can't drag notes, so there's nothing to find there. */
+  @media (max-width: 700px) {
+    .egg {
+      display: none;
+    }
+  }
+
   .note {
     position: relative;
     display: flex;

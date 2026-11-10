@@ -34,15 +34,17 @@ const skills = [
   {
     title: 'Keep the IT side running',
     proof: 'Google Workspace and everyday IT.',
+    egg: 'Have you tried turning it off and on again? Yes, I’ll even do the IT helpdesk.',
   },
-];
+] as { title: string; proof: string; egg?: string }[];
 
 // Off-the-clock notes. Give one an href (e.g. an Instagram or portfolio link)
 // and it becomes a link that lifts on hover; leave it empty to keep it a plain note.
-const hobbies: { text: string; sub?: string; tilt: number; href?: string }[] = [
-  { text: 'I love food.', sub: 'I still work in a Korean kitchen sometimes.', tilt: -3 },
+// `egg` is written on the wall behind the note; `eggMail` adds an email link under it.
+const hobbies: { text: string; sub?: string; tilt: number; href?: string; egg?: string; eggMail?: string }[] = [
+  { text: 'I love food.', sub: 'I still work in a Korean kitchen sometimes.', tilt: -3, egg: 'My favourite dish? Bibimbap.' },
   { text: 'I sew and design my own clothes.', tilt: 2, href: '' },
-  { text: 'Always planning the next trip.', tilt: -1.5 },
+  { text: 'Always planning the next trip.', tilt: -1.5, egg: 'Where should I go next?', eggMail: 'Tell me' },
   { text: 'Lifting heavy things for fun (gym).', tilt: 1 },
 ];
 
@@ -92,7 +94,10 @@ const games = [
       <p class="hero-sub">Software developer. I build the systems businesses run on: e‑commerce, Odoo, integrations and web apps.</p>
 
       <div class="hero-wall" data-wall data-links>
-        <Note color="yellow" size="md" tilt={-3} drag>I find out what a business really needs,</Note>
+        <Note color="yellow" size="md" tilt={-3} drag>
+          I find out what a business really needs,
+          <Fragment slot="egg">You found one. There are a few more.</Fragment>
+        </Note>
         <Note color="blue" size="md" tilt={2} drag>design how its systems fit together,</Note>
         <Note color="orange" size="md" tilt={-1.5} drag>and build the parts people use.</Note>
         <Note color="pink" size="md" tilt={3} href={`mailto:${email}`} linkSkip>
@@ -167,6 +172,7 @@ const games = [
                 <Note color="blue" size="sm" tilt={[-2, 1.5, -1, 2][i]}>
                   <span class="can-name">{k.title}</span>
                   <span class="can-proof">{k.proof}</span>
+                  {k.egg && <Fragment slot="egg">{k.egg}</Fragment>}
                 </Note>
               </li>
             ))
@@ -257,6 +263,16 @@ const games = [
                   ) : (
                     h.text
                   )}
+                  {h.egg && (
+                    <Fragment slot="egg">
+                      {h.egg}
+                      {h.eggMail && (
+                        <a href={`mailto:${email}`} tabindex="-1">
+                          {h.eggMail} <Arrow />
+                        </a>
+                      )}
+                    </Fragment>
+                  )}
                 </Note>
               </li>
             ))
@@ -290,6 +306,10 @@ const games = [
         <li>
           <Note color="ghost" size="sm" tilt={2}>
             <span>Next: a BIM internship, then freelance.</span>
+            <Fragment slot="egg">
+              2027 is closer than it looks.
+              <a href={`mailto:${email}`} tabindex="-1">Email me <Arrow /></a>
+            </Fragment>
             <span class="note-foot">From 2027</span>
           </Note>
         </li>

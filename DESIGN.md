@@ -247,6 +247,10 @@ A case study's architecture drawn on the wall (`MigrationMap.astro`), portrait s
 ### Hint Sticker
 A small pink note (62px, 56px on phones; pink because it is a call to action) stuck over the corner of the featured game print, tilted 8 degrees, label-size bold text ("Play this one!"). The same sticker in yellow marks "8.3 cum laude" on the MBO note, on its top-right corner. One per section at most.
 
+### Easter Egg
+
+A short line in label-size ink-2 text, written on the wall behind a draggable note (Note's `egg` slot) and only seen once the note is dragged away. Mostly behind the hobby notes, plus one in the hero and one behind the dashed "Next" note; work notes stay clean except the IT helpdesk joke. Hidden from screen readers and on phones, where notes can't be dragged.
+
 ### Navigation
 A slim sticky header on the wall colour: the name at weight 800 beside a tiny tilted yellow note mark, three plain ink links at weight 600 (Work, About, CV) whose hover is a 3px orange underline, and the pink CTA at the right. On phones only the name and the CTA remain.
 
