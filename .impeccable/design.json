@@ -1,0 +1,379 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-10T17:41:09+00:00",
+  "title": "Design System: Leandro Bonora",
+  "extensions": {
+    "colorMeta": {
+      "wall": {
+        "role": "neutral",
+        "displayName": "Whiteboard Wall",
+        "canonical": "oklch(97.6% 0.003 265)",
+        "tonalRamp": [
+          "oklch(15% 0.001 265)",
+          "oklch(26% 0.002 265)",
+          "oklch(37% 0.003 265)",
+          "oklch(48% 0.003 265)",
+          "oklch(59% 0.003 265)",
+          "oklch(70% 0.003 265)",
+          "oklch(82% 0.002 265)",
+          "oklch(95% 0.001 265)"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Marker Ink",
+        "canonical": "oklch(20.5% 0.006 271)",
+        "tonalRamp": [
+          "oklch(15% 0.001 271)",
+          "oklch(26% 0.004 271)",
+          "oklch(37% 0.006 271)",
+          "oklch(48% 0.006 271)",
+          "oklch(59% 0.006 271)",
+          "oklch(70% 0.006 271)",
+          "oklch(82% 0.004 271)",
+          "oklch(95% 0.001 271)"
+        ]
+      },
+      "ink-soft": {
+        "role": "neutral",
+        "displayName": "Faded Ink",
+        "canonical": "oklch(42.7% 0.016 267)",
+        "tonalRamp": [
+          "oklch(15% 0.003 267)",
+          "oklch(26% 0.010 267)",
+          "oklch(37% 0.016 267)",
+          "oklch(48% 0.016 267)",
+          "oklch(59% 0.016 267)",
+          "oklch(70% 0.016 267)",
+          "oklch(82% 0.012 267)",
+          "oklch(95% 0.003 267)"
+        ]
+      },
+      "link-blue": {
+        "role": "neutral",
+        "displayName": "Link Blue",
+        "canonical": "oklch(48.9% 0.213 264)",
+        "tonalRamp": [
+          "oklch(15% 0.043 264)",
+          "oklch(26% 0.136 264)",
+          "oklch(37% 0.213 264)",
+          "oklch(48% 0.213 264)",
+          "oklch(59% 0.213 264)",
+          "oklch(70% 0.213 264)",
+          "oklch(82% 0.153 264)",
+          "oklch(95% 0.043 264)"
+        ]
+      },
+      "note-pink": {
+        "role": "primary",
+        "displayName": "Problem Pink",
+        "canonical": "oklch(71.1% 0.203 358)",
+        "tonalRamp": [
+          "oklch(15% 0.041 358)",
+          "oklch(26% 0.130 358)",
+          "oklch(37% 0.203 358)",
+          "oklch(48% 0.203 358)",
+          "oklch(59% 0.203 358)",
+          "oklch(70% 0.203 358)",
+          "oklch(82% 0.146 358)",
+          "oklch(95% 0.041 358)"
+        ]
+      },
+      "note-yellow": {
+        "role": "secondary",
+        "displayName": "People Yellow",
+        "canonical": "oklch(90.9% 0.163 97)",
+        "tonalRamp": [
+          "oklch(15% 0.033 97)",
+          "oklch(26% 0.104 97)",
+          "oklch(37% 0.163 97)",
+          "oklch(48% 0.163 97)",
+          "oklch(59% 0.163 97)",
+          "oklch(70% 0.163 97)",
+          "oklch(82% 0.117 97)",
+          "oklch(95% 0.033 97)"
+        ]
+      },
+      "note-blue": {
+        "role": "secondary",
+        "displayName": "Systems Blue",
+        "canonical": "oklch(66.2% 0.179 265)",
+        "tonalRamp": [
+          "oklch(15% 0.036 265)",
+          "oklch(26% 0.115 265)",
+          "oklch(37% 0.179 265)",
+          "oklch(48% 0.179 265)",
+          "oklch(59% 0.179 265)",
+          "oklch(70% 0.179 265)",
+          "oklch(82% 0.129 265)",
+          "oklch(95% 0.036 265)"
+        ]
+      },
+      "note-orange": {
+        "role": "secondary",
+        "displayName": "Happening Orange",
+        "canonical": "oklch(74.8% 0.176 55)",
+        "tonalRamp": [
+          "oklch(15% 0.035 55)",
+          "oklch(26% 0.113 55)",
+          "oklch(37% 0.176 55)",
+          "oklch(48% 0.176 55)",
+          "oklch(59% 0.176 55)",
+          "oklch(70% 0.176 55)",
+          "oklch(82% 0.127 55)",
+          "oklch(95% 0.035 55)"
+        ]
+      },
+      "print-white": {
+        "role": "neutral",
+        "displayName": "Print White",
+        "canonical": "oklch(100% 0 0)",
+        "tonalRamp": [
+          "oklch(15% 0.000 0)",
+          "oklch(26% 0.000 0)",
+          "oklch(37% 0.000 0)",
+          "oklch(48% 0.000 0)",
+          "oklch(59% 0.000 0)",
+          "oklch(70% 0.000 0)",
+          "oklch(82% 0.000 0)",
+          "oklch(95% 0.000 0)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "The name in the hero; case-page titles one step smaller."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Section titles on the wall."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Case titles and Next links."
+      },
+      "note": {
+        "displayName": "Note",
+        "purpose": "Text written on a sticky note (medium size; small and large scale from it)."
+      },
+      "lede": {
+        "displayName": "Lede",
+        "purpose": "One faded sentence under a section title."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Running text and case prose."
+      },
+      "label": {
+        "displayName": "Foot label",
+        "purpose": "Small sentence-case label at the foot of a note."
+      }
+    },
+    "shadows": [
+      {
+        "name": "stuck",
+        "value": "0 1px 1px rgb(22 23 26 / 0.08), 0 14px 22px -12px rgb(22 23 26 / 0.35)",
+        "purpose": "Resting notes, prints, CV card, CTA, name mark."
+      },
+      {
+        "name": "lifted",
+        "value": "0 2px 2px rgb(22 23 26 / 0.08), 0 26px 36px -14px rgb(22 23 26 / 0.4)",
+        "purpose": "Hover on linked notes, prints and CTA; held notes."
+      },
+      {
+        "name": "tape",
+        "value": "0 1px 2px rgb(22 23 26 / 0.12)",
+        "purpose": "Translucent tape strip only."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "The only easing; ease-out-expo settle."
+      },
+      {
+        "name": "note-settle",
+        "value": "360ms",
+        "purpose": "Note and print tilt/shadow transitions."
+      },
+      {
+        "name": "cta",
+        "value": "220ms",
+        "purpose": "CTA straighten and lift."
+      },
+      {
+        "name": "link",
+        "value": "180ms",
+        "purpose": "Link underline colour."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "none",
+        "purpose": "Note transitions and smooth scroll are removed under prefers-reduced-motion."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "phone-nav",
+        "value": "640px"
+      },
+      {
+        "name": "phone-grid",
+        "value": "700px"
+      },
+      {
+        "name": "about-stack",
+        "value": "800px"
+      },
+      {
+        "name": "case-body-stack",
+        "value": "860px"
+      },
+      {
+        "name": "cases-stack",
+        "value": "900px"
+      },
+      {
+        "name": "cv-stack",
+        "value": "1000px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "People Note",
+      "kind": "card",
+      "refersTo": "note-yellow",
+      "description": "Yellow note: people and personal voice.",
+      "html": "<div class=\"ds-note ds-note-yellow\" style=\"--tilt:-2deg\"><span>I find out what a business really needs,</span><span class=\"ds-note-foot\">People</span></div>",
+      "css": ".ds-note{position:relative;display:flex;flex-direction:column;justify-content:space-between;gap:10px;aspect-ratio:1;width:200px;padding:18px 18px 16px;color:var(--ink,#16171a);text-decoration:none;font-family:'Bricolage Grotesque Variable', 'Bricolage Grotesque', system-ui, sans-serif;font-weight:700;font-size:1.3rem;line-height:1.12;letter-spacing:-0.01em;box-shadow:0 1px 1px rgb(22 23 26 / 0.08),0 14px 22px -12px rgb(22 23 26 / 0.35);transform:rotate(var(--tilt,-2deg));transition:transform 360ms cubic-bezier(0.16,1,0.3,1),box-shadow 360ms cubic-bezier(0.16,1,0.3,1)}.ds-note-foot{font-size:0.82rem;font-weight:650}a.ds-note:hover{--tilt:0deg;box-shadow:0 2px 2px rgb(22 23 26 / 0.08),0 26px 36px -14px rgb(22 23 26 / 0.4)}a.ds-note:focus-visible{outline:3px solid #16171a;outline-offset:3px}.ds-note-yellow{background:#ffe14d}"
+    },
+    {
+      "name": "Systems Note",
+      "kind": "card",
+      "refersTo": "note-blue",
+      "description": "Blue note: what the system does; used for the offers.",
+      "html": "<div class=\"ds-note ds-note-blue\" style=\"--tilt:-2deg\"><span>Connect your webshop, ERP and carriers.</span><span class=\"ds-note-foot\">Integrations</span></div>",
+      "css": ".ds-note{position:relative;display:flex;flex-direction:column;justify-content:space-between;gap:10px;aspect-ratio:1;width:200px;padding:18px 18px 16px;color:var(--ink,#16171a);text-decoration:none;font-family:'Bricolage Grotesque Variable', 'Bricolage Grotesque', system-ui, sans-serif;font-weight:700;font-size:1.3rem;line-height:1.12;letter-spacing:-0.01em;box-shadow:0 1px 1px rgb(22 23 26 / 0.08),0 14px 22px -12px rgb(22 23 26 / 0.35);transform:rotate(var(--tilt,-2deg));transition:transform 360ms cubic-bezier(0.16,1,0.3,1),box-shadow 360ms cubic-bezier(0.16,1,0.3,1)}.ds-note-foot{font-size:0.82rem;font-weight:650}a.ds-note:hover{--tilt:0deg;box-shadow:0 2px 2px rgb(22 23 26 / 0.08),0 26px 36px -14px rgb(22 23 26 / 0.4)}a.ds-note:focus-visible{outline:3px solid #16171a;outline-offset:3px}.ds-note-blue{background:#5b8cff}"
+    },
+    {
+      "name": "Happening Note",
+      "kind": "card",
+      "refersTo": "note-orange",
+      "description": "Orange note: what happens, steps in time.",
+      "html": "<div class=\"ds-note ds-note-orange\" style=\"--tilt:-2deg\"><span>Junior developer at a Dutch meal-kit company</span><span class=\"ds-note-foot\">2025 – now</span></div>",
+      "css": ".ds-note{position:relative;display:flex;flex-direction:column;justify-content:space-between;gap:10px;aspect-ratio:1;width:200px;padding:18px 18px 16px;color:var(--ink,#16171a);text-decoration:none;font-family:'Bricolage Grotesque Variable', 'Bricolage Grotesque', system-ui, sans-serif;font-weight:700;font-size:1.3rem;line-height:1.12;letter-spacing:-0.01em;box-shadow:0 1px 1px rgb(22 23 26 / 0.08),0 14px 22px -12px rgb(22 23 26 / 0.35);transform:rotate(var(--tilt,-2deg));transition:transform 360ms cubic-bezier(0.16,1,0.3,1),box-shadow 360ms cubic-bezier(0.16,1,0.3,1)}.ds-note-foot{font-size:0.82rem;font-weight:650}a.ds-note:hover{--tilt:0deg;box-shadow:0 2px 2px rgb(22 23 26 / 0.08),0 26px 36px -14px rgb(22 23 26 / 0.4)}a.ds-note:focus-visible{outline:3px solid #16171a;outline-offset:3px}.ds-note-orange{background:#ff8a1f}"
+    },
+    {
+      "name": "Problem Note",
+      "kind": "card",
+      "refersTo": "note-pink",
+      "description": "Pink note: the problem a case starts from; as a link it is the call to action.",
+      "html": "<a href=\"#\" class=\"ds-note ds-note-pink\" style=\"--tilt:-2deg\"><span>Every integration depended on the old webshop.</span><span class=\"ds-note-foot\">The hardest problem so far</span></a>",
+      "css": ".ds-note{position:relative;display:flex;flex-direction:column;justify-content:space-between;gap:10px;aspect-ratio:1;width:200px;padding:18px 18px 16px;color:var(--ink,#16171a);text-decoration:none;font-family:'Bricolage Grotesque Variable', 'Bricolage Grotesque', system-ui, sans-serif;font-weight:700;font-size:1.3rem;line-height:1.12;letter-spacing:-0.01em;box-shadow:0 1px 1px rgb(22 23 26 / 0.08),0 14px 22px -12px rgb(22 23 26 / 0.35);transform:rotate(var(--tilt,-2deg));transition:transform 360ms cubic-bezier(0.16,1,0.3,1),box-shadow 360ms cubic-bezier(0.16,1,0.3,1)}.ds-note-foot{font-size:0.82rem;font-weight:650}a.ds-note:hover{--tilt:0deg;box-shadow:0 2px 2px rgb(22 23 26 / 0.08),0 26px 36px -14px rgb(22 23 26 / 0.4)}a.ds-note:focus-visible{outline:3px solid #16171a;outline-offset:3px}.ds-note-pink{background:#ff5fa2}"
+    },
+    {
+      "name": "Ghost Note",
+      "kind": "card",
+      "refersTo": "note-ghost",
+      "description": "Dashed, unstuck note for what comes next.",
+      "html": "<div class=\"ds-note ds-note-ghost\" style=\"--tilt:2deg\"><span>Next: software architecture</span><span class=\"ds-note-foot\">Not stuck on yet</span></div>",
+      "css": ".ds-note{position:relative;display:flex;flex-direction:column;justify-content:space-between;gap:10px;aspect-ratio:1;width:200px;padding:18px 18px 16px;color:var(--ink,#16171a);text-decoration:none;font-family:'Bricolage Grotesque Variable', 'Bricolage Grotesque', system-ui, sans-serif;font-weight:700;font-size:1.3rem;line-height:1.12;letter-spacing:-0.01em;box-shadow:0 1px 1px rgb(22 23 26 / 0.08),0 14px 22px -12px rgb(22 23 26 / 0.35);transform:rotate(var(--tilt,-2deg));transition:transform 360ms cubic-bezier(0.16,1,0.3,1),box-shadow 360ms cubic-bezier(0.16,1,0.3,1)}.ds-note-foot{font-size:0.82rem;font-weight:650}a.ds-note:hover{--tilt:0deg;box-shadow:0 2px 2px rgb(22 23 26 / 0.08),0 26px 36px -14px rgb(22 23 26 / 0.4)}a.ds-note:focus-visible{outline:3px solid #16171a;outline-offset:3px}.ds-note-ghost{background:transparent;border:2.5px dashed #16171a;box-shadow:none}"
+    },
+    {
+      "name": "Call to Action",
+      "kind": "button",
+      "refersTo": "button-cta",
+      "description": "The one pink note-shaped button; always leads to email.",
+      "html": "<a class=\"ds-cta\" href=\"#\">Let’s talk</a>",
+      "css": ".ds-cta{display:inline-flex;align-items:center;gap:10px;min-height:48px;padding:12px 20px;background:#ff5fa2;color:#16171a;font-family:'Bricolage Grotesque Variable', 'Bricolage Grotesque', system-ui, sans-serif;font-weight:750;font-size:1.05rem;text-decoration:none;box-shadow:0 1px 1px rgb(22 23 26 / 0.08),0 14px 22px -12px rgb(22 23 26 / 0.35);transform:rotate(-1.5deg);transition:transform 220ms cubic-bezier(0.16,1,0.3,1),box-shadow 220ms cubic-bezier(0.16,1,0.3,1)}.ds-cta:hover{transform:rotate(0deg) translateY(-2px);box-shadow:0 2px 2px rgb(22 23 26 / 0.08),0 26px 36px -14px rgb(22 23 26 / 0.4)}.ds-cta:focus-visible{outline:3px solid #16171a;outline-offset:3px;border-radius:2px}"
+    },
+    {
+      "name": "Marker Arrow Flow",
+      "kind": "custom",
+      "description": "Two notes joined by a bowed ink marker arrow, edge to edge (static rendering of the live Links layer).",
+      "html": "<div class=\"ds-flow\"><div class=\"ds-n\" style=\"background:#ffe14d;transform:rotate(-3deg)\">People</div><svg class=\"ds-arrow\" viewBox=\"0 0 80 40\" aria-hidden=\"true\"><path d=\"M6 26 Q40 6 72 24 M62 15 L72 24 L60 29\"/></svg><div class=\"ds-n\" style=\"background:#5b8cff;transform:rotate(2deg)\">System</div></div>",
+      "css": ".ds-flow{display:flex;align-items:center;gap:4px}.ds-n{width:120px;aspect-ratio:1;padding:14px;font-family:'Bricolage Grotesque Variable', 'Bricolage Grotesque', system-ui, sans-serif;font-weight:700;color:#16171a;box-shadow:0 1px 1px rgb(22 23 26 / 0.08),0 14px 22px -12px rgb(22 23 26 / 0.35)}.ds-arrow{width:80px;height:40px}.ds-arrow path{fill:none;stroke:#16171a;stroke-width:4;stroke-linecap:round;stroke-linejoin:round}"
+    },
+    {
+      "name": "Pinned Print",
+      "kind": "card",
+      "refersTo": "print",
+      "description": "Photo as a white-bordered print with tape and a caption on the print.",
+      "html": "<figure class=\"ds-print\"><span class=\"ds-tape\"></span><div class=\"ds-img\"></div><figcaption>Leandro, probably thinking about dinner.</figcaption></figure>",
+      "css": ".ds-print{position:relative;width:220px;margin:0;padding:12px 12px 0;background:#fff;box-shadow:0 1px 1px rgb(22 23 26 / 0.08),0 14px 22px -12px rgb(22 23 26 / 0.35);transform:rotate(-2deg);transition:transform 360ms cubic-bezier(0.16,1,0.3,1),box-shadow 360ms cubic-bezier(0.16,1,0.3,1)}.ds-print:hover{transform:rotate(0deg);box-shadow:0 2px 2px rgb(22 23 26 / 0.08),0 26px 36px -14px rgb(22 23 26 / 0.4)}.ds-img{aspect-ratio:4/5;background:#16171a}.ds-print figcaption{padding:12px 4px 16px;font-family:'Bricolage Grotesque Variable', 'Bricolage Grotesque', system-ui, sans-serif;font-weight:650;font-size:1rem;line-height:1.25;color:#16171a}.ds-tape{position:absolute;z-index:1;top:-14px;left:50%;width:104px;height:28px;background:color-mix(in srgb,#ffe14d 45%,rgb(255 255 255 / 0.5));box-shadow:0 1px 2px rgb(22 23 26 / 0.12);transform:translateX(-50%) rotate(3deg)}"
+    },
+    {
+      "name": "Header Navigation",
+      "kind": "nav",
+      "description": "Slim sticky header: name with yellow note mark, ink links with orange hover underline, pink CTA.",
+      "html": "<header class=\"ds-top\"><a class=\"ds-name\" href=\"#\"><span class=\"ds-mark\"></span>Leandro Bonora</a><nav><a href=\"#\">Services</a><a href=\"#\">Work</a><a href=\"#\">About</a><a href=\"#\">CV</a><a href=\"#\">Contact</a></nav></header>",
+      "css": ".ds-top{display:flex;align-items:center;gap:32px;min-height:72px;padding:0 24px;background:#f6f7f9;font-family:'Bricolage Grotesque Variable', 'Bricolage Grotesque', system-ui, sans-serif}.ds-name{display:inline-flex;align-items:center;gap:10px;color:#16171a;text-decoration:none;font-weight:800;font-size:1.2rem;letter-spacing:-0.02em}.ds-mark{width:18px;height:18px;background:#ffe14d;box-shadow:0 1px 1px rgb(22 23 26 / 0.08),0 14px 22px -12px rgb(22 23 26 / 0.35);transform:rotate(-6deg)}.ds-top nav{display:flex;gap:28px;margin-left:auto}.ds-top nav a{color:#16171a;font-weight:600;text-decoration:none}.ds-top nav a:hover{text-decoration:underline;text-decoration-color:#ff8a1f;text-decoration-thickness:3px}.ds-top a:focus-visible{outline:3px solid #16171a;outline-offset:3px;border-radius:2px}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Workshop Wall",
+    "overview": "The site is the whiteboard wall of a requirements workshop: a cool, nearly white surface where a business's work is mapped in a handful of big, bright sticky notes, joined by thick marker arrows, and then built. Every page is that wall. Notes carry the story, colour carries the meaning, and the empty wall around them is part of the composition. Nothing is a card grid, a table, or a spec sheet.\n\nDensity is low on purpose. One element owns each screen; at most about five notes are visible at once; sections are separated by generous stretches of bare wall rather than rules or panels. Material is literal but restrained: flat paper squares with a real, soft shadow and a small tilt, photos pinned as white-bordered prints under translucent tape, one authored arrow shape. The single typeface, Bricolage Grotesque, does all the work, heavy for display and quieter in prose.\n\nThe interaction is the wall's own: on desktop the hero notes can be picked up and dragged, and the marker arrows redraw live to follow them; dropped notes settle at a fresh small tilt. On phones the same notes lock into a two-column grid that the arrows read as a Z.",
+    "keyCharacteristics": [
+      "Cool whiteboard wall, marker-black ink, four sticky-note colours with fixed meanings.",
+      "Flat square notes, no corner radius, soft two-layer shadow, tilt between about -3 and +3 degrees.",
+      "Live SVG marker arrows drawn note edge to note edge.",
+      "One typeface (Bricolage Grotesque Variable), weight 800 for every heading.",
+      "One pink call to action, repeated in the same form wherever it appears.",
+      "Lots of empty wall; no tables, section numbers, part codes, or kicker labels."
+    ],
+    "rules": [
+      {
+        "name": "The Fixed Roles Rule",
+        "body": "A note's colour is its meaning: yellow people, orange what happens, blue what the system does, pink the problem or the call to action. Never pick a note colour for variety or balance.",
+        "section": "colors"
+      },
+      {
+        "name": "The One Pink Action Rule",
+        "body": "The call to action is always a pink note-shaped element that leads to email. There is no second button style.",
+        "section": "colors"
+      },
+      {
+        "name": "The Single Family Rule",
+        "body": "Bricolage Grotesque is the only typeface. Hierarchy comes from weight (400 to 800) and size, not from a second family.",
+        "section": "typography"
+      },
+      {
+        "name": "The Foot Label Rule",
+        "body": "Any small label on a note sits at its foot, after the content. Nothing small and tracked-out sits above a heading.",
+        "section": "typography"
+      },
+      {
+        "name": "The Empty Wall Rule",
+        "body": "No more than about five notes are visible at once, and each screen has one element that owns it.",
+        "section": "layout"
+      },
+      {
+        "name": "The Paper Shadow Rule",
+        "body": "Shadows are soft and fall downward, like paper on a wall. No hard offset shadows, no glows, no coloured shadows.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "**Do** colour every note by its role: yellow people, orange what happens, blue what the system does, pink the problem or the call to action.",
+      "**Do** join notes in a flow with the live marker arrows, edge to edge, and leave 40 to 64px between notes so the arrows have room.",
+      "**Do** tilt notes and prints a few degrees, alternating direction within a row.",
+      "**Do** use the dashed ghost note for anything that has not happened yet.",
+      "**Do** show photos as white-bordered prints with tape and a caption on the print.",
+      "**Do** put any small label at the foot of a note, in sentence case.",
+      "**Do** turn every note flow into a two-column grid on phones, read as a Z.",
+      "**Do** keep reduced motion respected: no transitions on notes, no smooth scroll."
+    ],
+    "donts": [
+      "**Don't** use tables, section numbers, part codes, or kicker/eyebrow labels above titles.",
+      "**Don't** add a second button style; the pink note CTA is the only one.",
+      "**Don't** round the corners of notes, prints, or the CTA.",
+      "**Don't** use hard offset shadows, glows, or coloured shadows.",
+      "**Don't** pick a note colour for decoration or variety.",
+      "**Don't** put more than about five notes on one screen or fill the empty wall with panels or bands.",
+      "**Don't** introduce a second typeface or use Unicode arrow glyphs."
+    ]
+  }
+}
