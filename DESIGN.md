@@ -249,7 +249,7 @@ A small pink note (62px, 56px on phones; pink because it is a call to action) st
 
 ### Easter Egg
 
-A short line in label-size ink-2 text, written on the wall behind a draggable note (Note's `egg` slot) and only seen once the note is dragged away. Mostly behind the hobby notes, plus one in the hero and one behind the dashed "Next" note; work notes stay clean except the IT helpdesk joke. Hidden from screen readers and on phones, where notes can't be dragged.
+A short line in label-size ink-2 text, written on the wall behind a draggable note (Note's `egg` slot) and only seen once the note is dragged away. Mostly behind the hobby notes, plus one in the hero (never behind the see-through dashed ghost note); work notes stay clean except the IT helpdesk joke. Hidden from screen readers and on phones, where notes can't be dragged.
 
 ### Navigation
 A slim sticky header on the wall colour: the name at weight 800 beside a tiny tilted yellow note mark, three plain ink links at weight 600 (Work, About, CV) whose hover is a 3px orange underline, and the pink CTA at the right. On phones only the name and the CTA remain.
