@@ -271,7 +271,8 @@ const games = [
       <ol class="path-flow" data-links>
         <li>
           <Note color="orange" size="sm" tilt={-2}>
-            <span>MBO Game Development, Grafisch Lyceum Utrecht</span>
+            <span class="click-me sticker-yellow" aria-hidden="true">8.3 · cum laude</span>
+            <span>MBO Game Development, Grafisch Lyceum Utrecht <span class="visually-hidden">(graduated cum laude with an 8.3)</span></span>
             <span class="note-foot">2021 – 2025</span>
           </Note>
         </li>
@@ -883,6 +884,15 @@ const games = [
     transform: rotate(8deg);
     pointer-events: none;
     transition: transform 360ms var(--ease);
+  }
+
+  /* Cum laude: yellow, stuck on the empty bottom-right corner so it never covers the note's text. */
+  .click-me.sticker-yellow {
+    top: auto;
+    bottom: -12px;
+    right: -14px;
+    background: var(--yellow);
+    transform: rotate(-7deg);
   }
 
   .game:hover .click-me {
