@@ -30,7 +30,7 @@ The heart of the new flow is the order sync: every webshop order is fetched fres
 - Two moving targets at once. When the webshop and the ERP both change, every assumption about where an order or a customer "lives" has to be checked twice.
 - "An order" means two different things depending on which shop it comes from. Keeping them apart matters more than any single feature.
 - One cent off: Odoo's totals sometimes differed from Shopify's by a cent, because VAT was rounded per line. Mapping the taxes the way Odoo expects made them match exactly.
-- Knowing when to delete: the old flow lives on its own branch, where it keeps running untouched for the current shop.
+- Not touching what works: the old flow lives on its own branch, where it keeps running untouched for the current shop.
 
 ## Where it is now
 

@@ -40,7 +40,7 @@ Title on the site: **Software developer** (Leandro, Nov 2026: he did not want to
 
 **The business-IT bridge.** A versatile developer who understands the business side and can also build it: he works out what a business actually needs, designs how the systems fit together, and builds the parts people use. The proof is a live e-commerce operation (production Laravel middleware connecting Shopify and Odoo, a Shopware → Shopify migration, a customer portal), and the business side comes from his Business IT & Management study and from working directly with the people who use his systems.
 
-What gives him energy, and what the site should foreground: designing systems (architecture, data flows), working with people (finding out what users need, explaining, writing manuals), and building what people see (portals, interfaces). Long-term direction is genuinely open (Leandro, Nov 2026: "idk what I want to do next"); software architecture is one possibility, never presented as a title or a fixed plan. The site shows "Next: still figuring that out." Claim only what the evidence below supports.
+What gives him energy, and what the site should foreground: designing systems (architecture, data flows), working with people (finding out what users need, explaining, writing manuals), and building what people see (portals, interfaces). Long-term direction is genuinely open (Leandro, Nov 2026: "idk what I want to do next"); software architecture is one possibility, never presented as a title or a fixed plan. The site shows "Next: a BIM internship, then freelance." (Leandro, Nov 2026). Claim only what the evidence below supports.
 
 The one thing a visitor should remember: he gets the business side *and* can code it.
 
