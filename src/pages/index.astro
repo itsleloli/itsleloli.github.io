@@ -21,7 +21,7 @@ const linkedin = 'https://www.linkedin.com/in/leandro-bonora-08b0ba257/';
 const skills = [
   {
     title: 'Connect your webshop, ERP and other systems',
-    proof: 'Like the Shopify ↔ Odoo middleware I built.',
+    proof: 'Like the Shopify ↔ Odoo middleware I built.',
   },
   {
     title: 'Set up and extend Odoo',
@@ -270,27 +270,27 @@ const games = [
       <ol class="path-flow" data-links>
         <li>
           <Note color="orange" size="sm" tilt={-2}>
-            <span class="click-me sticker-yellow" aria-hidden="true">8.3 · cum laude</span>
+            <span class="click-me sticker-yellow" aria-hidden="true"><b>8.3</b> cum laude</span>
             <span>MBO Game Development, Grafisch Lyceum Utrecht <span class="visually-hidden">(graduated cum laude with an 8.3)</span></span>
-            <span class="note-foot">2021 – 2025</span>
+            <span class="note-foot">2021 – 2025</span>
           </Note>
         </li>
         <li>
           <Note color="orange" size="sm" tilt={1.5}>
             <span>Trainee, then junior developer at a Dutch meal-kit company</span>
-            <span class="note-foot">2025 – now · 24 h a week</span>
+            <span class="note-foot stacked"><span>2025 – now</span><span>24 h/week</span></span>
           </Note>
         </li>
         <li>
           <Note color="orange" size="sm" tilt={-1}>
-            <span>Business IT & Management (HBO), Hogeschool Rotterdam</span>
-            <span class="note-foot">2026 – now</span>
+            <span>Business IT & Management, Hogeschool Rotterdam</span>
+            <span class="note-foot stacked"><span>HBO bachelor</span><span>2026 – now</span></span>
           </Note>
         </li>
         <li>
           <Note color="ghost" size="sm" tilt={2}>
             <span>Next: a BIM internship, then freelance.</span>
-            <span class="note-foot">Ideas welcome</span>
+            <span class="note-foot">From 2027</span>
           </Note>
         </li>
       </ol>
@@ -381,6 +381,13 @@ const games = [
     font-size: var(--fs-label);
     font-weight: 650;
     color: var(--ink);
+  }
+
+  /* Two facts in a foot line, one per line, instead of wrapping at the dot. */
+  :global(.note-foot.stacked) {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
   }
 
   .hero-when {
@@ -866,11 +873,32 @@ const games = [
 
   /* Cum laude: yellow, stuck on the empty bottom-right corner so it never covers the note's text. */
   .click-me.sticker-yellow {
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 1px;
+    width: auto;
+    aspect-ratio: auto;
+    padding: 7px 9px;
+    white-space: nowrap;
     top: auto;
     bottom: -12px;
     right: -14px;
     background: var(--yellow);
     transform: rotate(-7deg);
+  }
+
+  @media (max-width: 700px) {
+    .click-me.sticker-yellow {
+      right: -26px;
+      bottom: -22px;
+    }
+  }
+
+  .sticker-yellow b {
+    font-size: var(--fs-body);
+    font-weight: 800;
+    line-height: 1;
   }
 
   .game:hover .click-me {
