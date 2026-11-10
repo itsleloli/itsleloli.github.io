@@ -79,6 +79,8 @@ img {
 a {
   color: var(--link);
   text-decoration-thickness: 2px;
+  /* Underlines are marker strokes: one straight line, never broken around descenders. */
+  text-decoration-skip-ink: none;
   text-underline-offset: 0.2em;
   text-decoration-color: color-mix(in srgb, var(--link) 35%, transparent);
   transition: text-decoration-color 180ms var(--ease);

@@ -1,9 +1,9 @@
 ---
 order: 1
 title: Moving the webshop and the ERP, at the same time
-summary: Rebuilding the integrations for a move from Shopware to Shopify while the back office moves to Odoo, without the current shop missing a single order along the way.
+summary: Rebuilding the integrations for a move from Shopware to Shopify and from the old back office to Odoo, while the current shop keeps running.
 problem: "New webshop and new ERP. At the same time."
-role: Building the new flow
+role: Integration developer
 period: 2026 – now
 status: In progress
 diagram: migration
@@ -17,7 +17,7 @@ flow:
 
 ## The problem
 
-The company is moving its webshop from Shopware to Shopify, and at the same time moving its back office to Odoo. Orders, customers, delivery options and stock all depend on the old setup. The current shop has to keep running, and keep every order, until the switch-over is done.
+The company is moving its webshop from Shopware to Shopify, and at the same time moving its back office to Odoo. Orders, customers, delivery options and stock all depend on the old setup. The current shop has to keep running until the switch-over is done.
 
 ## How I designed it
 
