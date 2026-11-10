@@ -1,0 +1,959 @@
+---
+import { Image } from 'astro:assets';
+import { getCollection } from 'astro:content';
+import Wall from '../layouts/Wall.astro';
+import Note from '../components/Note.astro';
+import Arrow from '../components/Arrow.astro';
+import leandro from '../assets/leandro.png';
+import chefLine from '../assets/chef-line.png';
+import starline from '../assets/starline.png';
+import sixBullets from '../assets/six-bullets.png';
+import seaMonkey from '../assets/sea-monkey.png';
+
+const work = (await getCollection('work')).sort((a, b) => a.data.order - b.data.order);
+const [featured, ...more] = work;
+const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
+
+const email = 'bonoraleandro@gmail.com';
+const linkedin = 'https://www.linkedin.com/in/leandro-bonora-08b0ba257/';
+const github = 'https://github.com/itsleloli';
+
+// What Leandro can do, each backed by something he has actually done.
+const skills = [
+  {
+    title: 'Connect your webshop, ERP and other systems',
+    proof: 'Like the Shopify ↔ Odoo middleware I built.',
+  },
+  {
+    title: 'Set up and extend Odoo',
+    proof: 'QWeb, the ORM, Studio.',
+  },
+  {
+    title: 'Build web apps and admin panels',
+    proof: 'Laravel and Filament.',
+  },
+  {
+    title: 'Keep the IT side running',
+    proof: 'Google Workspace and everyday IT.',
+  },
+];
+
+// Off-the-clock notes. Give one an href (e.g. an Instagram or portfolio link)
+// and it becomes a link that lifts on hover; leave it empty to keep it a plain note.
+const hobbies: { text: string; tilt: number; href?: string }[] = [
+  { text: 'I love food. I still work in a Korean kitchen from time to time.', tilt: -3 },
+  { text: 'I sew, and design my own streetwear.', tilt: 2, href: '' },
+  { text: 'Photography and making content.', tilt: -1.5, href: '' },
+  { text: 'Breakdance. Yes, really.', tilt: 1 },
+];
+
+const games = [
+  {
+    img: starline,
+    title: 'Starline',
+    date: 'Jun 2023',
+    line: 'First-person puzzle game, team of six. Scrum master, level design and code.',
+    href: 'https://m1l4n.itch.io/starline',
+    tilt: 1.5,
+  },
+  {
+    img: chefLine,
+    title: 'Chef Line’s Journey',
+    date: 'Feb – Jun 2024',
+    line: 'Food-themed action adventure, team of six. Scrum master, enemy AI and most of the UI.',
+    href: `${import.meta.env.BASE_URL.replace(/\/?$/, '/')}media/chef-line-gameplay.mp4`,
+    tilt: -2,
+  },
+  {
+    img: seaMonkey,
+    title: 'Sea Monkey',
+    date: 'Sep 2023',
+    line: '2D pixel-art arcade game, team of five. Flip the surfboard, bounce the beach balls back.',
+    href: 'https://itsleloli.itch.io/sea-monkey',
+    tilt: 2,
+  },
+  {
+    img: sixBullets,
+    title: 'Six Bullets',
+    date: 'May 2022',
+    line: 'Arcade shooter, solo. Design, code and my first own 3D model.',
+    href: 'https://itsleloli.itch.io/six-bullets',
+    tilt: -1,
+  },
+];
+---
+
+<Wall
+  title="Leandro Bonora · Software developer"
+  description="Leandro Bonora finds out what a business really needs, designs how its systems fit together, and builds the parts people use. Integrations, Odoo and web apps."
+>
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="wrap">
+      <h1 id="hero-title" class="hero-title">Leandro Bonora</h1>
+      <p class="hero-sub">Software developer. I build the systems businesses run on: e‑commerce, Odoo, integrations and web apps.</p>
+
+      <div class="hero-wall" data-wall data-links>
+        <Note color="yellow" size="md" tilt={-3} drag>I find out what a business really needs,</Note>
+        <Note color="blue" size="md" tilt={2} drag>design how its systems fit together,</Note>
+        <Note color="orange" size="md" tilt={-1.5} drag>and build the parts people use.</Note>
+        <Note color="pink" size="md" tilt={3} href={`mailto:${email}`} linkSkip>
+          <span>Let’s talk</span>
+          <span class="note-foot">Email me <Arrow /></span>
+        </Note>
+      </div>
+      <p class="hero-when">
+        Taking on freelance projects from 2027. Already have something in mind?{' '}
+        <a href="#contact">Let’s talk now</a>.
+        <span class="hero-hint">Psst: you can move the notes around.</span>
+      </p>
+    </div>
+  </section>
+
+  <section class="section work" aria-labelledby="work-title">
+    <div class="wrap" id="work">
+      <h2 class="section-title" id="work-title">Work</h2>
+      <p class="lede">
+        What I’ve built, and what I can build for you. It starts, like everything I do, with a business problem.
+      </p>
+
+      <div class="cases">
+        {featured && (
+          <article class="case case-featured">
+            <Note color="pink" size="md" tilt={-2.5}>
+              <span>{featured.data.problem}</span>
+              <span class="note-foot">The hardest problem so far</span>
+            </Note>
+            <div class="case-text">
+              <h3 class="case-title">
+                <a href={`${base}work/${featured.id}/`}>{featured.data.title}</a>
+              </h3>
+              <p class="case-summary">{featured.data.summary}</p>
+              <p class="case-meta">
+                {featured.data.role} · {featured.data.period} ·{' '}
+                <a href={`${base}work/${featured.id}/`}>How I did it</a>
+              </p>
+            </div>
+          </article>
+        )}
+
+        {more.length > 0 && (
+        <div class="cases-more">
+          {
+            more.map((w, i) => (
+              <article class="case case-small">
+                <Note color="pink" size="sm" tilt={i % 2 ? 2 : -2}>
+                  {w.data.problem}
+                </Note>
+                <div class="case-text">
+                  <h3 class="case-title">
+                    <a href={`${base}work/${w.id}/`}>{w.data.title}</a>
+                  </h3>
+                  <p class="case-meta">
+                    {w.data.role} · {w.data.period}
+                  </p>
+                </div>
+              </article>
+            ))
+          }
+        </div>
+        )}
+      </div>
+
+      <div class="can">
+        <h3 class="can-title">What I can do for you</h3>
+        <ul class="can-list">
+          {
+            skills.map((k, i) => (
+              <li class="can-item">
+                <Note color="blue" size="sm" tilt={[-2, 1.5, -1, 2][i]}>
+                  <span>{k.title}</span>
+                </Note>
+                <p class="can-proof">{k.proof}</p>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+
+      <div class="games">
+        <h3 class="games-title">Before this: games</h3>
+        <ul class="game-list">
+          {
+            games.map((g, i) => (
+              <li class="game">
+                <figure class="print" style={`--tilt: ${g.tilt}deg`}>
+                  <span class="tape" aria-hidden="true" />
+                  {i === 0 && (
+                    <span class="click-me" aria-hidden="true">
+                      Play this one!
+                    </span>
+                  )}
+                  <Image
+                    src={g.img}
+                    alt={`Cover art of ${g.title}`}
+                    widths={[200, 320, 480]}
+                    sizes="(max-width: 700px) 30vw, 220px"
+                  />
+                  <figcaption>
+                    {g.href ? (
+                      <a class="print-link" href={g.href} target="_blank" rel="noopener">
+                        {g.title}
+                      </a>
+                    ) : (
+                      g.title
+                    )}
+                    <span class="game-date">{g.date}</span>
+                  </figcaption>
+                </figure>
+  
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section about" aria-labelledby="about-title">
+    <div id="about" class="wrap about-grid">
+      <figure class="print photo">
+        <span class="tape" aria-hidden="true"></span>
+        <Image
+          src={leandro}
+          alt="Portrait of Leandro: curly dark hair, glasses, black shirt, against a black background."
+          widths={[360, 560, 800]}
+          sizes="(max-width: 800px) 80vw, 400px"
+        />
+        <figcaption>Leandro, probably thinking about dinner.</figcaption>
+      </figure>
+      <div class="about-text">
+        <h2 class="section-title" id="about-title">Hi, I’m Leandro</h2>
+        <p class="about-lead">I got into programming through games.</p>
+        <p>
+          I wanted to build the things I played, so I studied Game Development. Along the way I found
+          something I enjoy even more: building systems that keep a real business running.
+        </p>
+        <p>
+          I joined a Dutch meal-kit company as a trainee and had a junior contract within seven
+          months. Today I build the integrations behind its webshop, connecting Shopify, Odoo and the
+          tools in between so orders, stock and data flow without anyone touching a spreadsheet.
+        </p>
+        <p>
+          I combine 24 hours a week of development with a full-time study in Business IT &
+          Management, because I want to understand why a business needs something, not just how to
+          build it.
+        </p>
+        <h3 class="about-notes-title">Off the clock</h3>
+        <p class="about-notes-lede">
+          Outside of code, I sew, shoot photos and breakdance. I like making things, whether they’re
+          digital or not.
+        </p>
+        <ul class="about-notes" aria-label="Hobbies">
+          {
+            hobbies.map((h) =>
+              h.href ? (
+                <li>
+                  <Note color="yellow" size="sm" tilt={h.tilt} href={h.href}>
+                    {h.text}
+                  </Note>
+                </li>
+              ) : (
+                <li>
+                  <Note color="yellow" size="sm" tilt={h.tilt}>
+                    {h.text}
+                  </Note>
+                </li>
+              ),
+            )
+          }
+        </ul>
+      </div>
+    </div>
+
+    <div class="wrap short">
+      <h3 class="short-title" id="cv">The short version</h3>
+      <ol class="path-flow" data-links>
+        <li>
+          <Note color="orange" size="sm" tilt={-2}>
+            <span>MBO Game Development, Grafisch Lyceum Utrecht</span>
+            <span class="note-foot">2021 – 2025</span>
+          </Note>
+        </li>
+        <li>
+          <Note color="orange" size="sm" tilt={1.5}>
+            <span>Trainee, then junior developer at a Dutch meal-kit company</span>
+            <span class="note-foot">2025 – now · 24 h a week</span>
+          </Note>
+        </li>
+        <li>
+          <Note color="orange" size="sm" tilt={-1}>
+            <span>Business IT & Management (HBO), Hogeschool Rotterdam</span>
+            <span class="note-foot">2026 – now</span>
+          </Note>
+        </li>
+        <li>
+          <Note color="ghost" size="sm" tilt={2}>
+            <span>Next: still figuring that out.</span>
+            <span class="note-foot">Ideas welcome</span>
+          </Note>
+        </li>
+      </ol>
+
+      <div class="cv-row">
+        <div class="cv-card">
+          <span class="tape" aria-hidden="true"></span>
+          <div class="cv-col">
+            <h3>What I work with</h3>
+            <ul>
+              <li><b>Backend</b> PHP, Laravel, Filament, Livewire, Pest, Python</li>
+              <li><b>Business systems</b> Odoo (QWeb, ORM, Studio), Shopify, Shopware</li>
+              <li><b>Integrations</b> REST, GraphQL, webhooks, queues with Redis</li>
+              <li><b>Data &amp; tooling</b> MariaDB, Git, GitHub Actions, Docker</li>
+              <li><b>Games</b> C#, Unity</li>
+            </ul>
+          </div>
+          <div class="cv-col">
+            <h3>Also</h3>
+            <ul>
+              <li>Scrum master on two six-person game teams</li>
+              <li>I write the manuals for the colleagues who use what I build</li>
+              <li>Dutch (native), English (fluent), Spanish (beginner)</li>
+              <li>Based in the Netherlands, near Breda</li>
+              <li><a href={linkedin} target="_blank" rel="noopener">Full history on LinkedIn</a></li>
+            </ul>
+          </div>
+        </div>
+        <Note color="yellow" size="md" tilt={2.5}>
+          <span>I’m always open to work, and to a good conversation.</span>
+        </Note>
+      </div>
+    </div>
+  </section>
+
+  <section class="section contact" aria-labelledby="contact-title">
+    <div id="contact" class="wrap contact-grid">
+      <Note color="pink" size="lg" tilt={-2} href={`mailto:${email}`}>
+        <span id="contact-title">Let’s talk</span>
+        <span class="contact-mail">bonoraleandro@<wbr />gmail.com</span>
+      </Note>
+      <div class="contact-text">
+        <p class="about-lead">Got a project, an idea, or just want to grab a coffee? Let’s talk.</p>
+        <ul class="contact-links">
+          <li><a href={`mailto:${email}`}>Email</a></li>
+          <li><a href={linkedin} target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a href={github} target="_blank" rel="noopener">GitHub</a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</Wall>
+
+<script>
+  // Drag the hero notes around the wall. They settle with a fresh tilt where dropped.
+  const wall = document.querySelector<HTMLElement>('[data-wall]');
+  const phone = window.matchMedia('(max-width: 700px)');
+  for (const note of wall?.querySelectorAll<HTMLElement>('[data-drag]') ?? []) {
+    let startX = 0;
+    let startY = 0;
+    let dx = 0;
+    let dy = 0;
+
+    note.addEventListener('pointerdown', (e) => {
+      // Phones: the notes fill the first screen, so a swipe must scroll the page, not drag.
+      if (phone.matches) return;
+      note.setPointerCapture(e.pointerId);
+      note.classList.add('is-held');
+      startX = e.clientX - dx;
+      startY = e.clientY - dy;
+    });
+
+    note.addEventListener('pointermove', (e) => {
+      if (!note.hasPointerCapture(e.pointerId)) return;
+      dx = e.clientX - startX;
+      dy = e.clientY - startY;
+      note.style.setProperty('--dx', `${dx}px`);
+      note.style.setProperty('--dy', `${dy}px`);
+      wall?.dispatchEvent(new Event('notes:moved'));
+    });
+
+    const drop = (e: PointerEvent) => {
+      if (note.hasPointerCapture(e.pointerId)) note.releasePointerCapture(e.pointerId);
+      note.classList.remove('is-held');
+      note.style.setProperty('--tilt', `${(Math.random() * 6 - 3).toFixed(1)}deg`);
+      wall?.dispatchEvent(new Event('notes:moved'));
+    };
+    note.addEventListener('transitionend', () => wall?.dispatchEvent(new Event('notes:moved')));
+    note.addEventListener('pointerup', drop);
+    note.addEventListener('pointercancel', drop);
+  }
+</script>
+
+<style>
+  /* Hero */
+  .hero {
+    padding-block: clamp(32px, 5vw, 72px) clamp(24px, 3vw, 40px);
+  }
+
+  .work {
+    padding-top: clamp(40px, 5vw, 64px);
+  }
+
+  .hero-title {
+    font-size: var(--fs-display);
+    letter-spacing: -0.04em;
+    line-height: 0.92;
+  }
+
+  .hero-sub {
+    margin-top: 16px;
+    font-size: var(--fs-lede);
+    font-weight: 500;
+    color: var(--ink-2);
+  }
+
+  .hero-wall {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 24px clamp(40px, 4.5vw, 64px);
+    margin-top: clamp(40px, 6vw, 72px);
+  }
+
+  :global(.note-foot) {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: var(--fs-label);
+    font-weight: 650;
+    color: var(--ink);
+  }
+
+  .hero-when {
+    margin-top: clamp(28px, 4vw, 44px);
+    max-width: 62ch;
+    font-size: var(--fs-body);
+  }
+
+  .hero-hint {
+    display: block;
+    margin-top: 8px;
+    font-size: var(--fs-small);
+    color: var(--ink-2);
+  }
+
+  @media (max-width: 700px) {
+    .hero-wall {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .hero-wall > :global(.note-pink) {
+      margin: 0;
+    }
+
+    .hero-hint {
+      display: none;
+    }
+  }
+
+  /* Work: one featured case, then the compact ones */
+  .cases {
+    display: grid;
+    gap: clamp(56px, 7vw, 88px);
+    margin-top: clamp(40px, 5vw, 64px);
+  }
+
+  .case {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    gap: clamp(24px, 4vw, 56px);
+    align-items: center;
+  }
+
+  .case-text {
+    display: grid;
+    gap: 12px;
+    max-width: 56ch;
+  }
+
+
+  .case-title {
+    font-size: var(--fs-title);
+    line-height: 1.05;
+  }
+
+  .case-title a {
+    color: var(--ink);
+    text-decoration-color: var(--orange);
+    text-decoration-thickness: 4px;
+    text-underline-offset: 0.16em;
+  }
+
+  .case-title a:hover {
+    text-decoration-color: var(--ink);
+  }
+
+  .case-summary {
+    font-size: var(--fs-body);
+    max-width: 46ch;
+  }
+
+  .case-meta {
+    font-size: var(--fs-small);
+    color: var(--ink-2);
+  }
+
+  .cases-more {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr));
+    gap: clamp(32px, 5vw, 64px);
+  }
+
+  .case-small {
+    gap: 24px;
+  }
+
+  .case-small .case-title {
+    font-size: var(--fs-subtitle);
+    line-height: 1.12;
+  }
+
+  .case-small .case-title a {
+    text-decoration-thickness: 3px;
+  }
+
+  .case-small :global(.note) {
+    width: clamp(120px, 12vw, 150px);
+    font-size: var(--fs-small);
+    padding: 14px;
+  }
+
+  @media (max-width: 900px) {
+    .cases-more {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 700px) {
+    .case-featured {
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+
+    .case-featured > :global(.note) {
+      width: 52%;
+    }
+
+    .case-small {
+      grid-template-columns: 112px minmax(0, 1fr);
+      gap: 18px;
+    }
+
+    .case-small :global(.note) {
+      width: 112px;
+      font-size: var(--fs-label);
+      padding: 10px;
+    }
+  }
+
+  /* About */
+  .about-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 400px) minmax(0, 1fr);
+    gap: clamp(40px, 7vw, 104px);
+    align-items: center;
+  }
+
+  /* Photos are prints pinned to the wall: white border, caption on the print, tape. */
+  .print {
+    position: relative;
+    margin: 0;
+    padding: 12px 12px 0;
+    background: #fff;
+    box-shadow: var(--note-shadow);
+    transform: rotate(var(--tilt, -2deg));
+    transition:
+      transform 360ms var(--ease),
+      box-shadow 360ms var(--ease);
+  }
+
+  .print figcaption {
+    padding: 12px 4px 16px;
+    font-weight: 650;
+    font-size: var(--fs-small);
+    line-height: 1.25;
+  }
+
+  .tape {
+    position: absolute;
+    z-index: 1;
+    top: -14px;
+    left: 50%;
+    width: 104px;
+    height: 28px;
+    background: color-mix(in srgb, var(--yellow) 45%, rgb(255 255 255 / 0.5));
+    box-shadow: 0 1px 2px rgb(22 23 26 / 0.12);
+    transform: translateX(-50%) rotate(3deg);
+  }
+
+  .about-text {
+    display: grid;
+    gap: 20px;
+    max-width: 60ch;
+  }
+
+  .about-text .section-title {
+    margin-bottom: 0;
+  }
+
+  .about-lead {
+    font-size: var(--fs-subtitle);
+    line-height: 1.35;
+    font-weight: 600;
+  }
+
+  .short {
+    margin-top: clamp(64px, 8vw, 104px);
+  }
+
+  .short-title {
+    font-size: var(--fs-title);
+    letter-spacing: -0.025em;
+    scroll-margin-top: 96px;
+  }
+
+  .about-notes-lede {
+    margin-top: -8px;
+    color: var(--ink-2);
+    font-size: var(--fs-small);
+  }
+
+  .about-notes-title {
+    margin-top: 20px;
+    font-size: var(--fs-body);
+    letter-spacing: -0.01em;
+  }
+
+  .about-notes {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 150px));
+    gap: 18px;
+    list-style: none;
+  }
+
+  .about-notes :global(.note) {
+    width: 100%;
+    font-size: var(--fs-small);
+    padding: 14px;
+  }
+
+  @media (max-width: 700px) {
+    .about-notes {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+  }
+
+  @media (max-width: 800px) {
+    .about-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .photo {
+      max-width: min(280px, 72vw);
+    }
+  }
+
+  /* Path */
+  .path-flow {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 24px clamp(40px, 4.5vw, 64px);
+    list-style: none;
+    margin-top: clamp(32px, 4vw, 48px);
+  }
+
+  @media (max-width: 700px) {
+    .path-flow {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+  }
+
+  /* The short version */
+  .cv-row {
+    display: grid;
+    grid-template-columns: minmax(0, 700px) auto;
+    gap: clamp(32px, 5vw, 64px);
+    align-items: center;
+    margin-top: clamp(56px, 7vw, 88px);
+  }
+
+  .cv-card {
+    position: relative;
+    display: grid;
+    grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+    gap: 28px clamp(24px, 3vw, 40px);
+    padding: clamp(28px, 3.5vw, 44px);
+    background: #fff;
+    box-shadow: var(--note-shadow);
+    transform: rotate(-0.6deg);
+  }
+
+  .cv-col h3 {
+    font-size: var(--fs-body);
+    letter-spacing: -0.01em;
+    margin-bottom: 12px;
+  }
+
+  .cv-col li b {
+    display: block;
+    font-weight: 700;
+    color: var(--ink);
+  }
+
+  .cv-col ul {
+    list-style: none;
+    display: grid;
+    gap: 8px;
+    font-size: var(--fs-small);
+    line-height: 1.4;
+  }
+
+
+  @media (max-width: 1000px) {
+    .cv-row {
+      grid-template-columns: 1fr;
+    }
+
+    .cv-card {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .cv-card {
+      grid-template-columns: 1fr;
+    }
+
+    .cv-row > :global(.note) {
+      width: 70%;
+    }
+  }
+
+  /* What I can do: four offers, each with its proof underneath */
+  .can {
+    margin-top: clamp(64px, 8vw, 104px);
+  }
+
+  .can-title {
+    font-size: var(--fs-subtitle);
+    letter-spacing: -0.015em;
+  }
+
+  .can-list {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: clamp(24px, 3vw, 40px);
+    list-style: none;
+    margin-top: clamp(24px, 3vw, 36px);
+  }
+
+  .can-item :global(.note) {
+    width: 100%;
+    max-width: 210px;
+    font-size: var(--fs-body);
+  }
+
+  .can-proof {
+    margin-top: 16px;
+    font-size: var(--fs-small);
+    line-height: 1.45;
+    color: var(--ink-2);
+    max-width: 30ch;
+  }
+
+  @media (max-width: 900px) {
+    .can-list {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  /* Earlier games: a compact strip at the end of Work */
+  .games {
+    margin-top: clamp(72px, 9vw, 112px);
+  }
+
+  .games-title {
+    font-size: var(--fs-subtitle);
+  }
+
+  .games-lede {
+    margin-top: 8px;
+    color: var(--ink-2);
+  }
+
+  .game-list {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 210px));
+    gap: clamp(20px, 4vw, 56px);
+    list-style: none;
+    margin-top: clamp(28px, 3vw, 40px);
+  }
+
+  .game .print {
+    padding: 8px 8px 0;
+  }
+
+  .game .print figcaption {
+    padding: 8px 2px 10px;
+    font-size: var(--fs-small);
+  }
+
+  .game-date {
+    display: block;
+    margin-top: 2px;
+    font-size: var(--fs-label);
+    font-weight: 600;
+    color: var(--ink-2);
+  }
+
+  /* The whole print is the link, not just its title. */
+  .print-link::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+  }
+
+  .game .print:has(.print-link) {
+    cursor: pointer;
+  }
+
+  .game .print:has(.print-link:focus-visible) {
+    outline: 3px solid var(--ink);
+    outline-offset: 4px;
+  }
+
+  .print-link:focus-visible {
+    outline: none;
+  }
+
+  /* A small blue sticky note on the featured print: play this one. */
+  .click-me {
+    position: absolute;
+    z-index: 3;
+    top: -12px;
+    right: -14px;
+    display: flex;
+    align-items: flex-start;
+    width: 62px;
+    aspect-ratio: 1;
+    padding: 7px;
+    background: var(--orange);
+    box-shadow: var(--note-shadow);
+    font-size: var(--fs-label);
+    font-weight: 750;
+    line-height: 1.1;
+    transform: rotate(8deg);
+    pointer-events: none;
+    transition: transform 360ms var(--ease);
+  }
+
+  .game:hover .click-me {
+    transform: rotate(2deg) scale(1.06);
+  }
+
+  @media (max-width: 700px) {
+    .click-me {
+      width: 56px;
+      top: -10px;
+      right: -8px;
+      padding: 6px;
+    }
+  }
+
+  .game .print figcaption a {
+    color: var(--ink);
+    text-decoration-color: var(--orange);
+    text-decoration-thickness: 3px;
+  }
+
+  .game .tape {
+    width: 64px;
+    height: 20px;
+    top: -10px;
+  }
+
+  .game img {
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+  }
+
+  .game:hover .print {
+    --tilt: 0deg;
+    box-shadow: var(--note-shadow-up);
+  }
+
+
+  .game-line {
+    margin-top: 14px;
+    color: var(--ink-2);
+    font-size: var(--fs-small);
+    line-height: 1.45;
+  }
+
+  @media (max-width: 700px) {
+    .game-list {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 22px 16px;
+    }
+
+    .game .print figcaption {
+      font-size: var(--fs-label);
+      line-height: 1.2;
+    }
+
+    .game-date {
+      font-size: var(--fs-label);
+    }
+
+    .game-line {
+      display: none;
+    }
+  }
+
+  /* Contact */
+  .contact-grid {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    gap: clamp(40px, 7vw, 104px);
+    align-items: center;
+  }
+
+  .contact-mail {
+    font-size: var(--fs-small);
+    font-weight: 600;
+    overflow-wrap: anywhere;
+  }
+
+  .contact-links {
+    display: flex;
+    gap: 24px;
+    list-style: none;
+    margin-top: 20px;
+    font-weight: 650;
+    font-size: var(--fs-body);
+  }
+
+  @media (max-width: 700px) {
+    .contact-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
