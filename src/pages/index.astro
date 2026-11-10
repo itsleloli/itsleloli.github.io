@@ -39,8 +39,8 @@ const skills = [
 
 // Off-the-clock notes. Give one an href (e.g. an Instagram or portfolio link)
 // and it becomes a link that lifts on hover; leave it empty to keep it a plain note.
-const hobbies: { text: string; tilt: number; href?: string }[] = [
-  { text: 'I love food. Still cook in a Korean kitchen sometimes.', tilt: -3 },
+const hobbies: { text: string; sub?: string; tilt: number; href?: string }[] = [
+  { text: 'I love food.', sub: 'I still work in a Korean kitchen sometimes.', tilt: -3 },
   { text: 'I sew and design my own clothes.', tilt: 2, href: '' },
   { text: 'Always planning the next trip.', tilt: -1.5 },
   { text: 'Lifting heavy things for fun (gym).', tilt: 1 },
@@ -246,21 +246,20 @@ const games = [
         <p class="about-notes-lede">I like making things, whether they’re digital or not.</p>
         <ul class="about-notes" aria-label="Hobbies">
           {
-            hobbies.map((h) =>
-              h.href ? (
-                <li>
-                  <Note color="yellow" size="sm" tilt={h.tilt} href={h.href}>
-                    {h.text}
-                  </Note>
-                </li>
-              ) : (
-                <li>
-                  <Note color="yellow" size="sm" tilt={h.tilt}>
-                    {h.text}
-                  </Note>
-                </li>
-              ),
-            )
+            hobbies.map((h) => (
+              <li>
+                <Note color="yellow" size="sm" tilt={h.tilt} href={h.href || undefined}>
+                  {h.sub ? (
+                    <span class="hobby-stack">
+                      <span class="hobby-head">{h.text}</span>
+                      <span class="hobby-sub">{h.sub}</span>
+                    </span>
+                  ) : (
+                    h.text
+                  )}
+                </Note>
+              </li>
+            ))
           }
         </ul>
       </div>
@@ -586,6 +585,25 @@ const games = [
     margin-top: -8px;
     color: var(--ink-2);
     font-size: var(--fs-small);
+  }
+
+  /* A hobby note with a big headline and its line right underneath. */
+  .hobby-stack {
+    display: grid;
+    gap: 6px;
+  }
+
+  .hobby-head {
+    font-size: var(--fs-body);
+    font-weight: 800;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+  }
+
+  .hobby-sub {
+    font-size: var(--fs-small);
+    font-weight: 650;
+    line-height: 1.25;
   }
 
   .about-notes-title {
