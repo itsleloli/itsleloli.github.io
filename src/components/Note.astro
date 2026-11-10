@@ -8,12 +8,15 @@ interface Props {
   tilt?: number;
   size?: 'sm' | 'md' | 'lg';
   href?: string;
+  /** Defaults to true for plain notes, false for link notes. */
   drag?: boolean;
   /** Leave this note out of the live arrows (e.g. the call-to-action note). */
   linkSkip?: boolean;
 }
 
-const { color, tilt = 0, size = 'md', href, drag = false, linkSkip = false } = Astro.props;
+const { color, tilt = 0, size = 'md', href, linkSkip = false } = Astro.props;
+// Every plain note can be picked up and moved; link notes stay put so a drag never fights a click.
+const drag = Astro.props.drag ?? !href;
 const Tag = href ? 'a' : 'div';
 ---
 
@@ -26,6 +29,48 @@ const Tag = href ? 'a' : 'div';
 >
   <slot />
 </Tag>
+
+<script>
+  // Drag notes around the wall (desktop only). They settle with a fresh tilt where dropped,
+  // and tell their [data-links] container so the marker arrows follow.
+  const phone = window.matchMedia('(max-width: 700px)');
+  for (const note of document.querySelectorAll<HTMLElement>('[data-drag]')) {
+    const links = note.closest<HTMLElement>('[data-links]');
+    const moved = () => links?.dispatchEvent(new Event('notes:moved'));
+    let startX = 0;
+    let startY = 0;
+    let dx = 0;
+    let dy = 0;
+
+    note.addEventListener('pointerdown', (e) => {
+      // Phones: a swipe must scroll the page, not drag a note.
+      if (phone.matches) return;
+      note.setPointerCapture(e.pointerId);
+      note.classList.add('is-held');
+      startX = e.clientX - dx;
+      startY = e.clientY - dy;
+    });
+
+    note.addEventListener('pointermove', (e) => {
+      if (!note.hasPointerCapture(e.pointerId)) return;
+      dx = e.clientX - startX;
+      dy = e.clientY - startY;
+      note.style.setProperty('--dx', `${dx}px`);
+      note.style.setProperty('--dy', `${dy}px`);
+      moved();
+    });
+
+    const drop = (e: PointerEvent) => {
+      if (note.hasPointerCapture(e.pointerId)) note.releasePointerCapture(e.pointerId);
+      note.classList.remove('is-held');
+      note.style.setProperty('--tilt', `${(Math.random() * 6 - 3).toFixed(1)}deg`);
+      moved();
+    };
+    note.addEventListener('transitionend', moved);
+    note.addEventListener('pointerup', drop);
+    note.addEventListener('pointercancel', drop);
+  }
+</script>
 
 <style>
   .note {

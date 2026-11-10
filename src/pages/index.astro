@@ -344,46 +344,6 @@ const games = [
   </section>
 </Wall>
 
-<script>
-  // Drag the hero notes around the wall. They settle with a fresh tilt where dropped.
-  const wall = document.querySelector<HTMLElement>('[data-wall]');
-  const phone = window.matchMedia('(max-width: 700px)');
-  for (const note of wall?.querySelectorAll<HTMLElement>('[data-drag]') ?? []) {
-    let startX = 0;
-    let startY = 0;
-    let dx = 0;
-    let dy = 0;
-
-    note.addEventListener('pointerdown', (e) => {
-      // Phones: the notes fill the first screen, so a swipe must scroll the page, not drag.
-      if (phone.matches) return;
-      note.setPointerCapture(e.pointerId);
-      note.classList.add('is-held');
-      startX = e.clientX - dx;
-      startY = e.clientY - dy;
-    });
-
-    note.addEventListener('pointermove', (e) => {
-      if (!note.hasPointerCapture(e.pointerId)) return;
-      dx = e.clientX - startX;
-      dy = e.clientY - startY;
-      note.style.setProperty('--dx', `${dx}px`);
-      note.style.setProperty('--dy', `${dy}px`);
-      wall?.dispatchEvent(new Event('notes:moved'));
-    });
-
-    const drop = (e: PointerEvent) => {
-      if (note.hasPointerCapture(e.pointerId)) note.releasePointerCapture(e.pointerId);
-      note.classList.remove('is-held');
-      note.style.setProperty('--tilt', `${(Math.random() * 6 - 3).toFixed(1)}deg`);
-      wall?.dispatchEvent(new Event('notes:moved'));
-    };
-    note.addEventListener('transitionend', () => wall?.dispatchEvent(new Event('notes:moved')));
-    note.addEventListener('pointerup', drop);
-    note.addEventListener('pointercancel', drop);
-  }
-</script>
-
 <style>
   /* Hero */
   .hero {
