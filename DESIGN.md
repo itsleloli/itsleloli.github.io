@@ -241,11 +241,14 @@ A sheet of white paper taped to the wall: print white, "Stuck" shadow, -0.6 degr
 ### System Map
 A case study's architecture drawn on the wall (`MigrationMap.astro`), portrait so it reads on a phone: external systems as white cards with the "Stuck" shadow, the middleware as one blue card holding white sub-cards, ink marker arrows (3px, round caps) with small label-size captions, a dashed ink divider between "today" and "after the switch", and one tilted pink note for the hard part. Text uses the type tokens, so it scales with the drawing. On a case page it sits in the right column above "Built with" (first on phones).
 
+### Offer Note
+"What I can do for you" uses small blue notes (max 230px) that are filled, not empty: the offer at the top in note type (800), the proof written at the foot in small type (600). Four across on desktop, a 2×2 grid on phones.
+
 ### Hint Sticker
 A small orange note (62px, 56px on phones) stuck over the corner of the featured game print, tilted 8 degrees, label-size bold text ("Play this one!"). One per page at most.
 
 ### Navigation
-A slim sticky header on the wall colour: the name at weight 800 beside a tiny tilted yellow note mark, four plain ink links at weight 600 (Work, About, CV, Contact) whose hover is a 3px orange underline, and the pink CTA at the right. On phones only the name and the CTA remain.
+A slim sticky header on the wall colour: the name at weight 800 beside a tiny tilted yellow note mark, three plain ink links at weight 600 (Work, About, CV) whose hover is a 3px orange underline, and the pink CTA at the right. On phones only the name and the CTA remain.
 
 ### Inline Arrow
 One authored SVG arrow (1.6px stroke, 0.85em) for "Email me", "All work" and "Next" links, rotated for direction. Never a Unicode arrow glyph.

@@ -70,10 +70,10 @@ The one thing a visitor should remember: he gets the business side *and* can cod
   - **Customer self-service portal** (Laravel + Filament): deliveries, subscriptions, recipes, pause/cancel; piloted with a whitelist of customers, then rolled out to all. Real work, but deliberately **not shown** on the site (Leandro finds it the least interesting).
   - Odoo module work (Python) is part of his job but was **not** confirmed as his to claim; describe it at most as "contributed to" until he says otherwise.
 - Career path: joined as a trainee and had a junior developer contract within 7 months; the role grew into integrations, Odoo (QWeb, ORM, Studio) and IT admin (Google Workspace), well beyond the title. 24 h/week of development next to a full-time HBO.
-- Got into programming through gaming. Off the clock: cooking (nasi, roti; Asian and Latin food; still works in a Korean kitchen now and then), sewing and streetwear, photography and content creation, breakdance.
+- Got into programming through gaming. Off the clock: cooking (nasi, roti; Asian and Latin food; still cooks in a Korean kitchen sometimes), sewing and designing his own clothes, travel (Shanghai, Seoul, Tokyo, Okinawa), the gym.
 - Personal and school (BIM) projects he can show; specific projects not yet listed.
 - **Earlier work (game development, Grafisch Lyceum Utrecht, 2022–2024):** existing project pages, GIFs, videos and two game design documents in this repo (`images/`, `gifs/`, `videos/`, `pdf/`). Chef Line's Journey, Starline, Six Bullets, Sea Monkey, Christmas Fight, a Donkey Kong remake, Blender/3D-printing. The new site keeps the strongest 2–3 as an "Earlier work" section, as proof of C#/Unity skill and shipped projects; the rest leave the site.
-- Contact: email, LinkedIn and GitHub (`itsleloli`) as already published on the old site. The old PHP contact form never worked on GitHub Pages and must not be carried over as-is.
+- Contact: email and LinkedIn. GitHub is deliberately not linked (Leandro, Nov 2026): his real work is in private repos, so the public profile would undersell him. The old PHP contact form never worked on GitHub Pages and must not be carried over as-is.
 - The CV PDF (`pdf/Website CV Leandro Bonora 1-2024 English.pdf`) is outdated (January 2024, game-dev era).
 - **Absent, must not be fabricated:** testimonials, client logos, named freelance clients, paid freelance projects, metrics or results figures, certifications, pricing.
 

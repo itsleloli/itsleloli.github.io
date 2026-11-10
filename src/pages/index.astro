@@ -16,7 +16,6 @@ const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
 
 const email = 'bonoraleandro@gmail.com';
 const linkedin = 'https://www.linkedin.com/in/leandro-bonora-08b0ba257/';
-const github = 'https://github.com/itsleloli';
 
 // What Leandro can do, each backed by something he has actually done.
 const skills = [
@@ -26,7 +25,7 @@ const skills = [
   },
   {
     title: 'Set up and extend Odoo',
-    proof: 'QWeb, the ORM, Studio.',
+    proof: 'QWeb reports, the ORM, Studio.',
   },
   {
     title: 'Build web apps and admin panels',
@@ -41,10 +40,10 @@ const skills = [
 // Off-the-clock notes. Give one an href (e.g. an Instagram or portfolio link)
 // and it becomes a link that lifts on hover; leave it empty to keep it a plain note.
 const hobbies: { text: string; tilt: number; href?: string }[] = [
-  { text: 'I love food. I still work in a Korean kitchen from time to time.', tilt: -3 },
-  { text: 'I sew, and design my own streetwear.', tilt: 2, href: '' },
-  { text: 'Photography and making content.', tilt: -1.5, href: '' },
-  { text: 'Breakdance. Yes, really.', tilt: 1 },
+  { text: 'I love food. Still cook in a Korean kitchen sometimes.', tilt: -3 },
+  { text: 'I sew and design my own clothes.', tilt: 2, href: '' },
+  { text: 'Always planning the next trip.', tilt: -1.5 },
+  { text: 'Lifting heavy things for fun (gym).', tilt: 1 },
 ];
 
 const games = [
@@ -97,7 +96,7 @@ const games = [
         <Note color="blue" size="md" tilt={2} drag>design how its systems fit together,</Note>
         <Note color="orange" size="md" tilt={-1.5} drag>and build the parts people use.</Note>
         <Note color="pink" size="md" tilt={3} href={`mailto:${email}`} linkSkip>
-          <span>Let’s talk</span>
+          <span>Your business next?</span>
           <span class="note-foot">Email me <Arrow /></span>
         </Note>
       </div>
@@ -113,7 +112,7 @@ const games = [
     <div class="wrap" id="work">
       <h2 class="section-title" id="work-title">Work</h2>
       <p class="lede">
-        What I’ve built, and what I can build for you. It starts, like everything I do, with a business problem.
+        What I’ve built, and what I can build for you. It starts, like everything I do, with a business problem.
       </p>
 
       <div class="cases">
@@ -166,9 +165,9 @@ const games = [
             skills.map((k, i) => (
               <li class="can-item">
                 <Note color="blue" size="sm" tilt={[-2, 1.5, -1, 2][i]}>
-                  <span>{k.title}</span>
+                  <span class="can-name">{k.title}</span>
+                  <span class="can-proof">{k.proof}</span>
                 </Note>
-                <p class="can-proof">{k.proof}</p>
               </li>
             ))
           }
@@ -244,10 +243,7 @@ const games = [
           build it.
         </p>
         <h3 class="about-notes-title">Off the clock</h3>
-        <p class="about-notes-lede">
-          Outside of code, I sew, shoot photos and breakdance. I like making things, whether they’re
-          digital or not.
-        </p>
+        <p class="about-notes-lede">I like making things, whether they’re digital or not.</p>
         <ul class="about-notes" aria-label="Hobbies">
           {
             hobbies.map((h) =>
@@ -315,7 +311,7 @@ const games = [
           <div class="cv-col">
             <h3>Also</h3>
             <ul>
-              <li>Scrum master on two six-person game teams</li>
+              <li>Scrum master for mixed teams of developers and artists</li>
               <li>I write the manuals for the colleagues who use what I build</li>
               <li>Dutch (native), English (fluent), Spanish (beginner)</li>
               <li>Based in the Netherlands, near Breda</li>
@@ -341,7 +337,6 @@ const games = [
         <ul class="contact-links">
           <li><a href={`mailto:${email}`}>Email</a></li>
           <li><a href={linkedin} target="_blank" rel="noopener">LinkedIn</a></li>
-          <li><a href={github} target="_blank" rel="noopener">GitHub</a></li>
         </ul>
       </div>
     </div>
@@ -430,8 +425,12 @@ const games = [
 
   .hero-when {
     margin-top: clamp(28px, 4vw, 44px);
-    max-width: 62ch;
+    max-width: 72ch;
     font-size: var(--fs-body);
+  }
+
+  .hero-when a {
+    white-space: nowrap;
   }
 
   .hero-hint {
@@ -620,7 +619,6 @@ const games = [
   .short-title {
     font-size: var(--fs-title);
     letter-spacing: -0.025em;
-    scroll-margin-top: 96px;
   }
 
   .about-notes-lede {
@@ -765,21 +763,44 @@ const games = [
 
   .can-item :global(.note) {
     width: 100%;
-    max-width: 210px;
-    font-size: var(--fs-body);
+    max-width: 230px;
+    padding: 18px 18px 16px;
+  }
+
+  .can-name {
+    font-size: var(--fs-note);
+    font-weight: 800;
+    line-height: 1.12;
+    letter-spacing: -0.015em;
   }
 
   .can-proof {
-    margin-top: 16px;
     font-size: var(--fs-small);
-    line-height: 1.45;
-    color: var(--ink-2);
-    max-width: 30ch;
+    font-weight: 600;
+    line-height: 1.35;
   }
 
   @media (max-width: 900px) {
     .can-list {
       grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 600px) {
+    .can-list {
+      gap: 16px;
+    }
+
+    .can-item :global(.note) {
+      padding: 12px;
+    }
+
+    .can-name {
+      font-size: var(--fs-small);
+    }
+
+    .can-proof {
+      font-size: var(--fs-label);
     }
   }
 
