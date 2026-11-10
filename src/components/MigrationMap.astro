@@ -1,0 +1,162 @@
+---
+// How the migration fits together, drawn on the wall: today on the left, after the
+// switch on the right, one middleware contract in between. Portrait so it reads on a phone.
+---
+
+<figure class="map">
+  <svg viewBox="0 0 360 590" role="img" aria-labelledby="map-title map-desc">
+    <title id="map-title">How the migration fits together</title>
+    <desc id="map-desc">
+      Today, the Shopware webshop sends orders through the middleware's old adapter to the legacy back
+      office. After the switch, the Shopify webshop sends orders through the new adapter to Odoo. Both
+      adapters sit behind one middleware contract. The hard part is the switch-over: moving every order
+      from the old side to the new side without a gap.
+    </desc>
+
+    <text class="col" x="95" y="22" text-anchor="middle">Today</text>
+    <text class="col" x="265" y="22" text-anchor="middle">After the switch</text>
+    <path class="divider" d="M180 34 V140 M180 316 V420" />
+
+    <g class="card">
+      <rect x="20" y="36" width="150" height="64" />
+      <text class="t" x="34" y="62">Shopware</text>
+      <text class="s" x="34" y="82">old webshop</text>
+    </g>
+    <g class="card">
+      <rect x="190" y="36" width="150" height="64" />
+      <text class="t" x="204" y="62">Shopify</text>
+      <text class="s" x="204" y="82">new webshop</text>
+    </g>
+
+    <path class="wire" d="M95 104 V146 M88 138 L95 147 L102 138" />
+    <path class="wire" d="M265 104 V146 M258 138 L265 147 L272 138" />
+    <text class="lbl" x="102" y="128">orders</text>
+    <text class="lbl" x="272" y="128">orders</text>
+
+    <g class="hub">
+      <rect x="20" y="152" width="320" height="150" />
+      <text class="t" x="36" y="180">Middleware</text>
+      <text class="s" x="36" y="199">one contract for both sides</text>
+      <g class="chip">
+        <rect x="36" y="216" width="138" height="66" />
+        <text class="t sm" x="48" y="240">old adapter</text>
+        <text class="s" x="48" y="260">runs today’s shop</text>
+      </g>
+      <g class="chip">
+        <rect x="186" y="216" width="138" height="66" />
+        <text class="t sm" x="198" y="240">new adapter</text>
+        <text class="s" x="198" y="260">fetch, sync, retry</text>
+      </g>
+    </g>
+
+    <path class="wire" d="M105 306 V348 M98 340 L105 349 L112 340" />
+    <path class="wire" d="M255 306 V348 M248 340 L255 349 L262 340" />
+    <text class="lbl" x="97" y="330" text-anchor="end">sale orders</text>
+    <text class="lbl" x="262" y="330">sale orders</text>
+
+    <g class="card">
+      <rect x="20" y="354" width="150" height="64" />
+      <text class="t" x="34" y="380">Back office</text>
+      <text class="s" x="34" y="400">legacy system</text>
+    </g>
+    <g class="card">
+      <rect x="190" y="354" width="150" height="64" />
+      <text class="t" x="204" y="380">Odoo</text>
+      <text class="s" x="204" y="400">new ERP</text>
+    </g>
+
+    <g class="hot" transform="rotate(-2 180 510)">
+      <rect x="56" y="462" width="248" height="96" />
+      <text class="t" x="72" y="490">The switch-over</text>
+      <text class="s ink" x="72" y="512">Move every order from left to</text>
+      <text class="s ink" x="72" y="530">right, without a gap.</text>
+    </g>
+  </svg>
+  <figcaption>How it fits together. Left: today. Right: after the switch.</figcaption>
+</figure>
+
+<style>
+  .map {
+    margin: 0;
+  }
+
+  svg {
+    width: 100%;
+    height: auto;
+    overflow: visible;
+    font-family: var(--font);
+  }
+
+  .col {
+    font-size: var(--fs-label);
+    font-weight: 700;
+    fill: var(--ink-2);
+  }
+
+  .divider {
+    stroke: var(--ink-2);
+    stroke-width: 1.5;
+    stroke-dasharray: 4 5;
+    fill: none;
+  }
+
+  .card rect,
+  .chip rect {
+    fill: #fff;
+  }
+
+  .card rect {
+    filter: drop-shadow(0 8px 9px rgb(22 23 26 / 0.22));
+  }
+
+  .hub > rect {
+    fill: var(--blue);
+    filter: drop-shadow(0 10px 12px rgb(22 23 26 / 0.25));
+  }
+
+  .hot rect {
+    fill: var(--pink);
+    filter: drop-shadow(0 10px 12px rgb(22 23 26 / 0.25));
+  }
+
+  .t {
+    font-size: var(--fs-body);
+    font-weight: 800;
+    fill: var(--ink);
+  }
+
+  .t.sm {
+    font-size: var(--fs-small);
+  }
+
+  .s {
+    font-size: var(--fs-label);
+    font-weight: 500;
+    fill: var(--ink-2);
+  }
+
+  .hub > .s,
+  .s.ink {
+    fill: var(--ink);
+  }
+
+  .lbl {
+    font-size: var(--fs-label);
+    font-weight: 600;
+    fill: var(--ink-2);
+  }
+
+  .wire {
+    fill: none;
+    stroke: var(--ink);
+    stroke-width: 3;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  figcaption {
+    margin-top: 14px;
+    font-size: var(--fs-small);
+    color: var(--ink-2);
+  }
+</style>

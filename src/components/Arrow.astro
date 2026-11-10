@@ -1,0 +1,28 @@
+---
+// One authored arrow, one stroke weight, used everywhere instead of Unicode glyphs.
+interface Props {
+  dir?: 'right' | 'left' | 'up';
+}
+const { dir = 'right' } = Astro.props;
+const rotate = { right: 0, left: 180, up: -90 }[dir];
+---
+
+<svg
+  class="arrow"
+  viewBox="0 0 14 14"
+  width="0.85em"
+  height="0.85em"
+  fill="none"
+  aria-hidden="true"
+  style={`transform: rotate(${rotate}deg)`}
+>
+  <path d="M1 7h11M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.6"></path>
+</svg>
+
+<style>
+  .arrow {
+    display: inline-block;
+    vertical-align: -0.08em;
+    flex: none;
+  }
+</style>

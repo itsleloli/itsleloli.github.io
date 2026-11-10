@@ -1,0 +1,133 @@
+---
+// A sticky note. Colour carries a fixed role: yellow people, orange what happens,
+// blue what the system does, pink the problem (or the call to action).
+export type NoteColor = 'yellow' | 'orange' | 'blue' | 'pink' | 'ghost';
+
+interface Props {
+  color: NoteColor;
+  tilt?: number;
+  size?: 'sm' | 'md' | 'lg';
+  href?: string;
+  drag?: boolean;
+  /** Leave this note out of the live arrows (e.g. the call-to-action note). */
+  linkSkip?: boolean;
+}
+
+const { color, tilt = 0, size = 'md', href, drag = false, linkSkip = false } = Astro.props;
+const Tag = href ? 'a' : 'div';
+---
+
+<Tag
+  class:list={['note', `note-${color}`, `note-${size}`]}
+  style={`--tilt: ${tilt}deg`}
+  href={href}
+  data-drag={drag ? '' : undefined}
+  data-link-skip={linkSkip ? '' : undefined}
+>
+  <slot />
+</Tag>
+
+<style>
+  .note {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 10px;
+    aspect-ratio: 1;
+    padding: 18px 18px 16px;
+    color: var(--ink);
+    text-decoration: none;
+    font-weight: 700;
+    line-height: 1.18;
+    letter-spacing: -0.01em;
+    box-shadow: var(--note-shadow);
+    transform: translate(var(--dx, 0px), var(--dy, 0px)) rotate(var(--tilt));
+    transition:
+      transform 360ms var(--ease),
+      box-shadow 360ms var(--ease);
+  }
+
+  .note-sm {
+    width: clamp(140px, 15vw, 176px);
+    font-size: var(--fs-small);
+  }
+
+  .note-md {
+    width: clamp(168px, 19vw, 232px);
+    font-size: var(--fs-note);
+    line-height: 1.12;
+  }
+
+  .note-lg {
+    width: clamp(220px, 28vw, 340px);
+    font-size: var(--fs-title);
+    padding: 26px;
+  }
+
+  .note-yellow {
+    background: var(--yellow);
+  }
+
+  .note-orange {
+    background: var(--orange);
+  }
+
+  .note-blue {
+    background: var(--blue);
+  }
+
+  .note-pink {
+    background: var(--pink);
+  }
+
+  /* A note that isn't stuck on the wall yet: what comes next. */
+  .note-ghost {
+    background: transparent;
+    border: 2.5px dashed var(--ink);
+    box-shadow: none;
+  }
+
+  a.note:hover {
+    --tilt: 0deg;
+    box-shadow: var(--note-shadow-up);
+  }
+
+  [data-drag] {
+    cursor: grab;
+    touch-action: none;
+    user-select: none;
+  }
+
+  @media (max-width: 700px) {
+    [data-drag] {
+      cursor: default;
+      touch-action: auto;
+      user-select: auto;
+    }
+  }
+
+  [data-drag].is-held {
+    cursor: grabbing;
+    z-index: 5;
+    box-shadow: var(--note-shadow-up);
+    transition: box-shadow 200ms var(--ease);
+  }
+
+  /* Phones: notes fill a two-column grid instead of fixed sizes. */
+  @media (max-width: 700px) {
+    .note-sm,
+    .note-md {
+      width: 100%;
+      padding: 14px 14px 12px;
+      font-size: var(--fs-small);
+      line-height: 1.18;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .note {
+      transition: none;
+    }
+  }
+</style>
