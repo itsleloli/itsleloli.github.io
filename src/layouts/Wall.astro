@@ -57,6 +57,9 @@ const link = (hash: string) => (isHome ? hash : `${base}${hash}`);
         <p>No sticky notes were wasted making this site. Okay, a few.</p>
       </div>
     </footer>
+    <button class="reset-notes" type="button" onclick="document.dispatchEvent(new Event('notes:reset'))">
+      Put the notes back
+    </button>
     <Links />
   </body>
 </html>
@@ -160,5 +163,33 @@ const link = (hash: string) => (isHome ? hash : `${base}${hash}`);
     flex-wrap: wrap;
     justify-content: space-between;
     gap: 8px 24px;
+  }
+
+  /* Faint corner button for anyone who dragged the wall into a mess. Desktop only, like dragging. */
+  .reset-notes {
+    position: fixed;
+    right: 16px;
+    bottom: 12px;
+    z-index: 10;
+    padding: 6px 8px;
+    border: 0;
+    background: none;
+    font: inherit;
+    font-size: var(--fs-label);
+    color: var(--ink-2);
+    opacity: 0.45;
+    cursor: pointer;
+    transition: opacity 180ms var(--ease);
+  }
+
+  .reset-notes:hover,
+  .reset-notes:focus-visible {
+    opacity: 1;
+  }
+
+  @media (max-width: 700px) {
+    .reset-notes {
+      display: none;
+    }
   }
 </style>

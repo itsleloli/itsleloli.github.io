@@ -41,6 +41,17 @@ const Tag = href ? 'a' : 'div';
     let startY = 0;
     let dx = 0;
     let dy = 0;
+    const tilt = note.style.getPropertyValue('--tilt');
+
+    // "Put the notes back" in the corner sends every note home, with its own tilt.
+    document.addEventListener('notes:reset', () => {
+      dx = 0;
+      dy = 0;
+      note.style.removeProperty('--dx');
+      note.style.removeProperty('--dy');
+      note.style.setProperty('--tilt', tilt);
+      moved();
+    });
 
     note.addEventListener('pointerdown', (e) => {
       // Phones: a swipe must scroll the page, not drag a note.
