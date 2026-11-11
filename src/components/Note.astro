@@ -43,7 +43,8 @@ const Tag = href ? 'a' : 'div';
   // and tell their [data-links] container so the marker arrows follow.
   // Touch screens and phones never drag: a swipe must always scroll.
   const phone = window.matchMedia('(max-width: 700px), (pointer: coarse)');
-  for (const note of document.querySelectorAll<HTMLElement>('[data-drag]')) {
+  // On touch screens and phones notes don't react at all: no drag code is attached.
+  for (const note of phone.matches ? [] : document.querySelectorAll<HTMLElement>('[data-drag]')) {
     const links = note.closest<HTMLElement>('[data-links]');
     const moved = () => links?.dispatchEvent(new Event('notes:moved'));
     let startX = 0;
@@ -63,8 +64,6 @@ const Tag = href ? 'a' : 'div';
     });
 
     note.addEventListener('pointerdown', (e) => {
-      // Phones: a swipe must scroll the page, not drag a note.
-      if (phone.matches) return;
       note.setPointerCapture(e.pointerId);
       note.classList.add('is-held');
       startX = e.clientX - dx;
@@ -202,6 +201,8 @@ const Tag = href ? 'a' : 'div';
       cursor: default;
       touch-action: auto;
       user-select: auto;
+      pointer-events: none;
+      -webkit-tap-highlight-color: transparent;
     }
   }
 
