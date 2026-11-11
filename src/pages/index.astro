@@ -1038,4 +1038,33 @@ const games = [
       padding: 24px;
     }
   }
+  /* Phone pass: squares only where they carry the look (hero, timeline); text-height cards elsewhere. */
+  @media (max-width: 700px) {
+    .hero-wall :global(.note) {
+      padding: 16px;
+      font-size: 1.2rem;
+      line-height: 1.15;
+    }
+
+    .can-item,
+    .about-notes > li {
+      display: grid;
+    }
+
+    .can-list :global(.note),
+    .about-notes :global(.note) {
+      aspect-ratio: auto;
+    }
+
+    .can-list :global(.note) {
+      gap: 18px;
+    }
+
+    /* Five prints in two columns: the last one sits in the middle, not alone on the left. */
+    .game:last-child:nth-child(odd) {
+      grid-column: 1 / -1;
+      justify-self: center;
+      width: calc(50% - 10px);
+    }
+  }
 </style>

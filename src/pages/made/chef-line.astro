@@ -3,6 +3,7 @@
 import { Image } from 'astro:assets';
 import Project from '../../layouts/Project.astro';
 import onion from '../../assets/chef-line-onion.png';
+import cover from '../../assets/chef-line.png';
 
 const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
 ---
@@ -13,7 +14,7 @@ const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
   meta="Scrum master and programmer · Feb – Jun 2024 · Team of six · Unity, C#"
   description="A food-themed action adventure made during my internship at Ember Glitch. Scrum master for a team of six, enemy AI with state machines and most of the UI."
 >
-  <video slot="media" src={`${base}media/chef-line-gameplay.mp4`} controls preload="metadata" playsinline>
+  <video slot="media" src={`${base}media/chef-line-gameplay.mp4`} poster={onion.src} controls preload="metadata" playsinline>
     <a href={`${base}media/chef-line-gameplay.mp4`}>Watch the gameplay video</a>
   </video>
 
@@ -48,7 +49,7 @@ const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
 }`}</code></pre>
 
   <figure slot="aside">
-    <Image src={onion} alt="The chef facing an onion enemy with a health bar in Chef Line’s Journey" widths={[480, 760]} sizes="(max-width: 800px) 100vw, 380px" />
-    <figcaption>An onion critter: it roams, spots you, chases and attacks.</figcaption>
+    <Image src={cover} alt="Cover art of Chef Line’s Journey: the chef surrounded by flying food" widths={[480, 760]} sizes="(max-width: 800px) 100vw, 380px" />
+    <figcaption>The game’s cover art.</figcaption>
   </figure>
 </Project>

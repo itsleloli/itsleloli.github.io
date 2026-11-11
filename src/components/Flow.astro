@@ -47,5 +47,12 @@ const tilts = [-2.5, 1.5, -1, 2, -1.5];
       grid-template-columns: 1fr 1fr;
       gap: 16px;
     }
+
+    /* Phones: bigger text, so the square notes look full instead of empty. */
+    .flow :global(.note) {
+      padding: 16px;
+      font-size: 1.1rem;
+      line-height: 1.15;
+    }
   }
 </style>

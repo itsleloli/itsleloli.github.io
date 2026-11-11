@@ -108,6 +108,10 @@ const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
     line-height: 1.65;
   }
 
+  .prose :global(p + p) {
+    margin-top: 14px;
+  }
+
   .prose :global(h2) {
     font-size: var(--fs-subtitle);
     letter-spacing: -0.025em;
