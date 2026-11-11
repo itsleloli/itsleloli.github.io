@@ -537,7 +537,11 @@ const games = [
     }
 
     .case-featured > :global(.note) {
-      width: 52%;
+      width: 100%;
+      aspect-ratio: auto;
+      gap: 20px;
+      padding: 20px 22px;
+      font-size: var(--fs-note);
     }
 
     .case-small {
@@ -764,8 +768,12 @@ const games = [
       grid-template-columns: 1fr;
     }
 
+    /* Phones: a short card the height of its text, not a mostly empty square. */
     .cv-row > :global(.note) {
-      width: 70%;
+      width: 100%;
+      aspect-ratio: auto;
+      padding: 20px 22px;
+      font-size: var(--fs-note);
     }
   }
 
@@ -1019,6 +1027,15 @@ const games = [
   @media (max-width: 700px) {
     .contact-grid {
       grid-template-columns: 1fr;
+      gap: 28px;
+    }
+
+    /* Phones: the contact note becomes a wide card with the email right under the title. */
+    .contact-grid > :global(.note) {
+      width: 100%;
+      aspect-ratio: auto;
+      gap: 28px;
+      padding: 24px;
     }
   }
 </style>

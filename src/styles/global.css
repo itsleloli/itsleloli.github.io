@@ -27,7 +27,7 @@
   --font: 'Bricolage Grotesque Variable', 'Bricolage Grotesque', system-ui, sans-serif;
   --gutter: clamp(16px, 4vw, 48px);
   --max: 1240px;
-  --step: clamp(72px, 9vw, 128px);
+  --step: clamp(48px, 9vw, 128px);
   --ease: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
