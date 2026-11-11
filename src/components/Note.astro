@@ -81,7 +81,9 @@ const Tag = href ? 'a' : 'div';
     });
 
     const drop = (e: PointerEvent) => {
-      if (note.hasPointerCapture(e.pointerId)) note.releasePointerCapture(e.pointerId);
+      // Only a note that was actually picked up gets a new tilt; a tap on a phone leaves it alone.
+      if (!note.hasPointerCapture(e.pointerId)) return;
+      note.releasePointerCapture(e.pointerId);
       note.classList.remove('is-held');
       note.style.setProperty('--tilt', `${(Math.random() * 6 - 3).toFixed(1)}deg`);
       moved();
