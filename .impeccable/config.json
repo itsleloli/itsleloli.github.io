@@ -1,0 +1,14 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "design-system-font",
+        "value": "times new roman",
+        "createdAt": "2026-11-11T18:06:08.975Z",
+        "reason": "User asked for a formal US-style CV; Times New Roman is the point of that local-only print page"
+      }
+    ]
+  }
+}
