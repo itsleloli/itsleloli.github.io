@@ -187,7 +187,7 @@ const link = (hash: string) => (isHome ? hash : `${base}${hash}`);
     opacity: 1;
   }
 
-  @media (max-width: 700px) {
+  @media (max-width: 700px), (pointer: coarse) {
     .reset-notes {
       display: none;
     }
