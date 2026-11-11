@@ -1,0 +1,50 @@
+---
+// The Blender ring: two self-chosen weeks of learning 3D modelling and printing.
+import { Image } from 'astro:assets';
+import Project from '../../layouts/Project.astro';
+import render from '../../assets/ring-render.png';
+import sketch from '../../assets/ring-sketch.jpg';
+import burger from '../../assets/burger-print.jpg';
+---
+
+<Project
+  title="My own ring"
+  summary="In my first internship I got two weeks to learn whatever I wanted. I picked Blender and 3D printing, and ended up with a ring I designed and printed myself."
+  meta="Self-taught · two weeks in 2024 · Blender, Prusa Slicer, 3D printing"
+  description="Two weeks of learning Blender and 3D printing during my internship, ending in a signet ring I designed and printed myself."
+>
+  <Image slot="media" loading="eager" src={render} alt="Render of a black signet ring with bone-like details, modelled in Blender" widths={[640, 960, 1400]} sizes="(max-width: 1000px) 100vw, 960px" />
+
+  <h2>The plan</h2>
+  <ul>
+    <li>Follow a beginner tutorial to learn the basics.</li>
+    <li>Model a burger for Chef Line’s Journey.</li>
+    <li>Design a ring of my own.</li>
+    <li>3D print what I made.</li>
+  </ul>
+
+  <h2>How it went</h2>
+  <p>
+    Two days of tutorial, then the burger. I made it twice to try different ways of doing the cheese, one of them a
+    cloth simulation, and used geometry nodes to place the sesame seeds. It became a keychain: my first 3D print.
+  </p>
+  <p>
+    The second week went to the ring. The hardest part was a design I actually liked. After a lot of sketching I
+    landed on a signet ring with bone-like shapes, and printed it on the office printer.
+  </p>
+
+  <h2>What I took from it</h2>
+  <p>
+    It’s how I still learn something new: get the basics from a tutorial, then go straight to something I actually
+    want to make.
+  </p>
+
+  <figure slot="aside">
+    <Image src={sketch} alt="Pencil sketches of star and sun shapes for the ring design" widths={[480, 760]} sizes="(max-width: 800px) 100vw, 380px" />
+    <figcaption>Sketching the shapes for the ring.</figcaption>
+  </figure>
+  <figure slot="aside">
+    <Image src={burger} alt="A yellow 3D-printed burger keychain" widths={[480]} sizes="(max-width: 800px) 100vw, 380px" />
+    <figcaption>My first print: the burger, in yellow PLA.</figcaption>
+  </figure>
+</Project>

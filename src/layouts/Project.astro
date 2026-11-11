@@ -1,0 +1,181 @@
+---
+// Short project page for "Before this: things I made": header, an optional media slot,
+// text with a side column, and the email line at the end.
+import Wall from './Wall.astro';
+import Arrow from '../components/Arrow.astro';
+
+interface Props {
+  title: string;
+  summary: string;
+  meta: string;
+  description: string;
+}
+
+const { title, summary, meta, description } = Astro.props;
+const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
+---
+
+<Wall title={`${title} · Leandro Bonora`} description={description}>
+  <article>
+    <header class="wrap head">
+      <p class="back"><a href={`${base}#work`}><Arrow dir="left" /> Back</a></p>
+      <h1 class="title">{title}</h1>
+      <p class="summary">{summary}</p>
+      <p class="meta">{meta}</p>
+    </header>
+
+    <div class="wrap media"><slot name="media" /></div>
+
+    <div class="wrap body">
+      <div class="prose"><slot /></div>
+      <aside class="side"><slot name="aside" /></aside>
+    </div>
+
+    <nav class="wrap next" aria-label="Next">
+      <a href="mailto:bonoraleandro@gmail.com">Got a project in mind? Email me <Arrow /></a>
+    </nav>
+  </article>
+</Wall>
+
+<style>
+  .head {
+    padding-block: clamp(32px, 6vw, 80px) clamp(28px, 4vw, 48px);
+  }
+
+  .back {
+    font-weight: 650;
+    margin-bottom: clamp(24px, 4vw, 48px);
+  }
+
+  .back a,
+  .next a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .title {
+    font-size: var(--fs-display);
+    line-height: 0.98;
+    letter-spacing: -0.035em;
+  }
+
+  .summary {
+    margin-top: 22px;
+    max-width: 48ch;
+    font-size: var(--fs-lede);
+    line-height: 1.4;
+    color: var(--ink-2);
+  }
+
+  .meta {
+    margin-top: 14px;
+    font-size: var(--fs-small);
+    color: var(--ink-2);
+  }
+
+  .media :global(video),
+  .media :global(img) {
+    width: 100%;
+    max-width: 960px;
+    box-shadow: var(--note-shadow);
+  }
+
+  .media :global(video) {
+    background: var(--ink);
+  }
+
+  .prose :global(p + p) {
+    margin-top: 14px;
+  }
+
+  .body {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(280px, 380px);
+    gap: clamp(40px, 7vw, 104px);
+    align-items: start;
+    padding-block: clamp(48px, 7vw, 88px);
+  }
+
+  .prose {
+    max-width: 64ch;
+    line-height: 1.65;
+  }
+
+  .prose :global(h2) {
+    font-size: var(--fs-subtitle);
+    margin: clamp(40px, 5vw, 64px) 0 14px;
+  }
+
+  .prose :global(h2:first-child) {
+    margin-top: 0;
+  }
+
+  .prose :global(ul) {
+    list-style: none;
+    display: grid;
+    gap: 12px;
+  }
+
+  .prose :global(li) {
+    position: relative;
+    padding-left: 30px;
+  }
+
+  .prose :global(li)::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.45em;
+    width: 14px;
+    height: 14px;
+    background: var(--orange);
+    transform: rotate(-4deg);
+  }
+
+  .prose :global(pre) {
+    margin-top: 18px;
+    padding: 18px 20px;
+    overflow-x: auto;
+    background: #fff;
+    box-shadow: var(--note-shadow);
+    font-size: var(--fs-small);
+    line-height: 1.5;
+  }
+
+  .side {
+    display: grid;
+    gap: 32px;
+  }
+
+  /* Pictures in the side column are pinned prints. */
+  .side :global(figure) {
+    margin: 0;
+    padding: 10px 10px 14px;
+    background: #fff;
+    box-shadow: var(--note-shadow);
+    transform: rotate(1.5deg);
+  }
+
+  .side :global(figure:nth-child(even)) {
+    transform: rotate(-1.5deg);
+  }
+
+  .side :global(figcaption) {
+    margin-top: 10px;
+    font-size: var(--fs-small);
+    color: var(--ink-2);
+  }
+
+  .next {
+    padding-bottom: clamp(64px, 9vw, 120px);
+    font-size: var(--fs-subtitle);
+    font-weight: 750;
+  }
+
+  @media (max-width: 800px) {
+    .body {
+      grid-template-columns: minmax(0, 1fr);
+    }
+  }
+</style>
