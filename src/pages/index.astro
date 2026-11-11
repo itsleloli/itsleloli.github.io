@@ -9,6 +9,7 @@ import chefLine from '../assets/chef-line.png';
 import starline from '../assets/starline.png';
 import sixBullets from '../assets/six-bullets.png';
 import seaMonkey from '../assets/sea-monkey.png';
+import ring from '../assets/ring.png';
 
 const work = (await getCollection('work')).sort((a, b) => a.data.order - b.data.order);
 const [featured, ...more] = work;
@@ -80,6 +81,15 @@ const games = [
     line: 'Arcade shooter, solo. Design, code and my first own 3D model.',
     href: 'https://itsleloli.itch.io/six-bullets',
     tilt: -1,
+  },
+  {
+    img: ring,
+    title: 'My own ring',
+    alt: 'Render of a black signet ring with bone-like details, modelled in Blender',
+    date: '2024 · Learning Blender',
+    line: 'Taught myself Blender in two weeks during my internship, then designed a signet ring.',
+    href: `${import.meta.env.BASE_URL.replace(/\/?$/, '/')}media/ring-showcase.mp4`,
+    tilt: 1.5,
   },
 ];
 ---
@@ -181,7 +191,7 @@ const games = [
       </div>
 
       <div class="games">
-        <h3 class="games-title">Before this: games</h3>
+        <h3 class="games-title">Before this: games (and a ring)</h3>
         <ul class="game-list">
           {
             games.map((g, i) => (
@@ -195,7 +205,7 @@ const games = [
                   )}
                   <Image
                     src={g.img}
-                    alt={`Cover art of ${g.title}`}
+                    alt={'alt' in g ? g.alt : `Cover art of ${g.title}`}
                     widths={[200, 320, 480]}
                     sizes="(max-width: 700px) 30vw, 220px"
                   />
@@ -842,7 +852,7 @@ const games = [
 
   .game-list {
     display: grid;
-    grid-template-columns: repeat(4, minmax(0, 210px));
+    grid-template-columns: repeat(5, minmax(0, 1fr));
     gap: clamp(20px, 4vw, 56px);
     list-style: none;
     margin-top: clamp(28px, 3vw, 40px);
