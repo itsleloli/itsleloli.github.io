@@ -13,7 +13,6 @@ const work = defineCollection({
     period: z.string(),
     status: z.string(),
     stack: z.array(z.string()),
-    diagram: z.enum(['migration']).optional(),
     flow: z.array(
       z.object({
         color: z.enum(['yellow', 'orange', 'blue', 'pink']),

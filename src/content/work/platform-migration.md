@@ -6,7 +6,6 @@ problem: "New webshop and new ERP. At the same time."
 role: Integration developer
 period: 2026 – now
 status: In progress
-diagram: migration
 stack: [PHP, Laravel, Redis, Filament, Shopify GraphQL API, Odoo, GitHub Actions]
 flow:
   - { color: orange, text: "Webshop moves to Shopify, ERP moves to Odoo" }

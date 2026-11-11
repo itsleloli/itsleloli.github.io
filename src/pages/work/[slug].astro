@@ -6,19 +6,14 @@ import Arrow from '../../components/Arrow.astro';
 import MigrationMap from '../../components/MigrationMap.astro';
 
 export async function getStaticPaths() {
-  const work = (await getCollection('work')).sort((a, b) => a.data.order - b.data.order);
-  return work.map((entry, i) => ({
-    params: { slug: entry.id },
-    props: { entry, next: work[i + 1] },
-  }));
+  return (await getCollection('work')).map((entry) => ({ params: { slug: entry.id }, props: { entry } }));
 }
 
 interface Props {
   entry: CollectionEntry<'work'>;
-  next?: CollectionEntry<'work'>;
 }
 
-const { entry, next } = Astro.props;
+const { entry } = Astro.props;
 const { Content } = await render(entry);
 const d = entry.data;
 const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
@@ -42,7 +37,7 @@ const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
         <Content />
       </div>
       <aside class="stack" aria-label="System and stack">
-        {d.diagram === 'migration' && <MigrationMap />}
+        <MigrationMap />
         <p class="stack-head">Built with</p>
         <p>{d.stack.join(', ')}</p>
         <p class="stack-note">At a Dutch meal-kit company. Details kept anonymous.</p>
@@ -50,21 +45,11 @@ const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
     </div>
 
     <nav class="wrap case-next" aria-label="Next">
-      {
-        next ? (
-          <a href={`${base}work/${next.id}/`}>
-            <span class="next-title">
-              Next: {next.data.title} <Arrow />
-            </span>
-          </a>
-        ) : (
-          <a href="mailto:bonoraleandro@gmail.com">
-            <span class="next-title">
-              Got a project in mind? Email me <Arrow />
-            </span>
-          </a>
-        )
-      }
+      <a href="mailto:bonoraleandro@gmail.com">
+        <span class="next-title">
+          Got a project in mind? Email me <Arrow />
+        </span>
+      </a>
     </nav>
   </article>
 </Wall>

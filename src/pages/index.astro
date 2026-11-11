@@ -39,12 +39,11 @@ const skills = [
   },
 ] as { title: string; proof: string; egg?: string }[];
 
-// Off-the-clock notes. Give one an href (e.g. an Instagram or portfolio link)
-// and it becomes a link that lifts on hover; leave it empty to keep it a plain note.
+// Off-the-clock notes.
 // `egg` is written on the wall behind the note; `eggMail` adds an email link under it.
-const hobbies: { text: string; sub?: string; tilt: number; href?: string; egg?: string; eggMail?: string }[] = [
+const hobbies: { text: string; sub?: string; tilt: number; egg?: string; eggMail?: string }[] = [
   { text: 'I love food.', sub: 'I still work in a Korean kitchen sometimes.', tilt: -3, egg: 'My favourite dish? Bibimbap.' },
-  { text: 'I sew and design my own clothes.', tilt: 2, href: '', egg: 'No, I won’t hem your too-long pants.' },
+  { text: 'I sew and design my own clothes.', tilt: 2, egg: 'No, I won’t hem your too-long pants.' },
   { text: 'Always planning the next trip.', tilt: -1.5, egg: 'Where should I go next?', eggMail: 'Tell me' },
   { text: 'Lifting heavy things for fun (gym).', tilt: 1, egg: 'Yes, I train legs.' },
 ];
@@ -54,7 +53,6 @@ const games = [
     img: starline,
     title: 'Starline',
     date: 'Jun 2023 · Team project · programming',
-    line: 'First-person puzzle game, team of six. Scrum master, level design and code.',
     href: 'https://m1l4n.itch.io/starline',
     tilt: 1.5,
   },
@@ -62,7 +60,6 @@ const games = [
     img: chefLine,
     title: 'Chef Line’s Journey',
     date: 'Feb – Jun 2024',
-    line: 'Food-themed action adventure, team of six. Scrum master, enemy AI and most of the UI.',
     href: `${import.meta.env.BASE_URL.replace(/\/?$/, '/')}made/chef-line/`,
     tilt: -2,
   },
@@ -70,7 +67,6 @@ const games = [
     img: seaMonkey,
     title: 'Sea Monkey',
     date: 'Sep 2023',
-    line: '2D pixel-art arcade game, team of five. Flip the surfboard, bounce the beach balls back.',
     href: 'https://itsleloli.itch.io/sea-monkey',
     tilt: 2,
   },
@@ -78,7 +74,6 @@ const games = [
     img: sixBullets,
     title: 'Six Bullets',
     date: 'May 2022',
-    line: 'Arcade shooter, solo. Design, code and my first own 3D model.',
     href: 'https://itsleloli.itch.io/six-bullets',
     tilt: -1,
   },
@@ -88,7 +83,6 @@ const games = [
     href: `${import.meta.env.BASE_URL.replace(/\/?$/, '/')}made/blender-ring/`,
     alt: 'Render of a black signet ring with bone-like details, modelled in Blender',
     date: '2024 · Blender, 3D printed',
-    line: 'Taught myself Blender in two weeks during my internship, then designed and 3D printed a signet ring.',
     tilt: 1.5,
   },
 ];
@@ -264,7 +258,7 @@ const games = [
           {
             hobbies.map((h) => (
               <li>
-                <Note color="yellow" size="sm" tilt={h.tilt} href={h.href || undefined}>
+                <Note color="yellow" size="sm" tilt={h.tilt}>
                   {h.sub ? (
                     <span class="hobby-stack">
                       <span class="hobby-head">{h.text}</span>
@@ -845,11 +839,6 @@ const games = [
     font-size: var(--fs-subtitle);
   }
 
-  .games-lede {
-    margin-top: 8px;
-    color: var(--ink-2);
-  }
-
   .game-list {
     display: grid;
     grid-template-columns: repeat(5, minmax(0, 1fr));
@@ -983,13 +972,6 @@ const games = [
   }
 
 
-  .game-line {
-    margin-top: 14px;
-    color: var(--ink-2);
-    font-size: var(--fs-small);
-    line-height: 1.45;
-  }
-
   @media (max-width: 700px) {
     .game-list {
       grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1003,10 +985,6 @@ const games = [
 
     .game-date {
       font-size: var(--fs-label);
-    }
-
-    .game-line {
-      display: none;
     }
   }
 
