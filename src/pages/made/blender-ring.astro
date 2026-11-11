@@ -4,7 +4,7 @@ import { Image } from 'astro:assets';
 import Project from '../../layouts/Project.astro';
 import render from '../../assets/ring-render.png';
 import sketch from '../../assets/ring-sketch.jpg';
-import burger from '../../assets/burger-print.jpg';
+import burger from '../../assets/burger-keychain.jpg';
 ---
 
 <Project
@@ -44,7 +44,7 @@ import burger from '../../assets/burger-print.jpg';
     <figcaption>Sketching the shapes for the ring.</figcaption>
   </figure>
   <figure slot="aside">
-    <Image src={burger} alt="A yellow 3D-printed burger keychain" widths={[480]} sizes="(max-width: 800px) 100vw, 380px" />
+    <Image src={burger} alt="A yellow 3D-printed burger keychain held between two fingers" widths={[480]} sizes="(max-width: 800px) 100vw, 380px" />
     <figcaption>My first print: the burger, in yellow PLA.</figcaption>
   </figure>
 </Project>
