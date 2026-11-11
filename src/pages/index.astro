@@ -283,6 +283,13 @@ const games = [
 
     <div class="wrap short">
       <h3 class="short-title" id="cv">The short version</h3>
+      <p class="long-version">
+        The full CV, with all the details:{' '}
+        <a href={`${base}cv/leandro-bonora-cv-en.pdf`} target="_blank" rel="noopener">English</a>
+        {' · '}
+        <a href={`${base}cv/leandro-bonora-cv-nl.pdf`} target="_blank" rel="noopener" hreflang="nl">Nederlands</a>
+        {' (PDF)'}
+      </p>
       <ol class="path-flow" data-links>
         <li>
           <Note color="orange" size="sm" tilt={-2}>
@@ -332,14 +339,9 @@ const games = [
               <li>I write the manuals for the colleagues who use what I build</li>
               <li>Dutch (native), English (fluent), Spanish (beginner)</li>
               <li>Based in the Netherlands, near Breda</li>
+              <li><a href={linkedin} target="_blank" rel="noopener">Full history on LinkedIn</a></li>
             </ul>
           </div>
-          <p class="cv-more">
-            <span>The full CV, with all the details:</span>
-            <a href={`${base}cv/leandro-bonora-cv-en.pdf`} target="_blank" rel="noopener">English (PDF)</a>
-            <a href={`${base}cv/leandro-bonora-cv-nl.pdf`} target="_blank" rel="noopener" hreflang="nl">Nederlands (PDF)</a>
-            <a href={linkedin} target="_blank" rel="noopener">LinkedIn</a>
-          </p>
         </div>
         <Note color="yellow" size="md" tilt={2.5}>
           <span>I’m always open to work, and to a good conversation.</span>
@@ -611,6 +613,17 @@ const games = [
     letter-spacing: -0.025em;
   }
 
+  /* The long version, right where you land from the CV link. */
+  .long-version {
+    margin-top: 10px;
+    color: var(--ink-2);
+  }
+
+  .long-version a {
+    font-weight: 650;
+    white-space: nowrap;
+  }
+
   .about-notes-lede {
     margin-top: -8px;
     color: var(--ink-2);
@@ -709,27 +722,6 @@ const games = [
     background: #fff;
     box-shadow: var(--note-shadow);
     transform: rotate(-0.6deg);
-  }
-
-  /* Bottom line of the card: where to get the long version. */
-  .cv-more {
-    grid-column: 1 / -1;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: baseline;
-    gap: 6px 20px;
-    padding-top: 20px;
-    border-top: 2px dashed color-mix(in srgb, var(--ink) 18%, transparent);
-    font-size: var(--fs-small);
-  }
-
-  .cv-more span {
-    font-weight: 700;
-  }
-
-  .cv-more a {
-    font-weight: 650;
-    white-space: nowrap;
   }
 
   .cv-col h3 {
