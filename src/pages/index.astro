@@ -332,6 +332,12 @@ const games = [
               <li>I write the manuals for the colleagues who use what I build</li>
               <li>Dutch (native), English (fluent), Spanish (beginner)</li>
               <li>Based in the Netherlands, near Breda</li>
+              <li>
+                My CV as PDF:{' '}
+                <a href={`${base}cv/leandro-bonora-cv-en.pdf`} target="_blank" rel="noopener">English</a>
+                {' · '}
+                <a href={`${base}cv/leandro-bonora-cv-nl.pdf`} target="_blank" rel="noopener" hreflang="nl">Nederlands</a>
+              </li>
               <li><a href={linkedin} target="_blank" rel="noopener">Full history on LinkedIn</a></li>
             </ul>
           </div>
@@ -351,6 +357,7 @@ const games = [
       </Note>
       <div class="contact-text">
         <p class="about-lead">Got a project, an idea, or just want to grab a coffee?</p>
+        <p class="contact-nl" lang="nl">Liever in het Nederlands? Prima, mail gewoon.</p>
         <ul class="contact-links">
           <li><a href={`mailto:${email}`}>Email</a></li>
           <li><a href={linkedin} target="_blank" rel="noopener">LinkedIn</a></li>
@@ -993,6 +1000,11 @@ const games = [
     font-size: var(--fs-small);
     font-weight: 600;
     overflow-wrap: anywhere;
+  }
+
+  .contact-nl {
+    margin-top: 8px;
+    color: var(--ink-2);
   }
 
   .contact-links {
