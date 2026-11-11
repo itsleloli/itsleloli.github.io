@@ -9,9 +9,11 @@ interface Props {
   summary: string;
   meta: string;
   description: string;
+  /** Show the side pictures as one row under the text (for pages with several pictures). */
+  gallery?: boolean;
 }
 
-const { title, summary, meta, description } = Astro.props;
+const { title, summary, meta, description, gallery = false } = Astro.props;
 const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
 ---
 
@@ -26,7 +28,7 @@ const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
 
     <div class="wrap media"><slot name="media" /></div>
 
-    <div class="wrap body">
+    <div class:list={['wrap body', { gallery }]}>
       <div class="prose"><slot /></div>
       <aside class="side"><slot name="aside" /></aside>
     </div>
@@ -172,6 +174,17 @@ const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
     color: var(--ink-2);
   }
 
+  /* Several pictures: text on its own, then the prints in one row underneath. */
+  .body.gallery {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .body.gallery .side {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: start;
+    gap: clamp(24px, 4vw, 48px);
+  }
+
   .next {
     padding-bottom: clamp(64px, 9vw, 120px);
     font-size: var(--fs-subtitle);
@@ -179,7 +192,8 @@ const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
   }
 
   @media (max-width: 800px) {
-    .body {
+    .body,
+    .body.gallery .side {
       grid-template-columns: minmax(0, 1fr);
     }
   }
