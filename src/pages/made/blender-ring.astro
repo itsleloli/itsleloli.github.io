@@ -3,7 +3,8 @@
 import { Image } from 'astro:assets';
 import Project from '../../layouts/Project.astro';
 import render from '../../assets/ring-render.png';
-import sketch from '../../assets/ring-sketch.jpg';
+import sketch from '../../assets/ring-shapes.jpg';
+import nextRing from '../../assets/ring-sketch.jpg';
 import burger from '../../assets/burger-keychain.jpg';
 ---
 
@@ -40,11 +41,15 @@ import burger from '../../assets/burger-keychain.jpg';
   </p>
 
   <figure slot="aside">
-    <Image src={sketch} alt="Pencil sketches of star and sun shapes for the ring design" widths={[480, 760]} sizes="(max-width: 800px) 100vw, 380px" />
-    <figcaption>Sketching the shapes for the ring.</figcaption>
+    <Image src={sketch} alt="Two hand-drawn sketches of cross shapes with rounded, bone-like ends" widths={[480, 760]} sizes="(max-width: 800px) 100vw, 380px" />
+    <figcaption>Early sketches of the ring’s bone-like shapes.</figcaption>
   </figure>
   <figure slot="aside">
     <Image src={burger} alt="A yellow 3D-printed burger keychain held between two fingers" widths={[480]} sizes="(max-width: 800px) 100vw, 380px" />
     <figcaption>My first print: the burger, in yellow PLA.</figcaption>
+  </figure>
+  <figure slot="aside">
+    <Image src={nextRing} alt="Pencil sketch of a band with a pointed star and sun shapes" widths={[480, 760]} sizes="(max-width: 800px) 100vw, 380px" />
+    <figcaption>And already sketching the next ring.</figcaption>
   </figure>
 </Project>
