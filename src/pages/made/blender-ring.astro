@@ -4,8 +4,9 @@ import { Image } from 'astro:assets';
 import Project from '../../layouts/Project.astro';
 import render from '../../assets/ring-render.png';
 import sketch from '../../assets/ring-moodboard.jpg';
-import nextRing from '../../assets/ring-sketch.jpg';
 import burger from '../../assets/burger-keychain.jpg';
+
+const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
 ---
 
 <Project
@@ -41,15 +42,15 @@ import burger from '../../assets/burger-keychain.jpg';
   </p>
 
   <figure slot="aside">
+    <video src={`${base}media/ring-showcase.mp4`} autoplay muted loop playsinline aria-label="The printed ring held between fingers and worn on a hand"></video>
+    <figcaption>The printed ring, on my hand.</figcaption>
+  </figure>
+  <figure slot="aside">
     <Image src={sketch} alt="A sheet of hand-drawn cross and star shapes with bone-like ends, surrounded by handwritten notes" widths={[480, 760]} sizes="(max-width: 800px) 100vw, 380px" />
     <figcaption>Sketches and notes while looking for the ring’s shape.</figcaption>
   </figure>
   <figure slot="aside">
     <Image src={burger} alt="A yellow 3D-printed burger keychain held between two fingers" widths={[480]} sizes="(max-width: 800px) 100vw, 380px" />
     <figcaption>My first print: the burger, in yellow PLA.</figcaption>
-  </figure>
-  <figure slot="aside">
-    <Image src={nextRing} alt="Pencil sketch of a band with a pointed star and sun shapes" widths={[480, 760]} sizes="(max-width: 800px) 100vw, 380px" />
-    <figcaption>And already sketching the next ring.</figcaption>
   </figure>
 </Project>
