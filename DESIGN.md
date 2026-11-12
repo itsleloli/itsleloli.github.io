@@ -12,6 +12,11 @@ colors:
   note-pink: "#ff5fa2"
   print-white: "#ffffff"
 typography:
+  marker:
+    fontFamily: "'Caveat Variable', 'Caveat', cursive"
+    fontSize: "1.2rem"
+    fontWeight: 600
+    lineHeight: 1.15
   display:
     fontFamily: "'Bricolage Grotesque Variable', 'Bricolage Grotesque', system-ui, sans-serif"
     fontSize: "clamp(3.2rem, 9.5vw, 6rem)"
