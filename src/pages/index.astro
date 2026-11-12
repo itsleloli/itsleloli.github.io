@@ -271,7 +271,7 @@ const games = [
                     <Fragment slot="egg">
                       {h.egg}
                       {h.eggMail && (
-                        <a href={`mailto:${email}`} tabindex="-1">
+                        <a href={`mailto:${email}?subject=${encodeURIComponent('Travel tip for Leandro')}`} tabindex="-1">
                           {h.eggMail} <Arrow />
                         </a>
                       )}
