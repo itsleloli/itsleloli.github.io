@@ -62,7 +62,7 @@ body {
 }
 
 ::selection {
-  background: var(--yellow);
+  background: #a8f06a; /* highlighter green */
   color: var(--ink);
 }
 

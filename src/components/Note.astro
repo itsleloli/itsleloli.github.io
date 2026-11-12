@@ -7,6 +7,8 @@ export type NoteColor = 'yellow' | 'orange' | 'blue' | 'pink' | 'ghost';
 interface Props {
   color: NoteColor;
   tilt?: number;
+  /** Nudge up (-) or down (+) in px on desktop; defaults to a small step that follows the tilt. */
+  shift?: number;
   size?: 'sm' | 'md' | 'lg';
   href?: string;
   /** Defaults to true for plain notes, false for link notes. */
@@ -16,6 +18,8 @@ interface Props {
 }
 
 const { color, tilt = 0, size = 'md', href, linkSkip = false } = Astro.props;
+// Stuck on by hand: never quite in line with its neighbours.
+const shift = Astro.props.shift ?? Math.round(tilt * 2);
 // An easter egg: a line written on the wall behind the note, only seen once it's dragged away.
 // Rendered first: a slot filled with `{cond && ...}` still "has" content even when it's empty.
 const egg = Astro.slots.has('egg') ? (await Astro.slots.render('egg')).trim() : '';
@@ -30,7 +34,7 @@ const Tag = href ? 'a' : 'div';
 {hasEgg && <span class="egg" aria-hidden="true" set:html={egg} />}
 <Tag
   class:list={['note', `note-${color}`, `note-${size}`]}
-  style={`--tilt: ${tilt}deg`}
+  style={`--tilt: ${tilt}deg; --shift: ${shift}px`}
   href={href}
   data-drag={drag ? '' : undefined}
   data-link-skip={linkSkip ? '' : undefined}
@@ -146,6 +150,13 @@ const Tag = href ? 'a' : 'div';
     transition:
       transform 360ms var(--ease),
       box-shadow 360ms var(--ease);
+  }
+
+  /* `top`, not margin: the step never changes the layout around it. Phones stay in line. */
+  @media (min-width: 701px) {
+    .note {
+      top: var(--shift, 0px);
+    }
   }
 
   .note-sm {
