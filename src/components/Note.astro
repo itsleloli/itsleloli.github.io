@@ -1,4 +1,5 @@
 ---
+import '@fontsource-variable/caveat';
 // A sticky note. Colour carries a fixed role: yellow people, orange what happens,
 // blue what the system does, pink the problem (or the call to action).
 export type NoteColor = 'yellow' | 'orange' | 'blue' | 'pink' | 'ghost';
@@ -108,10 +109,12 @@ const Tag = href ? 'a' : 'div';
     justify-content: center;
     align-items: center;
     gap: 6px;
-    color: var(--ink-2);
-    font-size: var(--fs-label);
-    font-weight: 650;
-    line-height: 1.25;
+    /* Written on the wall in marker: the only handwriting on the site. */
+    color: var(--link);
+    font-family: 'Caveat Variable', 'Caveat', cursive;
+    font-size: 1.2rem;
+    font-weight: 600;
+    line-height: 1.15;
     text-align: center;
     text-wrap: balance;
     transform: rotate(-2deg);
