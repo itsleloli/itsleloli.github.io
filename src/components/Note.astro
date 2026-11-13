@@ -65,6 +65,7 @@ const Tag = href ? 'a' : 'div';
       note.style.removeProperty('--dx');
       note.style.removeProperty('--dy');
       note.style.setProperty('--tilt', tilt);
+      delete document.documentElement.dataset.moved;
       moved();
     });
 
@@ -90,6 +91,7 @@ const Tag = href ? 'a' : 'div';
       note.releasePointerCapture(e.pointerId);
       note.classList.remove('is-held');
       note.style.setProperty('--tilt', `${(Math.random() * 6 - 3).toFixed(1)}deg`);
+      if (dx || dy) document.documentElement.dataset.moved = '';
       moved();
     };
     note.addEventListener('transitionend', moved);

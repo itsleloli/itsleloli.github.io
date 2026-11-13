@@ -163,6 +163,12 @@ ol {
   box-shadow: var(--note-shadow-up);
 }
 
+@media (prefers-reduced-motion: reduce) {
+  .cta {
+    transition: none;
+  }
+}
+
 /* Text for screen readers only. */
 .visually-hidden {
   position: absolute;

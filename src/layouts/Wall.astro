@@ -148,9 +148,24 @@ const link = (hash: string) => (isHome ? hash : `${base}${hash}`);
     font-size: var(--fs-small);
   }
 
+  /* Phones: name and button on one row, the three links on a second. */
   @media (max-width: 640px) {
+    .top-in {
+      flex-wrap: wrap;
+      row-gap: 0;
+      min-height: 0;
+      padding-block: 10px 6px;
+    }
+
     nav {
-      display: none;
+      order: 3;
+      width: 100%;
+      margin-left: 0;
+    }
+
+    nav ul {
+      gap: 24px;
+      font-size: var(--fs-small);
     }
 
     .top-cta {
@@ -171,7 +186,7 @@ const link = (hash: string) => (isHome ? hash : `${base}${hash}`);
     gap: 8px 24px;
   }
 
-  /* Faint corner button for anyone who dragged the wall into a mess. Desktop only, like dragging. */
+  /* Corner button for anyone who dragged the wall into a mess. Desktop only, like dragging. */
   .reset-notes {
     position: fixed;
     right: 16px;
@@ -183,14 +198,18 @@ const link = (hash: string) => (isHome ? hash : `${base}${hash}`);
     font: inherit;
     font-size: var(--fs-label);
     color: var(--ink-2);
-    opacity: 0.45;
     cursor: pointer;
-    transition: opacity 180ms var(--ease);
+    display: none;
   }
 
-  .reset-notes:hover,
-  .reset-notes:focus-visible {
-    opacity: 1;
+  /* Only once a note has actually been moved. */
+  :global(:root[data-moved]) .reset-notes {
+    display: block;
+  }
+
+  .reset-notes:hover {
+    color: var(--ink);
+    text-decoration: underline;
   }
 
   @media (max-width: 700px), (pointer: coarse) {

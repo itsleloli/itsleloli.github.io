@@ -22,7 +22,7 @@ const linkedin = 'https://www.linkedin.com/in/bonoraleandro/';
 const skills = [
   {
     title: 'Connect your webshop, ERP and other systems',
-    proof: 'Like the Shopify ↔ Odoo middleware I built.',
+    proof: 'Like the Shopify ↔ Odoo middleware I’m building.',
   },
   {
     title: 'Set up and extend Odoo',
@@ -30,11 +30,11 @@ const skills = [
   },
   {
     title: 'Build web apps and admin panels',
-    proof: 'Laravel and Filament.',
+    proof: 'Like the admin panel where colleagues re-run a failed order themselves.',
   },
   {
     title: 'Keep the IT side running',
-    proof: 'Google Workspace and everyday IT.',
+    proof: 'Google Workspace, onboarding and the IT tickets at my current job.',
     egg: 'Have you tried turning it off and on again? Yes, I’ll even do the IT helpdesk.',
   },
 ] as { title: string; proof: string; egg?: string }[];
@@ -59,7 +59,7 @@ const games = [
   {
     img: chefLine,
     title: 'Chef Line’s Journey',
-    date: 'Feb – Jun 2024',
+    date: 'Jan – Jul 2024',
     href: `${import.meta.env.BASE_URL.replace(/\/?$/, '/')}made/chef-line/`,
     tilt: -2,
   },
@@ -121,7 +121,7 @@ const games = [
     <div class="wrap" id="work">
       <h2 class="section-title" id="work-title">Work</h2>
       <p class="lede">
-        What I’ve built, and what I can build for you. It starts, like everything I do, with a business problem.
+        What I’ve built, and what I can build for you.
       </p>
 
       <div class="cases">
@@ -286,7 +286,7 @@ const games = [
     </div>
 
     <div class="wrap short">
-      <h3 class="short-title" id="cv">The short version</h3>
+      <h2 class="short-title" id="cv">The short version</h2>
       <p class="long-version">
         The full CV, with all the details:{' '}
         <a href={`${base}cv/leandro-bonora-cv-en.pdf`} target="_blank" rel="noopener">English</a>
@@ -333,13 +333,13 @@ const games = [
               <li><b>Integrations</b> REST, GraphQL, webhooks, queues with Redis</li>
               <li><b>Data &amp; tooling</b> MariaDB, Git, GitHub Actions, Docker</li>
               <li><b>Games</b> C#, Unity</li>
-              <li><b>Design &amp; media</b> Photoshop, Premiere Pro, CapCut, Blender</li>
+              <li><b>Design &amp; media</b> Photoshop, Premiere Pro, Blender</li>
             </ul>
           </div>
           <div class="cv-col">
             <h3>Also</h3>
             <ul>
-              <li>Scrum master for mixed teams of developers and artists</li>
+              <li>Was scrum master for game teams of developers and artists</li>
               <li>I document what I build, so colleagues don’t have to ask me</li>
               <li>Dutch (native), English (C2), Spanish (beginner)</li>
               <li>Based in the Netherlands, near Breda</li>
@@ -472,6 +472,7 @@ const games = [
   }
 
 
+
   .case-title {
     font-size: var(--fs-title);
     line-height: 1.05;
@@ -560,7 +561,7 @@ const games = [
     display: grid;
     grid-template-columns: minmax(0, 400px) minmax(0, 1fr);
     gap: clamp(40px, 7vw, 104px);
-    align-items: center;
+    align-items: start;
   }
 
   /* Photos are prints pinned to the wall: white border, caption on the print, tape. */
@@ -667,6 +668,13 @@ const games = [
     grid-template-columns: repeat(4, minmax(0, 150px));
     gap: 18px;
     list-style: none;
+  }
+
+  /* The about column is too narrow for four notes until wide screens. */
+  @media (max-width: 1150px) {
+    .about-notes {
+      grid-template-columns: repeat(2, minmax(0, 150px));
+    }
   }
 
   .about-notes :global(.note) {
@@ -848,7 +856,7 @@ const games = [
 
   .game-list {
     display: grid;
-    grid-template-columns: repeat(5, minmax(0, 1fr));
+    grid-template-columns: repeat(5, minmax(0, 160px));
     gap: clamp(20px, 4vw, 56px);
     list-style: none;
     margin-top: clamp(28px, 3vw, 40px);
@@ -976,6 +984,13 @@ const games = [
   .game:hover .print {
     --tilt: 0deg;
     box-shadow: var(--note-shadow-up);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .print,
+    .click-me {
+      transition: none;
+    }
   }
 
 
