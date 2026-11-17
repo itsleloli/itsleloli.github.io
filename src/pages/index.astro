@@ -384,7 +384,7 @@ const games = [
 
   .hero-title {
     font-size: var(--fs-display);
-    letter-spacing: -0.04em;
+    letter-spacing: -0.02em;
     line-height: 0.92;
   }
 
@@ -857,6 +857,8 @@ const games = [
   .game-list {
     display: grid;
     grid-template-columns: repeat(5, minmax(0, 160px));
+    /* The prints are capped at 160px, so spread the leftover width between them: the row spans the wall like the notes above. */
+    justify-content: space-between;
     gap: clamp(20px, 4vw, 56px);
     list-style: none;
     margin-top: clamp(28px, 3vw, 40px);

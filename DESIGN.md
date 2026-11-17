@@ -18,52 +18,52 @@ typography:
     fontWeight: 500
     lineHeight: 1.15
   display:
-    fontFamily: "'Bricolage Grotesque Variable', 'Bricolage Grotesque', system-ui, sans-serif"
+    fontFamily: "'Schibsted Grotesk Variable', 'Schibsted Grotesk', system-ui, sans-serif"
     fontSize: "clamp(3.2rem, 9.5vw, 6rem)"
     fontWeight: 800
     lineHeight: 0.92
-    letterSpacing: "-0.04em"
+    letterSpacing: "-0.02em"
   headline:
-    fontFamily: "'Bricolage Grotesque Variable', 'Bricolage Grotesque', system-ui, sans-serif"
+    fontFamily: "'Schibsted Grotesk Variable', 'Schibsted Grotesk', system-ui, sans-serif"
     fontSize: "clamp(2.3rem, 5vw, 3.4rem)"
     fontWeight: 800
     lineHeight: 1
     letterSpacing: "-0.025em"
   title:
-    fontFamily: "'Bricolage Grotesque Variable', 'Bricolage Grotesque', system-ui, sans-serif"
+    fontFamily: "'Schibsted Grotesk Variable', 'Schibsted Grotesk', system-ui, sans-serif"
     fontSize: "clamp(1.8rem, 3.6vw, 2.8rem)"
     fontWeight: 800
     lineHeight: 1.05
     letterSpacing: "-0.025em"
   subtitle:
-    fontFamily: "'Bricolage Grotesque Variable', 'Bricolage Grotesque', system-ui, sans-serif"
+    fontFamily: "'Schibsted Grotesk Variable', 'Schibsted Grotesk', system-ui, sans-serif"
     fontSize: "clamp(1.3rem, 2.2vw, 1.75rem)"
     fontWeight: 700
     lineHeight: 1.15
     letterSpacing: "-0.015em"
   note:
-    fontFamily: "'Bricolage Grotesque Variable', 'Bricolage Grotesque', system-ui, sans-serif"
+    fontFamily: "'Schibsted Grotesk Variable', 'Schibsted Grotesk', system-ui, sans-serif"
     fontSize: "clamp(1.15rem, 1.9vw, 1.55rem)"
     fontWeight: 700
     lineHeight: 1.12
     letterSpacing: "-0.01em"
   lede:
-    fontFamily: "'Bricolage Grotesque Variable', 'Bricolage Grotesque', system-ui, sans-serif"
+    fontFamily: "'Schibsted Grotesk Variable', 'Schibsted Grotesk', system-ui, sans-serif"
     fontSize: "clamp(1.2rem, 1.8vw, 1.45rem)"
     fontWeight: 400
     lineHeight: 1.4
   body:
-    fontFamily: "'Bricolage Grotesque Variable', 'Bricolage Grotesque', system-ui, sans-serif"
+    fontFamily: "'Schibsted Grotesk Variable', 'Schibsted Grotesk', system-ui, sans-serif"
     fontSize: "1.125rem"
     fontWeight: 400
     lineHeight: 1.6
   small:
-    fontFamily: "'Bricolage Grotesque Variable', 'Bricolage Grotesque', system-ui, sans-serif"
+    fontFamily: "'Schibsted Grotesk Variable', 'Schibsted Grotesk', system-ui, sans-serif"
     fontSize: "0.95rem"
     fontWeight: 400
     lineHeight: 1.45
   label:
-    fontFamily: "'Bricolage Grotesque Variable', 'Bricolage Grotesque', system-ui, sans-serif"
+    fontFamily: "'Schibsted Grotesk Variable', 'Schibsted Grotesk', system-ui, sans-serif"
     fontSize: "0.82rem"
     fontWeight: 650
     lineHeight: 1.2
@@ -130,7 +130,7 @@ components:
 
 The site is the whiteboard wall of a requirements workshop: a cool, nearly white surface where a business's work is mapped in a handful of big, bright sticky notes, joined by thick marker arrows, and then built. Every page is that wall. Notes carry the story, colour carries the meaning, and the empty wall around them is part of the composition. Nothing is a card grid, a table, or a spec sheet.
 
-Density is low on purpose. One element owns each screen; at most about five notes are visible at once; sections are separated by generous stretches of bare wall rather than rules or panels. Material is literal but restrained: flat paper squares with a real, soft shadow and a small tilt, photos pinned as white-bordered prints under translucent tape, one authored arrow shape. The single typeface, Bricolage Grotesque, does all the work, heavy for display and quieter in prose.
+Density is low on purpose. One element owns each screen; at most about five notes are visible at once; sections are separated by generous stretches of bare wall rather than rules or panels. Material is literal but restrained: flat paper squares with a real, soft shadow and a small tilt, photos pinned as white-bordered prints under translucent tape, one authored arrow shape. The single typeface, Schibsted Grotesk, does all the work, heavy for display and quieter in prose.
 
 The interaction is the wall's own: on desktop the hero notes can be picked up and dragged, and the marker arrows redraw live to follow them; dropped notes settle at a fresh small tilt. On phones the same notes lock into a two-column grid that the arrows read as a Z.
 
@@ -138,7 +138,7 @@ The interaction is the wall's own: on desktop the hero notes can be picked up an
 - Cool whiteboard wall, marker-black ink, four sticky-note colours with fixed meanings.
 - Flat square notes, no corner radius, soft two-layer shadow, tilt between about -3 and +3 degrees.
 - Live SVG marker arrows drawn note edge to note edge.
-- One typeface (Bricolage Grotesque Variable), weight 800 for every heading.
+- One typeface (Schibsted Grotesk Variable), weight 800 for every heading.
 - One pink call to action, repeated in the same form wherever it appears.
 - Lots of empty wall; no tables, section numbers, part codes, or kicker labels.
 
@@ -168,15 +168,15 @@ A cool, nearly colourless wall and ink, with four saturated sticky-note colours 
 
 ## Typography
 
-**Display Font:** Bricolage Grotesque Variable (self-hosted via @fontsource-variable, with system-ui fallback)
-**Body Font:** the same family, optical sizing on
+**Display Font:** Schibsted Grotesk Variable (self-hosted via @fontsource-variable, with system-ui fallback)
+**Body Font:** the same family
 
-**Character:** One expressive grotesque used at every size. At 800 with tight tracking it reads like a confident marker headline; in prose it relaxes into a warm, readable sans.
+**Character:** One sturdy, newspaper-style grotesque used at every size. At 800 it reads like a confident marker headline; tracking stays modest (no tighter than -0.02em) so the hero does not read as a generic AI landing page. Chosen over Bricolage Grotesque in Nov 2026 because Bricolage at 800 with tight tracking had become a typical look of AI-generated sites.
 
 ### Hierarchy
 Every font-size in the code is one of nine tokens in `src/styles/global.css` (`--fs-display` … `--fs-label`); there are no one-off sizes.
 
-- **Display** `--fs-display` (800, clamp 3.2 to 6rem, line-height 0.92, tracking -0.04em): the name in the hero, and the title of a case page.
+- **Display** `--fs-display` (800, clamp 3.2 to 6rem, line-height 0.92, tracking -0.02em): the name in the hero, and the title of a case page.
 - **Headline** `--fs-headline` (800, clamp 2.3 to 3.4rem, line-height 1): section titles on the wall.
 - **Title** `--fs-title` (800, clamp 1.8 to 2.8rem, line-height 1.05): featured case titles, "Next" links, the large contact note.
 - **Subtitle** `--fs-subtitle` (700–800, clamp 1.3 to 1.75rem): compact case titles, the games heading, the about lead, prose h2 on case pages.
@@ -187,7 +187,7 @@ Every font-size in the code is one of nine tokens in `src/styles/global.css` (`-
 - **Label** `--fs-label` (650, 0.82rem): the foot line at the bottom of a note ("Email me", "Integrations", dates). Sentence case, never uppercase, never above a title.
 
 ### Named Rules
-**The Single Family Rule.** Bricolage Grotesque is the only typeface. Hierarchy comes from weight (400 to 800) and size, not from a second family.
+**The Single Family Rule.** Schibsted Grotesk is the only typeface. Hierarchy comes from weight (400 to 800) and size, not from a second family.
 
 **The Foot Label Rule.** Any small label on a note sits at its foot, after the content. Nothing small and tracked-out sits above a heading.
 
